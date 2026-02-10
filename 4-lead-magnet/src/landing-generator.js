@@ -1,0 +1,243 @@
+const fs = require('fs');
+const path = require('path');
+
+class LandingPageGenerator {
+    constructor() {
+        this.outputDir = path.join(__dirname, '../output');
+    }
+
+    async gerarLandingPage(leadMagnet) {
+        console.log('🌐 Gerando landing page...');
+        
+        const { titulo, subtitulo, tipo, problema } = leadMagnet;
+        
+        const html = this.criarHTML(titulo, subtitulo, tipo, problema);
+        
+        const filename = `landing-${this.slugify(titulo)}.html`;
+        const filepath = path.join(this.outputDir, filename);
+        
+        fs.writeFileSync(filepath, html);
+        
+        console.log(`✅ Landing page gerada: ${filename}`);
+        
+        return {
+            arquivo: filename,
+            caminho: filepath,
+            url: `https://60maisplay.com/${filename}`
+        };
+    }
+
+    criarHTML(titulo, subtitulo, tipo, problema) {
+        const beneficio = this.extrairBeneficio(titulo);
+        
+        return `<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${titulo} - Download Grátis</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', Arial, sans-serif; 
+            line-height: 1.6; 
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        .hero {
+            background: white;
+            border-radius: 20px;
+            padding: 60px 40px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        .badge {
+            display: inline-block;
+            background: #FFC107;
+            color: #212121;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: #212121;
+            line-height: 1.2;
+        }
+        .subtitle {
+            font-size: 22px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .benefits {
+            text-align: left;
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+        .benefits h3 {
+            margin-bottom: 20px;
+            color: #212121;
+        }
+        .benefits ul {
+            list-style: none;
+        }
+        .benefits li {
+            padding: 10px 0;
+            font-size: 18px;
+        }
+        .benefits li:before {
+            content: "✓ ";
+            color: #28a745;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .form-container {
+            background: #212121;
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin-top: 40px;
+        }
+        .form-container h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        .form-container p {
+            color: #aaa;
+            margin-bottom: 30px;
+        }
+        input {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+        }
+        button {
+            width: 100%;
+            padding: 18px;
+            background: #FFC107;
+            color: #212121;
+            border: none;
+            border-radius: 10px;
+            font-size: 20px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        button:hover {
+            transform: scale(1.02);
+        }
+        .trust {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .trust-item {
+            text-align: center;
+        }
+        .trust-item .number {
+            font-size: 32px;
+            font-weight: 700;
+            color: #667eea;
+        }
+        .trust-item .label {
+            font-size: 14px;
+            color: #666;
+        }
+        @media (max-width: 600px) {
+            h1 { font-size: 28px; }
+            .subtitle { font-size: 18px; }
+            .hero { padding: 40px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <span class="badge">🎁 DOWNLOAD GRÁTIS</span>
+            
+            <h1>${titulo}</h1>
+            
+            <p class="subtitle">${subtitulo}</p>
+            
+            <div class="benefits">
+                <h3>📥 O que você vai receber:</h3>
+                <ul>
+                    <li>✅ ${tipo === 'ebook' ? 'Ebook completo em PDF' : 'Checklist prático para imprimir'}</li>
+                    <li>✅ Passo a passo simples (linguagem de vovó)</li>
+                    <li>✅ Dicas que realmente funcionam</li>
+                    <li>✅ Bônus: Checklist de prevenção</li>
+                    <li>✅ 100% gratuito - sem pegadinhas</li>
+                </ul>
+            </div>
+            
+            <div class="trust">
+                <div class="trust-item">
+                    <div class="number">500+</div>
+                    <div class="label">Idosos ajudados</div>
+                </div>
+                <div class="trust-item">
+                    <div class="number">4.9★</div>
+                    <div class="label">Avaliação média</div>
+                </div>
+                <div class="trust-item">
+                    <div class="number">100%</div>
+                    <div class="label">Gratuito</div>
+                </div>
+            </div>
+            
+            <div class="form-container">
+                <h2>📧 Receba no seu email agora</h2>
+                <p>Preencha seus dados para receber o material gratuito:</p>
+                
+                <form action="/api/capturar-lead" method="POST">
+                    <input type="text" name="nome" placeholder="Seu nome completo" required>
+                    <input type="email" name="email" placeholder="Seu melhor email" required>
+                    <input type="tel" name="whatsapp" placeholder="Seu WhatsApp (opcional)">
+                    
+                    <button type="submit">🚀 QUERO RECEBER AGORA</button>
+                </form>
+                
+                <p style="margin-top: 20px; font-size: 12px; color: #777;">
+                    🔒 Seus dados estão seguros. Nunca enviamos spam.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>`;
+    }
+
+    extrairBeneficio(titulo) {
+        // Extrai o benefício principal do título
+        if (titulo.includes('hackeada')) return 'proteger sua conta';
+        if (titulo.includes('segurança')) return 'navegar com tranquilidade';
+        if (titulo.includes('checklist')) return 'verificar antes de agir';
+        return 'resolver seu problema';
+    }
+
+    slugify(texto) {
+        return texto
+            .toString()
+            .toLowerCase()
+            .trim()
+            .replace(/\s+/g, '-')
+            .replace(/[^\w\-]+/g, '')
+            .replace(/\-\-+/g, '-');
+    }
+}
+
+module.exports = LandingPageGenerator;

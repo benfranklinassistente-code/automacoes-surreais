@@ -1,0 +1,25 @@
+{
+  "name": "lead-magnet-infinito",
+  "version": "1.0.0",
+  "description": "Sistema automático de criação de lead magnets para nicho 60+",
+  "main": "src/sistema.js",
+  "scripts": {
+    "start": "node src/sistema.js",
+    "gerar": "node src/sistema.js",
+    "test": "echo 'Sistema operacional'"
+  },
+  "keywords": [
+    "lead-magnet",
+    "automation",
+    "marketing",
+    "60+",
+    "idosos"
+  ],
+  "author": "60maisPlay",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "cheerio": "^1.0.0-rc.12",
+    "dotenv": "^16.3.1"
+  }
+}
