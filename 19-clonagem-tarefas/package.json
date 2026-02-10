@@ -1,0 +1,20 @@
+{
+  "name": "19-clonagem-tarefas",
+  "nome": "Clonagem de Tarefas Repetitivas",
+  "versao": "1.0.0",
+  "descricao": "Detecta padrões após 3 repetições e sugere automações",
+  "main": "src/clonagem.js",
+  "scripts": {
+    "start": "node src/clonagem.js dashboard",
+    "dashboard": "node src/clonagem.js dashboard",
+    "registrar": "node src/clonagem.js registrar",
+    "detectar": "node src/clonagem.js detectar",
+    "relatorio": "node src/clonagem.js relatorio",
+    "ativar": "node src/clonagem.js ativar",
+    "exemplo": "node scripts/exemplo-deteccao.js",
+    "simular": "node scripts/simular-padroes.js"
+  },
+  "keywords": ["automação", "padrões", "machine-learning", "produtividade"],
+  "author": "60maisPlay",
+  "license": "MIT"
+}

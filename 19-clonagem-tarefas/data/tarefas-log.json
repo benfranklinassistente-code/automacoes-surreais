@@ -1,0 +1,35 @@
+[
+  {
+    "id": "mlh4s9uz",
+    "timestamp": "2026-02-10T21:46:41.771Z",
+    "tipo": "backup",
+    "comando": "tar czf backup-[DATA].tar.gz ./workspace",
+    "contexto": {
+      "importante": true,
+      "projeto": "60maisPlay"
+    },
+    "hash": "46ad0de1"
+  },
+  {
+    "id": "mlh4s9v0",
+    "timestamp": "2026-02-10T21:46:41.772Z",
+    "tipo": "backup",
+    "comando": "tar czf backup-[DATA].tar.gz ./workspace",
+    "contexto": {
+      "importante": true,
+      "projeto": "60maisPlay"
+    },
+    "hash": "46ad0de1"
+  },
+  {
+    "id": "mlh4s9v1",
+    "timestamp": "2026-02-10T21:46:41.773Z",
+    "tipo": "backup",
+    "comando": "tar czf backup-[DATA].tar.gz ./workspace",
+    "contexto": {
+      "importante": true,
+      "projeto": "60maisPlay"
+    },
+    "hash": "46ad0de1"
+  }
+]

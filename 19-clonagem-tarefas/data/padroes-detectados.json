@@ -1,0 +1,13 @@
+{
+  "46ad0de1": {
+    "tipo": "backup",
+    "comando": "tar czf backup-[DATA].tar.gz ./workspace",
+    "repeticoes": 3,
+    "primeiraVez": "2026-02-10T21:46:41.771Z",
+    "ultimaVez": "2026-02-10T21:46:41.773Z",
+    "sugerido": true,
+    "automatizado": false,
+    "confianca": 45,
+    "arquivoSugestao": "/root/.openclaw/workspace/automacoes-surreais/19-clonagem-tarefas/automacoes-geradas/sugestao-46ad0de1.js"
+  }
+}
