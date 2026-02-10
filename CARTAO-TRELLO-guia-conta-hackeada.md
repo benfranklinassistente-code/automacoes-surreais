@@ -40,7 +40,9 @@ https://github.com/benfranklinassistente-code/automacoes-surreais/raw/master/4-l
 ✅ Integração pronta para email marketing
 
 **🔗 Link para visualização:**
-https://benfranklinassistente-code.github.io/automacoes-surreais/
+https://web-production-df2db.up.railway.app/lead-magnet/guia-conta-hackeada.html
+
+*(Hospedada na plataforma 60maisPlay - SSL ativo)*
 
 **🎨 Preview:**
 - Headline impactante com gradiente roxo/azul
