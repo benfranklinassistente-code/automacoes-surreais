@@ -1,0 +1,43 @@
+{
+  "nome": "Luis",
+  "preferencias": {
+    "horarioInicio": "06:00",
+    "horarioFim": "20:00",
+    "canalPreferido": "telegram",
+    "fusoHorario": "America/Sao_Paulo",
+    "idioma": "pt-BR"
+  },
+  "contatos": {
+    "mae": "+554484130849",
+    "whatsappPessoal": "+5511953545939"
+  },
+  "projetos": [
+    {
+      "nome": "60maisPlay",
+      "prioridade": "alta",
+      "url": "https://web-production-df2db.up.railway.app"
+    },
+    {
+      "nome": "Newsletter",
+      "prioridade": "alta",
+      "frequencia": "diaria"
+    },
+    {
+      "nome": "Aulas Presenciais",
+      "prioridade": "media"
+    }
+  ],
+  "metas": {
+    "faturamentoMensal": 50000,
+    "alunosNovos": 100,
+    "newslettersEnviadas": 30
+  },
+  "notificacoes": {
+    "bomDia": true,
+    "briefing": true,
+    "almoco": true,
+    "fimExpediente": true,
+    "preparacaoAmanha": true,
+    "modoFoco": true
+  }
+}

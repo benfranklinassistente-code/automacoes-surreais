@@ -1,0 +1,24 @@
+{
+  "name": "16-assistente-pessoal",
+  "nome": "Assistente Pessoal 24/7",
+  "versao": "1.0.0",
+  "descricao": "Assistente digital que trabalha 24 horas por dia, 7 dias por semana",
+  "main": "src/assistente.js",
+  "scripts": {
+    "start": "node src/assistente.js",
+    "bom-dia": "node -e \"const A=require('./src/assistente'); new A().bomDia()\"",
+    "briefing": "node -e \"const A=require('./src/assistente'); new A().briefingManha()\"",
+    "almoco": "node -e \"const A=require('./src/assistente'); new A().horaDoAlmoco()\"",
+    "fim-dia": "node -e \"const A=require('./src/assistente'); new A().fimDoExpediente()\"",
+    "preparar-amanha": "node -e \"const A=require('./src/assistente'); new A().preparacaoAmanha()\"",
+    "modo-foco": "node -e \"const A=require('./src/assistente'); new A().modoFoco()\"",
+    "dashboard": "node src/dashboard.js"
+  },
+  "keywords": ["assistente", "produtividade", "automação", "24/7"],
+  "author": "60maisPlay",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "node-cron": "^3.0.3"
+  }
+}
