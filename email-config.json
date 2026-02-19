@@ -1,0 +1,21 @@
+{
+  "email": "benjamin@60maiscursos.com.br",
+  "senha": "Ch@vedeacesso64",
+  "host": "Hostgator",
+  "servidor": "Titan",
+  "imap": {
+    "server": "imap.titan.email",
+    "port": 993,
+    "encryption": "SSL/TLS"
+  },
+  "smtp": {
+    "server": "smtp.titan.email",
+    "port": 465,
+    "encryption": "SSL/TLS"
+  },
+  "pop": {
+    "server": "pop.titan.email",
+    "port": 995,
+    "encryption": "SSL/TLS"
+  }
+}

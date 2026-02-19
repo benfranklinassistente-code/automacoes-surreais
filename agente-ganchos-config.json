@@ -1,0 +1,88 @@
+{
+  "agenteGanchos": {
+    "nome": "Sub-Agente Ganchos",
+    "versao": "2.0",
+    "funcao": "Identificar temas relevantes usando dados reais",
+    
+    "fontes": {
+      "calendarioComercial": {
+        "arquivo": "calendario-comercial-60mais-2026.json",
+        "totalEventos": 36
+      },
+      
+      "googleTrends": {
+        "ativo": true,
+        "config": {
+          "geo": "BR",
+          "hl": "pt-BR",
+          "categoria": "todos",
+          "tempoAnalise": "7-dias"
+        },
+        "categoriasInteresse": [
+          "tecnologia",
+          "celulares",
+          "seguranca digital",
+          "aplicativos"
+        ]
+      },
+      
+      "googleAnalytics": {
+        "ativo": true,
+        "propertyId": "PENDENTE_CONFIGURAR",
+        "site": "60maiscursos.com.br/blog",
+        "metricas": ["pageviews", "searchTerms", "topPages", "popularTimes"]
+      },
+      
+      "googleSearchConsole": {
+        "ativo": true,
+        "site": "60maiscursos.com.br/blog",
+        "metricas": ["queries", "impressions", "clicks", "position"]
+      }
+    },
+    
+    "output": {
+      "formato": "JSON",
+      "campos": [
+        "tema",
+        "titulo",
+        "gancho",
+        "urgencia",
+        "palavrasChave",
+        "dadosTrends",
+        "dadosAnalytics",
+        "seoScore"
+      ]
+    },
+    
+    "regrasSEO": {
+      "titulo": {
+        "tamanhoMin": 50,
+        "tamanhoMax": 60,
+        "incluirKeyword": true
+      },
+      "palavrasChave": {
+        "quantidadeMin": 3,
+        "quantidadeMax": 5,
+        "relevanciaMinima": 0.7
+      },
+      "metaDescricao": {
+        "tamanhoMin": 140,
+        "tamanhoMax": 160
+      }
+    },
+    
+    "pesosDecisao": {
+      "googleTrends": 0.50,
+      "googleAnalytics": 0.35,
+      "sazonalidade": 0.15
+    },
+    
+    "prioridade": {
+      "1": "Google Trends - temas em alta AGORA",
+      "2": "Google Analytics - o que nosso público já busca",
+      "3": "Sazonalidade - datas comemorativas gerais"
+    },
+    
+    "nota": "Calendário Comercial é usado pelo Sub-Agente de Vendas para criar promoções"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "titulo": "📱 Aplicativos Que Facilitam Sua Vida",
+  "tema": "aplicativo idoso",
+  "reflexao": "🌟 A tecnologia foi feita para servir as pessoas, não para intimidar. Cada aplicativo que você aprende a usar é uma porta que se abre para mais independência e conexão com quem você ama.",
+  "story": "Dona Maria, 72 anos, morava sozinha e sentia falta dos netos que moravam em outra cidade. Achava que tecnologia era 'coisa de jovem' e que nunca ia conseguir. Até que a neta instalou 3 aplicativos no celular dela: WhatsApp para conversar, Google Fotos para ver as fotos da família, e um aplicativo de banco para não precisar ir à agência. Hoje, Dona Maria faz videochamadas toda semana, vê as fotos do bisneto crescendo, e paga as contas sem sair de casa. Ela mesma diz: 'Eu me sinto mais jovem agora do que há 10 anos!' A tecnologia não tem idade. Ela está aí para facilitar a sua vida.",
+  "lesson": "Não tenha medo de experimentar novos aplicativos. Comece com um de cada vez, peça ajuda de alguém de confiança, e vá no seu ritmo. Aos poucos, você vai ver como sua vida fica mais prática.",
+  "tutorial": {
+    "titulo": "🛠️ TUTORIAL: 5 Aplicativos Gratuitos Para Começar",
+    "introducao": "Estes aplicativos são gratuitos, fáceis de usar e vão facilitar muito seu dia a dia. Anote!",
+    "passos": [
+      {
+        "numero": 1,
+        "titulo": "WhatsApp - Converse com a família",
+        "explicacao": "O aplicativo mais popular do Brasil. Permite mandar mensagens, fotos e fazer ligações gratuitas.",
+        "acao": "Baixe na loja do seu celular (Play Store ou App Store) e peça para um filho ou neto te ajudar a configurar.",
+        "exemplo": "Você pode mandar 'Bom dia!' para toda a família de uma vez só, sem gastar nada!"
+      },
+      {
+        "numero": 2,
+        "titulo": "Google Fotos - Suas fotos seguras",
+        "explicacao": "Guarda todas as suas fotos automaticamente. Mesmo que perca o celular, suas memórias ficam salvas.",
+        "acao": "Instale e faça login com seu email. As fotos salvam sozinhas!",
+        "exemplo": "Todas as fotos dos netos ficam guardadas para sempre, sem ocupar espaço no celular."
+      },
+      {
+        "numero": 3,
+        "titulo": "App do seu banco - Sem fila!",
+        "explicacao": "Consulte saldo, pague contas e faça transferências sem sair de casa.",
+        "acao": "Baixe o aplicativo do seu banco (Itaú, Bradesco, BB, Nubank...) e peça ajuda para ativar.",
+        "exemplo": "Pagar a conta de luz em 2 minutos, de qualquer lugar, sem pegar fila."
+      },
+      {
+        "numero": 4,
+        "titulo": "Google Maps - Nunca se perca",
+        "explicacao": "Mostra o caminho para qualquer lugar. Útil para ir a consultas médicos, visitar amigos...",
+        "acao": "Abra o aplicativo, digite o endereço e ele mostra o caminho passo a passo.",
+        "exemplo": "Vai ao médico novo? O aplicativo mostra exatamente como chegar, de ônibus ou a pé."
+      },
+      {
+        "numero": 5,
+        "titulo": "Farmácia Popular - Medicamentos grátis",
+        "explicacao": "Muitos remédios para diabetes, hipertensão e outros são GRATUITOS pelo governo.",
+        "acao": "Baixe o app 'Farmácia Popular' e veja se seus remédios são gratuitos.",
+        "exemplo": "Economize muito em medicamentos de uso contínuo, sem burocracia."
+      }
+    ],
+    "checklist": "☐ WhatsApp instalado e configurado\n☐ Google Fotos salvando suas fotos\n☐ App do banco funcionando\n☐ Google Maps testado uma vez\n☐ Farmácia Popular consultado"
+  },
+  "oQueMaisAprender": "Quer aprender a usar esses aplicativos com calma, no seu ritmo, com vídeos explicativos? O Mini Apps Essenciais do 60maisPlay ensina cada um passo a passo. Clique no botão abaixo!",
+  "seguranca": "🔒 Dica de segurança: Só baixe aplicativos da loja oficial do seu celular (Play Store no Android ou App Store no iPhone). Nunca clique em links de mensagens que prometem 'atualizar' aplicativos - isso pode ser golpe!",
+  "score": 9.0
+}
