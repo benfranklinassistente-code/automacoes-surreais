@@ -1,0 +1,364 @@
+{
+  "temas_parte2": [
+    {
+      "id": 11,
+      "tema": "Spam - Como Identificar",
+      "titulo": "📧 Spam: Como Identificar e Se Proteger",
+      "reflexao": "Nem todo email que chega merece ser aberto. Desconfie do inesperado.",
+      "historia": "Dona Alice recebeu um email do 'Banco do Brasil' pedindo para atualizar dados. Clicou no link, colocou senha e... percebeu tarde demais que era golpe. O saldo da conta foi zerado. Hoje, ela sabe: banco NUNCA pede dados por email!",
+      "licao": "Spam são emails falsos. Nunca clique em links de emails suspeitos!",
+      "tutorial": {
+        "passo1": {
+          "titulo": "VEJA O ENDEREÇO DO REMETENTE",
+          "explicacao": "Golpistas usam endereços parecidos mas falsos",
+          "acao": "Passe o mouse sobre o nome para ver o email real",
+          "exemplo": "banco-brasil@seguro.com é FALSO. O real seria @bb.com.br"
+        },
+        "passo2": {
+          "titulo": "DESCONFIE DE ERROS DE PORTUGUÊS",
+          "explicacao": "Empresas sérias não cometem erros grosseiros",
+          "ação": "Se o texto tem erros, é provável golpe",
+          "exemplo": "'Sua conta foi bloqueado' (errado) = SPAM"
+        },
+        "passo3": {
+          "titulo": "NUNCA CLIQUE EM LINKS SUSPEITOS",
+          "explicacao": "Em vez de clicar, digite o site do banco diretamente",
+          "ação": "Abra o navegador e digite o endereço oficial",
+          "exemplo": "Digite 'bb.com.br' em vez de clicar no link do email"
+        }
+      },
+      "checklist": ["☐ Verificou o endereço do remetente", "☐ Não clicou em links suspeitos", "☐ Denunciou como spam"],
+      "cta": {
+        "produto": "Mini Curso Email Seguro",
+        "preco": "R$ 37,00",
+        "link_whatsapp": "https://wa.me/5511920990009?text=Quero%20o%20Mini%20Curso%20Email%20Seguro"
+      },
+      "dica_extra": "Marcou como spam? Ajuda o provedor a bloquear esse remetente para todos!",
+      "categoria": "email"
+    },
+    {
+      "id": 12,
+      "tema": "Google Maps - Não Se Perca",
+      "titulo": "🗺️ Google Maps: Nunca Mais Se Perca!",
+      "reflexao": "O mapa está na palma da sua mão. Use essa ferramenta!",
+      "historia": "Seu Antônio ia visitar a irmã em outra cidade mas se perdeu no caminho. Parou para pedir informação três vezes! Hoje, usa o Google Maps: fala o endereço e o app guia passo a passo, com voz! Chega sem erro.",
+      "licao": "Google Maps é um GPS grátis que fala o caminho! Use e não se perca mais.",
+      "tutorial": {
+        "passo1": {
+          "titulo": "ABRA O GOOGLE MAPS",
+          "explicacao": "O app já vem instalado na maioria dos celulares",
+          "ação": "Toque no ícone colorido de mapa",
+          "exemplo": "Procure por 'Maps' ou 'Mapas' na tela inicial"
+        },
+        "passo2": {
+          "titulo": "DIGITE O ENDEREÇO",
+          "explicacao": "Use a busca ou fale o endereço",
+          "ação": "Toque na lupa e digite ou no microfone para falar",
+          "exemplo": "Toque no 🎤 e diga: 'Rua Augusta, 500, São Paulo'"
+        },
+        "passo3": {
+          "titulo": "COMECE A NAVEGAÇÃO",
+          "explicacao": "O app vai guiando com voz",
+          "ação": "Toque em 'Rotas' e depois no botão azul 'Iniciar'",
+          "exemplo": "Uma voz vai dizer: 'Em 200 metros, vire à direita'"
+        }
+      },
+      "checklist": ["☐ App aberto", "☐ Endereço buscado", "☐ Navegação iniciada"],
+      "cta": {
+        "produto": "Mini Curso Navegação e GPS",
+        "preco": "R$ 37,00",
+        "link_whatsapp": "https://wa.me/5511920990009?text=Quero%20o%20Mini%20Curso%20GPS"
+      },
+      "dica_extra": "Baixe o mapa da sua cidade para usar offline (sem internet)!",
+      "categoria": "navegacao"
+    },
+    {
+      "id": 13,
+      "tema": "YouTube - Assistir Vídeos",
+      "titulo": "📺 YouTube: Como Assistir e Aprender",
+      "reflexao": "No YouTube tem aula de tudo. Aproveite esse conhecimento gratuito!",
+      "historia": "Dona Conceição queria aprender a fazer pão caseiro. A filha mostrou o YouTube e ela achou centenas de vídeos de receitas! Hoje, Conceição assina canais de culinária e já aprendeu até a fazer sonho.",
+      "licao": "YouTube é a maior escola do mundo, de graça! Aprenda o que quiser.",
+      "tutorial": {
+        "passo1": {
+          "titulo": "ABRA O YOUTUBE",
+          "explicacao": "O app já vem instalado na maioria dos celulares",
+          "ação": "Toque no ícone vermelho com play ▶️",
+          "exemplo": "Procure por 'YouTube' na tela inicial"
+        },
+        "passo2": {
+          "titulo": "BUSQUE O QUE QUER VER",
+          "explicacao": "Digite na busca ou fale o que procura",
+          "ação": "Toque na lupa 🔍 e digite",
+          "exemplo": "Busque: 'como fazer bolo de fubá'"
+        },
+        "passo3": {
+          "titulo": "TOQUE NO VÍDEO E ASSISTA",
+          "explicacao": "Clique no vídeo que interessar",
+          "ação": "Controles: ⏸️ pausar, ⏪ voltar, ⏩ avançar",
+          "exemplo": "Toque em ▶️ para começar"
+        }
+      },
+      "checklist": ["☐ App aberto", "☐ Primeira busca feita", "☐ Vídeo assistido"],
+      "cta": {
+        "produto": "Mini Curso YouTube",
+        "preco": "R$ 37,00",
+        "link_whatsapp": "https://wa.me/5511920990009?text=Quero%20o%20Mini%20Curso%20YouTube"
+      },
+      "dica_extra": "Inscreva-se nos canais que você gosta para receber novidades!",
+      "categoria": "entretenimento"
+    },
+    {
+      "id": 14,
+      "tema": "Zoom - Reunião Online",
+      "titulo": "📹 Zoom: Faça Reuniões Pelo Celular",
+      "reflexao": "A distância física não precisa ser distância afetiva. Conecte-se!",
+      "historia": "Seu Benedito achava que videoconferência era coisa de jovem. Mas quando a neta se casou em outro estado, ele aprendeu a usar o Zoom para assistir ao ensaio da festa! Viu tudo em tempo real, como se estivesse lá.",
+      "licao": "Zoom permite ver e falar com pessoas à distância. É como uma janela virtual!",
+      "tutorial": {
+        "passo1": {
+          "titulo": "INSTALE O ZOOM",
+          "explicacao": "Baixe gratuito na Play Store ou App Store",
+          "ação": "Busque 'Zoom Cloud Meetings' e instale",
+          "exemplo": "Não precisa criar conta para entrar em reuniões"
+        },
+        "passo2": {
+          "titulo": "RECEBEU O CONVITE? CLIQUE NO LINK",
+          "explicacao": "Quem convida manda um link por WhatsApp ou email",
+          "ação": "Toque no link e depois em 'Abrir com Zoom'",
+          "exemplo": "O link parece: zoom.us/j/123456789"
+        },
+        "passo3": {
+          "titulo": "ENTRE NA REUNIÃO",
+          "explicacao": "Permita acesso à câmera e microfone",
+          "ação": "Toque em 'Entrar com vídeo' e depois em 'Conectar áudio'",
+          "exemplo": "Agora você vê e é visto! Fale normalmente."
+        }
+      },
+      "checklist": ["☐ Zoom instalado", "☐ Primeira reunião acessada", "☐ Câmera e microfone funcionando"],
+      "cta": {
+        "produto": "Mini Curso Videoconferência",
+        "preco": "R$ 37,00",
+        "link_whatsapp": "https://wa.me/5511920990009?text=Quero%20o%20Mini%20Curso%20Videoconferência"
+      },
+      "dica_extra": "Toque em 'Parar vídeo' se quiser sair da câmera mas continuar ouvindo!",
+      "categoria": "trabalho"
+    },
+    {
+      "id": 15,
+      "tema": "Spotify - Ouvir Música",
+      "titulo": "🎵 Spotify: Sua Música a Qualquer Hora",
+      "reflexao": "A música que você ama, na hora que você quer. A tecnologia é sua amiga!",
+      "historia": "Dona Jandira tinha mil CDs guardados. A neta mostrou o Spotify e ela descobriu que TODAS as músicas que ela amava estavam lá! Elis Regina, Roberto Carlos, Nara Leão... Hoje, Jandira ouve suas músicas favoritas andando, cozinhando, em qualquer lugar.",
+      "licao": "Spotify é um rádio personalizado: escolha suas músicas e ouça quando quiser!",
+      "tutorial": {
+        "passo1": {
+          "titulo": "INSTALE O SPOTIFY",
+          "explicacao": "Baixe gratuito na Play Store ou App Store",
+          "ação": "Busque 'Spotify' e clique em Instalar",
+          "exemplo": "A versão grátis tem anúncios, mas funciona bem!"
+        },
+        "passo2": {
+          "titulo": "CRIE SUA CONTA",
+          "explicacao": "Use seu email ou entre com Facebook",
+          "ação": "Escolha 'Inscrever-se grátis'",
+          "exemplo": "Digite email, crie uma senha, pronto!"
+        },
+        "passo3": {
+          "titulo": "BUSQUE SUAS MÚSICAS",
+          "explicacao": "Digite o nome do artista ou da música",
+          "ação": "Toque na lupa 🔍 e busque",
+          "exemplo": "Busque: 'Roberto Carlos' ou 'Como é grande o meu amor por você'"
+        }
+      },
+      "checklist": ["☐ Spotify instalado", "☐ Conta criada", "☐ Primeira música tocada"],
+      "cta": {
+        "produto": "Mini Curso Música Digital",
+        "preco": "R$ 37,00",
+        "link_whatsapp": "https://wa.me/5511920990009?text=Quero%20o%20Mini%20Curso%20Música%20Digital"
+      },
+      "dica_extra": "Crie playlists! Toque nos três pontinhos da música e escolha 'Adicionar à playlist'.",
+      "categoria": "entretenimento"
+    },
+    {
+      "id": 16,
+      "tema": "Golpe do Falso Parente",
+      "titulo": "👨‍👩‍👧 Golpe do Falso Parente: Não Caia!",
+      "reflexao": "O amor da família é incondicional. Mas verifique antes de ajudar.",
+      "historia": "Dona Helena recebeu mensagem da 'neta' com número novo: 'Vovó, perdi o celular, me manda R$200 urgente que preciso pagar uma conta'. Na pressa, Helena ia mandar. Mas ligou pro número antigo da neta e descobriu: era golpe!",
+      "licao": "Sempre CONFIRME por outro canal (telefonema ou pessoalmente) antes de mandar dinheiro!",
+      "tutorial": {
+        "passo1": {
+          "titulo": "DESCONFIE DE NÚMERO NOVO",
+          "explicacao": "Se a pessoa diz que trocou de número, verifique",
+          "ação": "Ligue para o número antigo para confirmar",
+          "exemplo": "'Oi netinha, é você mesmo nesse número novo?'"
+        },
+        "passo2": {
+          "titulo": "NÃO MANDE DINHEIRO NA HORA",
+          "explicacao": "Golpistas criam urgência para você não pensar",
+          "ação": "Responda: 'Vou ligar pra você agora'",
+          "exemplo": "Golpistas fazem você não ligar. LIGUE!"
+        },
+        "passo3": {
+          "titulo": "FAÇA PERGUNTAS PESSOAIS",
+          "explicacao": "Pergunte algo que só a pessoa de verdade saberia",
+          "ação": "Ex.: 'Qual o nome do seu cachorro?'",
+          "exemplo": "Se errar ou não souber, é GOLPE!"
+        }
+      },
+      "checklist": ["☐ Verificou número com ligação", "☐ Não mandou dinheiro na hora", "☐ Fez pergunta pessoal"],
+      "cta": {
+        "produto": "Mini Curso Segurança Digital",
+        "preco": "R$ 37,00",
+        "link_whatsapp": "https://wa.me/5511920990009?text=Quero%20o%20Mini%20Curso%20Segurança%20Digital"
+      },
+      "dica_extra": "Adicione contatos com nome completo e foto. Assim você reconhece quando a mensagem vier de número estranho.",
+      "categoria": "seguranca"
+    },
+    {
+      "id": 17,
+      "tema": "Backup do Celular",
+      "titulo": "💾 Backup: Salve Tudo Antes Que Perca!",
+      "reflexao": "Prevenir perdas é mais fácil que chorar pelo que foi perdido.",
+      "historia": "Seu Eduardo deixou o celular cair na água. Perdeu fotos de 5 anos de família! Tentou recuperar, mas não tinha backup. A dor foi enorme. Hoje, ele faz backup toda semana no Google Drive. Nunca mais vai perder uma memória.",
+      "licao": "Backup é uma cópia de segurança. Faça SEMANALMENTE e nunca perca nada!",
+      "tutorial": {
+        "passo1": {
+          "titulo": "ATIVE O BACKUP AUTOMÁTICO",
+          "explicacao": "Deixe o celular salvar tudo sozinho",
+          "ação": "Configurações > Google > Backup > Ativar backup do dispositivo",
+          "exemplo": "O celular faz backup quando carrega e está no Wi-Fi"
+        },
+        "passo2": {
+          "titulo": "SALVE AS FOTOS NO GOOGLE FOTOS",
+          "explicacao": "O Google Fotos guarda suas imagens na nuvem",
+          "ação": "Abra Google Fotos > perfil > Configurações de backup",
+          "exemplo": "Ative 'Fazer backup e sincronizar'"
+        },
+        "passo3": {
+          "titulo": "VERIFIQUE SE FUNCIONOU",
+          "explicacao": "Entre no Google Drive no computador e confira",
+          "ação": "Acesse drive.google.com e veja se seus arquivos estão lá",
+          "exemplo": "Deve ter uma pasta 'Backup' com seus dados"
+        }
+      },
+      "checklist": ["☐ Backup automático ativado", "☐ Google Fotos sincronizando", "☐ Verificou no computador"],
+      "cta": {
+        "produto": "Mini Curso Backup e Segurança",
+        "preco": "R$ 37,00",
+        "link_whatsapp": "https://wa.me/5511920990009?text=Quero%20o%20Mini%20Curso%20Backup"
+      },
+      "dica_extra": "Você tem 15GB grátis no Google Drive. Dá pra guardar milhares de fotos!",
+      "categoria": "manutencao"
+    },
+    {
+      "id": 18,
+      "tema": "Celular Lento? Resolva!",
+      "titulo": "🐢 Celular Lento? 3 Soluções Simples",
+      "reflexao": "Um celular rápido deixa a vida mais leve. Cuide do seu aparelho.",
+      "historia": "Dona Beatriz reclamava que o celular travava toda hora. Um técnico caro disse que precisava trocar. Mas o neto mostrou três truques simples: limpar cache, apagar apps antigos e reiniciar. O celular ficou novo de novo, de graça!",
+      "licao": "Celular lento não precisa trocar! Limpeza básica resolve na maioria das vezes.",
+      "tutorial": {
+        "passo1": {
+          "titulo": "FECHE APPS ABERTOS",
+          "explicacao": "Apps rodando em segundo plano gastam memória",
+          "ação": "Toque no botão de quadrados e deslize os apps para fechar",
+          "exemplo": "No Android: quadrado ▢ no canto inferior. No iPhone: swipe de baixo pra cima."
+        },
+        "passo2": {
+          "titulo": "APAGUE FOTOS E APPS VELHOS",
+          "explicacao": "Memória cheia deixa o celular lento",
+          "ação": "Vá em Configurações > Armazenamento e veja o que ocupa espaço",
+          "exemplo": "Apague apps que não usa há 6 meses"
+        },
+        "passo3": {
+          "titulo": "REINICIE O CELULAR",
+          "explicacao": "Desligar e ligar limpa a memória do sistema",
+          "ação": "Segure o botão de ligar e escolha 'Reiniciar'",
+          "exemplo": "Faça isso pelo menos uma vez por semana!"
+        }
+      },
+      "checklist": ["☐ Apps fechados", "☐ Arquivos antigos apagados", "☐ Celular reiniciado"],
+      "cta": {
+        "produto": "Mini Curso Manutenção de Celular",
+        "preco": "R$ 37,00",
+        "link_whatsapp": "https://wa.me/5511920990009?text=Quero%20o%20Mini%20Curso%20Manutenção%20Celular"
+      },
+      "dica_extra": "Use o app 'Files by Google' (grátis) para limpar lixo automático!",
+      "categoria": "manutencao"
+    },
+    {
+      "id": 19,
+      "tema": "App de Medicamentos",
+      "titulo": "💊 Nunca Esqueça Seus Remédios!",
+      "reflexao": "A saúde é o maior bem. A tecnologia ajuda a cuidar dela.",
+      "historia": "Seu Nestor tomava 5 remédios por dia e vivia esquecendo. A filha instalou um app de lembrete e configurou os horários. Agora, o celular toca na hora certa e ele nunca mais esqueceu uma dose!",
+      "licao": "Apps de remédios tocam alarme na hora certa. Use e não esqueça nunca!",
+      "tutorial": {
+        "passo1": {
+          "titulo": "INSTALE UM APP DE LEMBRETE",
+          "explicacao": "Busque 'lembrete de remédio' na Play Store",
+          "ação": "Escolha 'Medisafe' ou 'MyTherapy' (gratuitos)",
+          "exemplo": "Clique em Instalar e depois Abrir"
+        },
+        "passo2": {
+          "titulo": "CADASTRE SEUS REMÉDIOS",
+          "explicacao": "Digite o nome e horário de cada um",
+          "ação": "Toque em 'Adicionar medicamento' e preencha",
+          "exemplo": "Dipirona - 8h, 14h, 20h - 1 comprimido"
+        },
+        "passo3": {
+          "titulo": "CONFIRME QUANDO TOMAR",
+          "explicacao": "O app toca e você confirma que tomou",
+          "ação": "Quando tocar, marque 'Tomado'",
+          "exemplo": "Isso ajuda a controlar e não repetir dose"
+        }
+      },
+      "checklist": ["☐ App instalado", "☐ Remédios cadastrados", "☐ Alarmes funcionando"],
+      "cta": {
+        "produto": "Mini Curso Saúde Digital",
+        "preco": "R$ 37,00",
+        "link_whatsapp": "https://wa.me/5511920990009?text=Quero%20o%20Mini%20Curso%20Saúde%20Digital"
+      },
+      "dica_extra": "Mostre o app para seu médico nas consultas. Ele pode ajudar a configurar!",
+      "categoria": "saude"
+    },
+    {
+      "id": 20,
+      "tema": "Banco Digital Seguro",
+      "titulo": "🏦 Banco Digital: Seguro e Prático",
+      "reflexao": "O banco no celular é como uma agência 24h na sua mão. Mas com segurança!",
+      "historia": "Dona Sônia achava que banco digital não era seguro. Mas quando precisou transferir dinheiro de madrugada, descobriu que o app do banco resolveu em 30 segundos. Hoje, ela paga contas, transfere e vê extrato sem sair de casa.",
+      "licao": "Banco digital é seguro SE você seguir as regras básicas de proteção!",
+      "tutorial": {
+        "passo1": {
+          "titulo": "BAIXE SÓ O APP OFICIAL",
+          "explicacao": "Use apenas o app do seu banco da Play Store oficial",
+          "ação": "Busque pelo nome exato do banco",
+          "exemplo": "'Banco do Brasil' oficial tem mais de 10 milhões de downloads"
+        },
+        "passo2": {
+          "titulo": "ATIVE O RECONHECIMENTO FACIAL",
+          "explicacao": "Seu rosto é sua senha mais segura",
+          "ação": "Nas configurações do app, ative 'Biometria facial'",
+          "exemplo": "É mais seguro que senha digitada"
+        },
+        "passo3": {
+          "titulo": "NUNCA PASSE CÓDIGOS POR MENSAGEM",
+          "explicacao": "O banco NUNCA pede senha ou código por WhatsApp",
+          "ação": "Se alguém ligar dizendo ser do banco, desligue e ligue você",
+          "exemplo": "Ligue no número do cartão: 4004-0001 (exemplo)"
+        }
+      },
+      "checklist": ["☐ App oficial instalado", "☐ Biometria ativada", "☐ Número de emergência salvo"],
+      "cta": {
+        "produto": "Mini Curso Banco Digital Seguro",
+        "preco": "R$ 37,00",
+        "link_whatsapp": "https://wa.me/5511920990009?text=Quero%20o%20Mini%20Curso%20Banco%20Digital"
+      },
+      "dica_extra": "Anote o telefone de emergência do seu banco num papel. Se bloquearem seu celular, você liga de outro.",
+      "categoria": "financas"
+    }
+  ]
+}

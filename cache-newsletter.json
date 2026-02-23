@@ -1,0 +1,276 @@
+{
+  "versao": "1.0",
+  "criado_em": "2026-02-23",
+  
+  "LAYOUT_FIXO": {
+    "cabecalho": {
+      "titulo": "60maisNews",
+      "subtitulo": "Dicas de tecnologia para quem tem mais de 60 anos",
+      "logo_url": "https://60maiscursos.com.br/logo-newsletter.png",
+      "cor_fundo": "#2563eb",
+      "cor_texto": "#ffffff"
+    },
+    
+    "estrutura_email": {
+      "secao1_saude": {
+        "titulo": "💊 Não Esqueça Seus Medicamentos!",
+        "icone": "💊"
+      },
+      "secao2_tutorial": {
+        "titulo": "📱 Tutorial do Dia",
+        "subtitulos_possiveis": [
+          "Aprenda passo a passo",
+          "Como fazer",
+          "Simples e rápido"
+        ]
+      },
+      "secao3_curso": {
+        "titulo": "📚 Quer Aprender Mais?",
+        "texto_padrao": "Se quiser aprender mais com calma e carinho, temos um curso especial para você!"
+      },
+      "secao4_cta": {
+        "titulo": "🟢 Clique Aqui e Saiba Mais",
+        "botao_cor": "#25D366",
+        "botao_texto": "Falar no WhatsApp"
+      }
+    },
+    
+    "rodape": {
+      "texto": "Você recebe este email porque se cadastrou na 60maisNews.",
+      "link_descadastro": "{{unsubscribe_url}}",
+      "endereco": "60mais Cursos - São Paulo, SP",
+      "ano": "2026"
+    }
+  },
+
+  "CACHE_TEMAS": [
+    {
+      "id": "golpe-pix",
+      "titulo": "🚨 Golpe do PIX: Como Se Proteger",
+      "urgencia": 9,
+      "tutorial": [
+        "NUNCA passe códigos de segurança para ninguém",
+        "Desconfie de ligações de 'bancos' pedindo PIX",
+        "Sempre confirme o nome de quem vai receber",
+        "Se em dúvida, NÃO faça a transferência",
+        "Ligue para o banco pelo número oficial (no cartão)"
+      ],
+      "cta": {
+        "produto": "Mini Curso Segurança Digital para Idosos",
+        "preco": 37.00,
+        "link_whatsapp": "https://wa.me/5511953545939?text=Olá! Vim da newsletter 60maisNews e quero saber mais sobre o Mini Curso Segurança Digital para Idosos!"
+      },
+      "tags": ["seguranca", "pix", "golpe", "financeiro"],
+      "score_medio": 9.2
+    },
+    {
+      "id": "whatsapp-seguranca",
+      "titulo": "📱 WhatsApp Seguro em 5 Passos",
+      "urgencia": 8,
+      "tutorial": [
+        "Ative a verificação em duas etapas nas Configurações",
+        "NUNCA compartilhe o código de 6 dígitos",
+        "Desative 'Mostrar prévia' nas notificações",
+        "Use bloqueio com digital ou senha",
+        "Desconfie de mensagens pedindo código"
+      ],
+      "cta": {
+        "produto": "Mini Curso WhatsApp Completo",
+        "preco": 37.00,
+        "link_whatsapp": "https://wa.me/5511953545939?text=Olá! Vim da newsletter 60maisNews e quero saber mais sobre o Mini Curso WhatsApp!"
+      },
+      "tags": ["whatsapp", "seguranca", "mensagem"],
+      "score_medio": 8.8
+    },
+    {
+      "id": "senha-forte",
+      "titulo": "🔐 Crie Senhas Fortes e Seguras",
+      "urgencia": 7,
+      "tutorial": [
+        "Use pelo menos 8 caracteres",
+        "Misture letras MAIÚSCULAS e minúsculas",
+        "Adicione números e símbolos (!@#$)",
+        "NÃO use datas de nascimento ou nomes",
+        "Use uma senha diferente para cada site"
+      ],
+      "cta": {
+        "produto": "Mini Curso Segurança Digital para Idosos",
+        "preco": 37.00,
+        "link_whatsapp": "https://wa.me/5511953545939?text=Olá! Vim da newsletter 60maisNews e quero saber mais sobre o Mini Curso Segurança Digital para Idosos!"
+      },
+      "tags": ["senha", "seguranca", "conta"],
+      "score_medio": 8.5
+    },
+    {
+      "id": "golpe-falso-parente",
+      "titulo": "👨‍👩‍👧 Golpe do Falso Parente no WhatsApp",
+      "urgencia": 9,
+      "tutorial": [
+        "Recebeu mensagem de 'filho/a' com número desconhecido?",
+        "DESCONFIE! Pode ser golpe",
+        "Ligue para o número ORIGINAL do seu familiar",
+        "Pergunte algo que só vocês sabem",
+        "NUNCA empreste dinheiro sem confirmar por voz"
+      ],
+      "cta": {
+        "produto": "Mini Curso Segurança Digital para Idosos",
+        "preco": 37.00,
+        "link_whatsapp": "https://wa.me/5511953545939?text=Olá! Vim da newsletter 60maisNews e quero saber mais sobre o Mini Curso Segurança Digital para Idosos!"
+      },
+      "tags": ["golpe", "whatsapp", "familia", "seguranca"],
+      "score_medio": 9.0
+    },
+    {
+      "id": "google-fotos",
+      "titulo": "📸 Google Fotos: Nunca Perca uma Foto!",
+      "urgencia": 6,
+      "tutorial": [
+        "Baixe o app Google Fotos (gratuito)",
+        "Entre com sua conta Google (ou crie uma)",
+        "Toque em 'Ativar backup'",
+        "Suas fotos ficam salvas na nuvem automaticamente",
+        "Mesmo se perder o celular, as fotos estão seguras!"
+      ],
+      "cta": {
+        "produto": "Mini Curso Google Fotos",
+        "preco": 37.00,
+        "link_whatsapp": "https://wa.me/5511953545939?text=Olá! Vim da newsletter 60maisNews e quero saber mais sobre o Mini Curso Google Fotos!"
+      },
+      "tags": ["fotos", "google", "nuvem", "backup"],
+      "score_medio": 8.2
+    },
+    {
+      "id": "celular-lento",
+      "titulo": "🐢 Celular Lento? 5 Dicas para Melhorar",
+      "urgencia": 5,
+      "tutorial": [
+        "Feche apps que não está usando (swipe para cima)",
+        "Apague fotos e vídeos antigos",
+        "Desinstale apps que não usa",
+        "Reinicie o celular uma vez por semana",
+        "Atualize os apps na Play Store"
+      ],
+      "cta": {
+        "produto": "Mini Curso Smartphone Básico",
+        "preco": 37.00,
+        "link_whatsapp": "https://wa.me/5511953545939?text=Olá! Vim da newsletter 60maisNews e quero saber mais sobre o Mini Curso Smartphone Básico!"
+      },
+      "tags": ["celular", "smartphone", "desempenho"],
+      "score_medio": 7.8
+    },
+    {
+      "id": "email-seguro",
+      "titulo": "📧 Como Identificar Emails Falsos",
+      "urgencia": 8,
+      "tutorial": [
+        "Olhe o remetente: está estranho?",
+        "Erros de portuguça são sinal de golpe",
+        "Não clique em links suspeitos",
+        "Bancos NUNCA pedem dados por email",
+        "Se parece bom demais... desconfie!"
+      ],
+      "cta": {
+        "produto": "Mini Curso Internet Segura",
+        "preco": 37.00,
+        "link_whatsapp": "https://wa.me/5511953545939?text=Olá! Vim da newsletter 60maisNews e quero saber mais sobre o Mini Curso Internet Segura!"
+      },
+      "tags": ["email", "seguranca", "golpe"],
+      "score_medio": 8.6
+    },
+    {
+      "id": "wifi-lento",
+      "titulo": "📶 WiFi Lento? Tente Isso!",
+      "urgencia": 5,
+      "tutorial": [
+        "Reinicie o roteador (tire da tomada 30 segundos)",
+        "Cheque se outras pessoas estão usando",
+        "Aproxime-se do roteador",
+        "Verifique se a conta está em dia",
+        "Se persistir, ligue para operadora"
+      ],
+      "cta": {
+        "produto": "Mini Curso Internet para Iniciantes",
+        "preco": 37.00,
+        "link_whatsapp": "https://wa.me/5511953545939?text=Olá! Vim da newsletter 60maisNews e quero saber mais sobre o Mini Curso Internet para Iniciantes!"
+      },
+      "tags": ["wifi", "internet", "conexao"],
+      "score_medio": 7.5
+    },
+    {
+      "id": "youtube-favoritos",
+      "titulo": "▶️ Salve Vídeos Favoritos no YouTube",
+      "urgencia": 4,
+      "tutorial": [
+        "Encontre o vídeo que gostou",
+        "Toque em 'Salvar' (ícone de lista)",
+        "Escolha uma playlist ou crie nova",
+        "Depois acesse em 'Biblioteca'",
+        "Assista quando quiser, mesmo sem internet!"
+      ],
+      "cta": {
+        "produto": "Mini Curso YouTube para Iniciantes",
+        "preco": 37.00,
+        "link_whatsapp": "https://wa.me/5511953545939?text=Olá! Vim da newsletter 60maisNews e quero saber mais sobre o Mini Curso YouTube para Iniciantes!"
+      },
+      "tags": ["youtube", "video", "entretenimento"],
+      "score_medio": 7.2
+    },
+    {
+      "id": "gov-br-cadastro",
+      "titulo": "🏛️ Acesse o Gov.br Fácil",
+      "urgencia": 6,
+      "tutorial": [
+        "Entre em gov.br",
+        "Clique em 'Entrar' e depois 'Criar conta'",
+        "Use seu CPF e dados pessoais",
+        "Valide com foto ou banco",
+        "Acesse serviços públicos sem sair de casa!"
+      ],
+      "cta": {
+        "produto": "Mini Curso Gov.br para Idosos",
+        "preco": 37.00,
+        "link_whatsapp": "https://wa.me/5511953545939?text=Olá! Vim da newsletter 60maisNews e quero saber mais sobre o Mini Curso Gov.br!"
+      },
+      "tags": ["gov.br", "governo", "servicos"],
+      "score_medio": 8.0
+    }
+  ],
+
+  "CACHE_CTAS": {
+    "seguranca": {
+      "produto": "Mini Curso Segurança Digital para Idosos",
+      "preco": 37.00,
+      "beneficios": ["Aprenda a se proteger de golpes", "Navegue com segurança", "Suporte humanizado"]
+    },
+    "whatsapp": {
+      "produto": "Mini Curso WhatsApp Completo",
+      "preco": 37.00,
+      "beneficios": ["Envie fotos e vídeos", "Faça chamadas de vídeo", "Use com segurança"]
+    },
+    "fotos": {
+      "produto": "Mini Curso Google Fotos",
+      "preco": 37.00,
+      "beneficios": ["Nunca perca suas fotos", "Organize automaticamente", "Libere espaço no celular"]
+    },
+    "internet": {
+      "produto": "Mini Curso Internet para Iniciantes",
+      "preco": 37.00,
+      "beneficios": ["Navegue com confiança", "Faça compras online", "Evite golpes"]
+    },
+    "smartphone": {
+      "produto": "Mini Curso Smartphone Básico",
+      "preco": 37.00,
+      "beneficios": ["Domine seu celular", "Instale apps com facilidade", "Personalize do seu jeito"]
+    }
+  },
+
+  "CACHE_TEMPLATES_HTML": {
+    "tutorial_5_passos": "<div style='background: #f8fafc; padding: 20px; border-radius: 10px; margin: 20px 0;'><h3 style='color: #1e40af; margin-bottom: 15px;'>📋 Passo a Passo</h3><ol style='color: #334155; line-height: 1.8;'>{{PASSOS}}</ol></div>",
+    
+    "botao_cta": "<div style='text-align: center; margin: 30px 0;'><a href='{{LINK}}' style='background: #25D366; color: white; padding: 15px 30px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 18px; display: inline-block;'>🟢 {{TEXTO}}</a></div>",
+    
+    "alerta_urgente": "<div style='background: #fef2f2; border-left: 4px solid #ef4444; padding: 15px; margin: 20px 0;'><strong style='color: #dc2626;'>⚠️ ALERTA:</strong> {{MENSAGEM}}</div>"
+  },
+
+  "HISTORICO_USO": []
+}

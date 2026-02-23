@@ -1,0 +1,373 @@
+{
+  "configuracao": {
+    "versao": "1.0",
+    "criado_em": "2026-02-23",
+    "total_temas": 30,
+    "imagens": {
+      "cabecalho": "https://raw.githubusercontent.com/benfranklinassistente-code/openclaw-backup/main/newsletter-imagens/cabecalho-60mais.jpg",
+      "rodape": "https://raw.githubusercontent.com/benfranklinassistente-code/openclaw-backup/main/newsletter-imagens/rodape-60mais.jpg"
+    }
+  },
+  "temas": [
+    {
+      "id": 1,
+      "tema": "Antivírus Grátis",
+      "titulo": "🛡️ Antivírus Grátis: Seu Celular Precisa?",
+      "reflexao": "Prevenir é melhor que remediar. Um vírus no celular pode custar caro.",
+      "historia": "Dona Carmem notou que seu celular estava estranho: apareciam anúncios do nada e apps que ela não instalou. Um vizinho tech explicou: era vírus! Depois de instalar um antivírus gratuito, o celular voltou ao normal. Ela aprendeu que proteção digital é tão importante quanto trancar a porta de casa.",
+      "licao": "Vírus de celular roubam dados e deixam o aparelho lento. Um antivírus grátis resolve!",
+      "tutorial": {
+        "passo1": {
+          "titulo": "BAIXE UM ANTIVÍRUS CONFIÁVEL",
+          "explicacao": "Vá na Play Store e busque 'antivírus'",
+          "acao": "Escolha Avast, Kaspersky ou McAfee (todos têm versão grátis)",
+          "exemplo": "Digite 'Avast' na busca e clique em Instalar"
+        },
+        "passo2": {
+          "titulo": "FAÇA O PRIMEIRO ESCANEAMENTO",
+          "explicacao": "Abra o app e toque em 'Escanear'",
+          "acao": "Deixe o antivírus verificar seu celular inteiro",
+          "exemplo": "Toque no botão grande 'VERIFICAR AGORA'"
+        },
+        "passo3": {
+          "titulo": "ATIVE A PROTEÇÃO AUTOMÁTICA",
+          "explicacao": "Configure para verificar toda semana",
+          "acao": "Nas configurações, ative 'Verificação automática'",
+          "exemplo": "Marque 'Toda semana' e escolha um horário"
+        }
+      },
+      "checklist": ["☐ Antivírus instalado", "☐ Primeira verificação feita", "☐ Proteção automática ativada"],
+      "cta": {
+        "produto": "Mini Curso Segurança Digital para Idosos",
+        "preco": "R$ 37,00",
+        "link_whatsapp": "https://wa.me/5511920990009?text=Quero%20o%20Mini%20Curso%20Segurança%20Digital"
+      },
+      "dica_extra": "Nunca clique em popups que dizem 'Seu celular está infectado!'. Feche e ignore.",
+      "categoria": "seguranca"
+    },
+    {
+      "id": 2,
+      "tema": "Google Fotos - Backup",
+      "titulo": "📸 Google Fotos: Nunca Perca Suas Fotos!",
+      "reflexao": "Memórias são eternas quando estão guardadas em lugar seguro.",
+      "historia": "Seu João tinha 2.000 fotos do neto no celular. Quando o aparelho caiu na água, perdeu TUDO. Ficou dias triste, sem recuperar as recordações. Depois disso, aprendeu a usar o Google Fotos. Hoje, todas as fotos estão salvas na nuvem e ele pode ver de qualquer lugar.",
+      "licao": "Fotos no celular podem sumir. No Google Fotos, elas ficam guardadas para sempre!",
+      "tutorial": {
+        "passo1": {
+          "titulo": "INSTALE O GOOGLE FOTOS",
+          "explicacao": "Vá na Play Store e busque 'Google Fotos'",
+          "acao": "Instale e abra o app",
+          "exemplo": "Clique em 'Instalar' e depois 'Abrir'"
+        },
+        "passo2": {
+          "titulo": "FAÇA LOGIN COM SUA CONTA GOOGLE",
+          "explicacao": "Use seu Gmail para entrar",
+          "acao": "Digite seu email e senha do Gmail",
+          "exemplo": "seunome@gmail.com + sua senha"
+        },
+        "passo3": {
+          "titulo": "ATIVE O BACKUP AUTOMÁTICO",
+          "explicacao": "Deixe o app salvar suas fotos sozinho",
+          "acao": "Toque em 'Ativar backup' e confirme",
+          "exemplo": "Escolha 'Alta qualidade' (grátis e ilimitado)"
+        }
+      },
+      "checklist": ["☐ Google Fotos instalado", "☐ Login feito", "☐ Backup automático ativado"],
+      "cta": {
+        "produto": "Mini Curso Google Fotos",
+        "preco": "R$ 37,00",
+        "link_whatsapp": "https://wa.me/5511920990009?text=Quero%20o%20Mini%20Curso%20Google%20Fotos"
+      },
+      "dica_extra": "Conecte no Wi-Fi para fazer backup sem gastar seus dados móveis!",
+      "categoria": "fotos"
+    },
+    {
+      "id": 3,
+      "tema": "Facebook Seguro",
+      "titulo": "📘 Facebook Seguro: Aprenda a Se Proteger",
+      "reflexao": "Nas redes sociais, compartilhe alegria, não seus dados pessoais.",
+      "historia": "Dona Lúcia adorava postar fotos das viagens no Facebook. Um dia, descobriu que alguém criou um perfil falso com as fotos dela e estava pedindo dinheiro emprestado pros amigos. Ela aprendeu a ajustar a privacidade e hoje só amigos veem suas postagens.",
+      "licao": "Configure a privacidade do Facebook para que só amigos vejam suas informações!",
+      "tutorial": {
+        "passo1": {
+          "titulo": "ACESSE AS CONFIGURAÇÕES",
+          "explicacao": "No Facebook, toque no menu (três risquinhos)",
+          "ação": "Vá em 'Configurações e privacidade' > 'Configurações'",
+          "exemplo": "Toque no ☰ no canto superior direito"
+        },
+        "passo2": {
+          "titulo": "AJUSTE A PRIVACIDADE",
+          "explicacao": "Configure quem pode ver suas postagens",
+          "acao": "Em 'Privacidade', mude para 'Amigos'",
+          "exemplo": "Toque em 'Quem pode ver suas futuras postagens' e escolha 'Amigos'"
+        },
+        "passo3": {
+          "titulo": "ATIVE A APROVAÇÃO DE LOGIN",
+          "explicacao": "Receba um alerta se alguém tentar entrar na sua conta",
+          "acao": "Em 'Segurança', ative 'Aprovações de login'",
+          "exemplo": "Marque 'Receber alertas' e adicione seu número"
+        }
+      },
+      "checklist": ["☐ Privacidade configurada para 'Amigos'", "☐ Aprovação de login ativada", "☐ Senha forte criada"],
+      "cta": {
+        "produto": "Mini Curso Redes Sociais Seguras",
+        "preco": "R$ 37,00",
+        "link_whatsapp": "https://wa.me/5511920990009?text=Quero%20o%20Mini%20Curso%20Redes%20Sociais"
+      },
+      "dica_extra": "Nunca aceite solicitações de amizade de pessoas que você não conhece pessoalmente!",
+      "categoria": "redes_sociais"
+    },
+    {
+      "id": 4,
+      "tema": "Netflix para Iniciantes",
+      "titulo": "🎬 Netflix: Como Assistir Filmes e Séries",
+      "reflexao": "A tecnologia traz o cinema para dentro de casa. Aproveite cada momento!",
+      "historia": "Seu Carlos reclamava que só passava filme velho na TV. O neto instalou Netflix e ele descobriu um mundo de filmes novos! Hoje, Carlos assiste documentários de história e filmes clássicos quando quer, sem hora marcada.",
+      "licao": "Netflix é um cinema em casa: escolha o que quer ver e quando quer ver!",
+      "tutorial": {
+        "passo1": {
+          "titulo": "CRIE SUA CONTA NETFLIX",
+          "explicacao": "Acesse netflix.com no navegador ou app",
+          "acao": "Clique em 'Assine agora' e escolha o plano",
+          "exemplo": "Plano Básico: R$ 55,90/mês (1 tela)"
+        },
+        "passo2": {
+          "titulo": "ESCOLHA O QUE ASSISTIR",
+          "explicacao": "Navegue pelas categorias ou use a busca",
+          "ação": "Toque na lupa e digite o nome do filme",
+          "exemplo": "Busque 'Comédia' ou 'Filmes brasileiros'"
+        },
+        "passo3": {
+          "titulo": "APRENDA A USAR OS CONTROLES",
+          "explicacao": "Pause, volte e avance quando quiser",
+          "ação": "Toque na tela para ver os controles",
+          "exemplo": "Toque em ⏸️ para pausar, em ⏪ para voltar"
+        }
+      },
+      "checklist": ["☐ Conta criada", "☐ Primeiro filme assistido", "☐ Controles aprendidos"],
+      "cta": {
+        "produto": "Mini Curso Netflix",
+        "preco": "R$ 37,00",
+        "link_whatsapp": "https://wa.me/5511920990009?text=Quero%20o%20Mini%20Curso%20Netflix"
+      },
+      "dica_extra": "Baixe filmes no Wi-Fi para assistir offline (sem internet)!",
+      "categoria": "entretenimento"
+    },
+    {
+      "id": 5,
+      "tema": "Gov.br - Acesso Fácil",
+      "titulo": "🏛️ Gov.br: Seus Documentos na Palma da Mão",
+      "reflexao": "O governo digital chegou. Não fique para trás!",
+      "historia": "Dona Odete precisava tirar CPF do neto e achou que teria que ir no banco. Uma amiga contou que pelo Gov.br dá pra fazer tudo online! Em 10 minutos, ela criou a conta, subiu os documentos e resolveu sem sair de casa.",
+      "licao": "Gov.br é o portal do governo: CPF, CNH, INSS e muito mais em um só lugar!",
+      "tutorial": {
+        "passo1": {
+          "titulo": "ACESSE O GOV.BR",
+          "explicacao": "Digite gov.br no navegador",
+          "ação": "Clique em 'Entrar' > 'Criar conta'",
+          "exemplo": "Use seu CPF para começar"
+        },
+        "passo2": {
+          "titulo": "CONFIRME SEUS DADOS",
+          "explicacao": "Digite CPF, nome e data de nascimento",
+          "ação": "Preencha os dados exatamente como no documento",
+          "exemplo": "Use a certidão de nascimento se tiver dúvida"
+        },
+        "passo3": {
+          "titulo": "SUBA SEUS DOCUMENTOS",
+          "explicacao": "Tire foto do RG ou CNH",
+          "ação": "Use a câmera do celular para fotografar",
+          "exemplo": "Deixe o documento em local bem iluminado"
+        }
+      },
+      "checklist": ["☐ Conta gov.br criada", "☐ Nível Prata ou Ouro alcançado", "☐ Primeiro serviço online feito"],
+      "cta": {
+        "produto": "Mini Curso Gov.br",
+        "preco": "R$ 37,00",
+        "link_whatsapp": "https://wa.me/5511920990009?text=Quero%20o%20Mini%20Curso%20Gov.br"
+      },
+      "dica_extra": "Nível Ouro permite assinar documentos digitalmente como se fosse cartório!",
+      "categoria": "governo"
+    },
+    {
+      "id": 6,
+      "tema": "Golpe do Falso Entregador",
+      "titulo": "🚚 Golpe do Falso Entregador: Não Caia!",
+      "reflexao": "A pressa é inimiga da cautela. Verifique antes de abrir.",
+      "historia": "Seu Roberto ouviu a campainha às 14h. Um homem com uniforme de correios disse que tinha uma encomenda. Quando foi buscar a caneta para assinar, o homem entrou na casa e roubou a bolsa da cozinha. Roberto aprendeu: nunca abra a porta sem confirmar!",
+      "licao": "Bandidos se disfarçam de entregadores. Sempre confirme se está esperando algo!",
+      "tutorial": {
+        "passo1": {
+          "titulo": "PERGUNTE QUEM ESTÁ ESPERANDO",
+          "explicacao": "Antes de abrir, pergunte pelo interfone ou pela janela",
+          "ação": "Não abra a porta imediatamente",
+          "exemplo": "Fale: 'Um momento, vou verificar!'"
+        },
+        "passo2": {
+          "titulo": "CONFIRA SE TEM ENTREGA",
+          "explicacao": "Veja no app do correio ou das compras online",
+          "ação": "Entre no site dos Correios com o código de rastreio",
+          "exemplo": "Acesse 'correios.com.br/rastreio'"
+        },
+        "passo3": {
+          "titulo": "PEÇA IDENTIFICAÇÃO",
+          "explicacao": "Entregadores reais têm crachá e uniforme oficial",
+          "ação": "Peça para ver o crachá pela janela ou câmera",
+          "exemplo": "Funcionário dos Correios tem crachá azul"
+        }
+      },
+      "checklist": ["☐ Verificou se tem entrega esperada", "☐ Pediu identificação", "☐ Não abriu a porta antes de confirmar"],
+      "cta": {
+        "produto": "Mini Curso Segurança em Casa",
+        "preco": "R$ 37,00",
+        "link_whatsapp": "https://wa.me/5511920990009?text=Quero%20o%20Mini%20Curso%20Segurança%20em%20Casa"
+      },
+      "dica_extra": "Se desconfiar, ligue 190 (Polícia Militar) imediatamente!",
+      "categoria": "seguranca"
+    },
+    {
+      "id": 7,
+      "tema": "Uber - Primeira Viagem",
+      "titulo": "🚗 Uber: Sua Primeira Viagem Passo a Passo",
+      "reflexao": "Mobilidade é liberdade. A tecnologia está do seu lado!",
+      "historia": "Dona Hilda tinha medo de andar de carro com desconhecido. Mas quando precisou ir no médico e não tinha ônibus perto, experimentou o Uber. O motorista foi educado, ela viu todo o trajeto no celular e chegou segura. Hoje, Hilda só usa Uber!",
+      "licao": "Uber é seguro: você vê quem é o motorista, o trajeto e o preço antes!",
+      "tutorial": {
+        "passo1": {
+          "titulo": "INSTALE O APP UBER",
+          "explicacao": "Vá na Play Store e busque 'Uber'",
+          "ação": "Instale e crie sua conta com telefone e email",
+          "exemplo": "Digite seu número de celular para receber o código"
+        },
+        "passo2": {
+          "titulo": "PEÇA SUA VIAGEM",
+          "explicacao": "Digite onde você está e para onde vai",
+          "ação": "O app mostra o preço antes de você confirmar",
+          "exemplo": "De: 'Rua das Flores, 123' Para: 'Hospital São Lucas'"
+        },
+        "passo3": {
+          "titulo": "AGUARDE O MOTORISTA",
+          "explicacao": "Veja a foto, placa e cor do carro no app",
+          "ação": "Confira se a placa bate antes de entrar",
+          "exemplo": "Placa: ABC-1234, Carro: Prata, Motorista: João"
+        }
+      },
+      "checklist": ["☐ App instalado e conta criada", "☐ Primeira viagem pedida", "☐ Conferiu placa antes de entrar"],
+      "cta": {
+        "produto": "Mini Curso Uber e Transporte Digital",
+        "preco": "R$ 37,00",
+        "link_whatsapp": "https://wa.me/5511920990009?text=Quero%20o%20Mini%20Curso%20Uber"
+      },
+      "dica_extra": "Compartilhe sua viagem com um familiar pelo app. Eles veem onde você está em tempo real!",
+      "categoria": "transporte"
+    },
+    {
+      "id": 8,
+      "tema": "iFood - Pedir Comida",
+      "titulo": "🍔 iFood: Peça Comida Sem Sair de Casa",
+      "reflexao": "Um prato quentinho a um toque de distância. Simples assim!",
+      "historia": "Seu Geraldo estava com gripe e sem força para cozinhar. A neta ensinou a usar o iFood e em 30 minutos chegou uma sopa quentinha na porta. Ele achou que era complicado, mas viu que é só clicar no que quer e esperar!",
+      "licao": "iFood traz o restaurante para você. Escolha, pague e receba em casa!",
+      "tutorial": {
+        "passo1": {
+          "titulo": "INSTALE O IFOOD",
+          "explicacao": "Baixe na Play Store ou App Store",
+          "ação": "Crie sua conta com telefone",
+          "exemplo": "Digite seu CEP para ver restaurantes perto de você"
+        },
+        "passo2": {
+          "titulo": "ESCOLHA O RESTAURANTE E PRATO",
+          "explicacao": "Navegue pelos restaurantes ou busque pelo prato",
+          "ação": "Toque no prato e depois em 'Adicionar'",
+          "exemplo": "Busque 'sopa' ou 'marmita'"
+        },
+        "passo3": {
+          "titulo": "PAGUE E ACOMPANHE A ENTREGA",
+          "explicacao": "Escolha pagar em dinheiro ou cartão",
+          "ação": "Veja o motoboy chegando no mapa do app",
+          "exemplo": "Toque em 'Acompanhar pedido' para ver no mapa"
+        }
+      },
+      "checklist": ["☐ App instalado", "☐ Primeiro pedido feito", "☐ Pagamento configurado"],
+      "cta": {
+        "produto": "Mini Curso Delivery Seguro",
+        "preco": "R$ 37,00",
+        "link_whatsapp": "https://wa.me/5511920990009?text=Quero%20o%20Mini%20Curso%20Delivery"
+      },
+      "dica_extra": "Dica: pedidos acima de R$ 30 costumam ter frete grátis!",
+      "categoria": "delivery"
+    },
+    {
+      "id": 9,
+      "tema": "Clonagem de WhatsApp",
+      "titulo": "⚠️ Clonagem de WhatsApp: Como Evitar",
+      "reflexao": "Seu WhatsApp é sua identidade digital. Proteja como protege sua casa.",
+      "historia": "Dona Tereza recebeu uma mensagem de um primo pedindo um código que chegou no celular dela. Ela mandou achando que era para um grupo. Minutos depois, todos os contatos receberam pedidos de PIX em nome dela. Seu WhatsApp tinha sido clonado!",
+      "licao": "Nunca compartilhe códigos de verificação com NINGUÉM, nem com familiares!",
+      "tutorial": {
+        "passo1": {
+          "titulo": "ATIVE A VERIFICAÇÃO EM DUAS ETAPAS",
+          "explicacao": "Isso impede que clonem seu WhatsApp",
+          "ação": "WhatsApp > Configurações > Conta > Verificação em duas etapas > Ativar",
+          "exemplo": "Crie um PIN de 6 dígitos e ANOTE em lugar seguro"
+        },
+        "passo2": {
+          "titulo": "NUNCA MANDE CÓDIGOS POR MENSAGEM",
+          "explicacao": "Golpistas inventam desculpas para pedir códigos",
+          "ação": "Se alguém pedir código, é GOLPE!",
+          "exemplo": "Falso primo: 'Me manda o código pra te adicionar no grupo' = GOLPE"
+        },
+        "passo3": {
+          "titulo": "ATIVE O DISPOSITIVO DE CONFIANÇA",
+          "explicacao": "WhatsApp avisa se alguém tentar entrar na sua conta",
+          "ação": "Configure um email de recuperação",
+          "exemplo": "Adicione seu email pessoal nas configurações"
+        }
+      },
+      "checklist": ["☐ Verificação em duas etapas ativada", "☐ PIN anotado em lugar seguro", "☐ Email de recuperação configurado"],
+      "cta": {
+        "produto": "Mini Curso WhatsApp Seguro",
+        "preco": "R$ 37,00",
+        "link_whatsapp": "https://wa.me/5511920990009?text=Quero%20o%20Mini%20Curso%20WhatsApp%20Seguro"
+      },
+      "dica_extra": "Se seu WhatsApp foi clonado, ligue para seu número de outro aparelho e fique online para derrubar o clonador!",
+      "categoria": "seguranca"
+    },
+    {
+      "id": 10,
+      "tema": "Senha Forte em 3 Passos",
+      "titulo": "🔐 Senha Forte: Crie em 3 Passos Simples",
+      "reflexao": "Uma senha forte é como uma tranca blindada. Difícil de arrombar.",
+      "historia": "Seu Miguel usava a mesma senha '123456' em tudo. Um dia, descobriram sua senha e entraram no email, banco e redes sociais. Perdeu acesso a tudo! Com ajuda do neto, criou senhas fortes e diferentes para cada conta. Hoje, dorme tranquilo.",
+      "licao": "Senhas fracas são como portas abertas. Crie senhas fortes e únicas!",
+      "tutorial": {
+        "passo1": {
+          "titulo": "USE 8 CARACTERES OU MAIS",
+          "explicacao": "Quanto mais longa, mais difícil de descobrir",
+          "ação": "Mínimo 8 caracteres, ideal 12 ou mais",
+          "exemplo": "Em vez de 'Maria', use 'Minh4M4r1a2024!'"
+        },
+        "passo2": {
+          "titulo": "MISTURE LETRAS, NÚMEROS E SÍMBOLOS",
+          "explicacao": "Varie entre maiúsculas, minúsculas, números e caracteres especiais",
+          "ação": "Substitua letras por números: a=4, e=3, i=1, o=0",
+          "exemplo": "'Senha' vira 'S3nh4!'"
+        },
+        "passo3": {
+          "titulo": "NÃO USE DATAS OU NOMES ÓBVIOS",
+          "explicacao": "Data de nascimento e nomes de familiares são fáceis de descobrir",
+          "ação": "Use uma frase que só você conhece",
+          "exemplo": "Fr4s3D4Senh4@2024 (baseado em 'Frase da senha 2024')"
+        }
+      },
+      "checklist": ["☐ Pelo menos 8 caracteres", "☐ Misturou letras, números e símbolos", "☐ Não usou datas ou nomes óbvios"],
+      "cta": {
+        "produto": "Mini Curso Segurança Digital",
+        "preco": "R$ 37,00",
+        "link_whatsapp": "https://wa.me/5511920990009?text=Quero%20o%20Mini%20Curso%20Segurança%20Digital"
+      },
+      "dica_extra": "Use um gerenciador de senhas como Google ou Firefox para lembrar todas!",
+      "categoria": "seguranca"
+    }
+  ]
+}
