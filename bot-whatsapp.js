@@ -18,7 +18,7 @@ const { CURSOS, menuPrincipal, menuCursos, menuAulas, menuSuporte, menuSobre, re
 
 const CONFIG = {
   gatewayToken: 'pUfMKh_QxGckUpL3TpMNuGRiQRyIaaoBjcQwvh247FE',
-  grupoId: '120363407488049190@g.us',
+  grupoId: '120363375518105627@g.us',
   logPath: '/tmp/bot-processado.json',
   statePath: '/tmp/bot-estado.json',
   cooldownFaqMs: 60000, // 1 min entre respostas do mesmo FAQ

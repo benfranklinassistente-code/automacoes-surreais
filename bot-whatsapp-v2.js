@@ -19,7 +19,7 @@ try {
 // Configurações
 const CONFIG = {
   gatewayToken: 'pUfMKh_QxGckUpL3TpMNuGRiQRyIaaoBjcQwvh247FE',
-  grupoId: '120363407488049190@g.us',
+  grupoId: '120363375518105627@g.us',
   adminNumber: '5511953545939',
   botNumber: '5511920990009',
   logPath: '/tmp/bot-v2-processado.json'

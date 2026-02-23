@@ -12,7 +12,7 @@ const { FAQS } = require('./faq-whatsapp.js');
 // Configurações
 const CONFIG = {
   gatewayToken: 'pUfMKh_QxGckUpL3TpMNuGRiQRyIaaoBjcQwvh247FE',
-  grupoId: '120363407488049190@g.us',
+  grupoId: '120363375518105627@g.us',
   logPath: '/tmp/faq-processado.json',
   cooldownMs: 60000, // 1 minuto entre respostas do mesmo tema
   botNumber: '5511920990009'

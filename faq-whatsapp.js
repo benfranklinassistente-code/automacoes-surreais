@@ -208,7 +208,7 @@ const CONFIG = {
   gatewayToken: process.env.OPENCLAW_GATEWAY_TOKEN || 'pUfMKh_QxGckUpL3TpMNuGRiQRyIaaoBjcQwvh247FE',
   gatewayUrl: '127.0.0.1',
   gatewayPort: 18789,
-  grupoId: '120363407488049190@g.us', // Grupo Segurança Digital 60mais
+  grupoId: '120363375518105627@g.us', // Grupo Segurança Digital 60mais
   cooldownMs: 30000, // 30 segundos entre respostas do mesmo tema
   respostaAutomatica: true
 };

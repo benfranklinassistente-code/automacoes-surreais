@@ -10,7 +10,7 @@ const http = require('http');
 const GATEWAY_HOST = '127.0.0.1';
 const GATEWAY_PORT = 18789;
 const GATEWAY_TOKEN = 'pUfMKh_QxGckUpL3TpMNuGRiQRyIaaoBjcQwvh247FE';
-const GRUPO_ID = '120363375518105627@g.us';
+const GRUPO_ID = '120363375518105627@g.us'; // Grupo: Curso Smartphone Inteligência Artificial 60+
 
 // Banco de dicas rotativas
 const DICAS = [

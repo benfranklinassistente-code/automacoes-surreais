@@ -7,7 +7,7 @@ const { execSync } = require('child_process');
 
 const TOKEN = 'pUfMKh_QxGckUpL3TpMNuGRiQRyIaaoBjcQwvh247FE';
 const ADMIN = '5511953545939';
-const GRUPO = '120363407488049190@g.us';
+const GRUPO = '120363375518105627@g.us';
 const BOT = '5511920990009';
 
 // Estado

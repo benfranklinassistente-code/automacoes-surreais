@@ -16,7 +16,7 @@ const CONFIG = {
   gatewayToken: 'pUfMKh_QxGckUpL3TpMNuGRiQRyIaaoBjcQwvh247FE',
   gatewayUrl: '127.0.0.1',
   gatewayPort: 18789,
-  grupoId: '120363407488049190@g.us',
+  grupoId: '120363375518105627@g.us',
   botNumber: '5511920990009'
 };
 
