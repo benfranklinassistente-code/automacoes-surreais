@@ -1,0 +1,13 @@
+{
+  "eventos": [
+    {
+      "id": "evt-1771850741827",
+      "tipo": "pergunta",
+      "dados": {
+        "usuario": "user-123",
+        "mensagem": "como configurar wifi?"
+      },
+      "data": 1771850741827
+    }
+  ]
+}

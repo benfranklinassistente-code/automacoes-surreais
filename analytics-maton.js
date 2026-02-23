@@ -120,12 +120,13 @@ function extrairTemaDoPost(titulo) {
 
 /**
  * Identifica tema mais popular baseado em visualizações
+ * Retorna LISTA ORDENADA de temas por popularidade
  */
 function temaMaisPopular() {
   const posts = postsPopularesTecnologia();
   
   if (posts.length === 0) {
-    return { tema: 'WhatsApp segurança', motivo: 'fallback padrão' };
+    return { tema: 'WhatsApp segurança', motivo: 'fallback padrão', listaTemas: [] };
   }
   
   // Contar visualizações por tema
@@ -138,23 +139,31 @@ function temaMaisPopular() {
     }
   }
   
-  // Encontrar o mais popular
-  let temaVencedor = null;
-  let maxViews = 0;
+  // Ordenar temas por popularidade (MAIS views primeiro)
+  const listaTemas = Object.entries(temaViews)
+    .sort((a, b) => b[1] - a[1])
+    .map(([tema, views]) => ({ tema, views }));
   
-  for (const [tema, views] of Object.entries(temaViews)) {
-    if (views > maxViews) {
-      maxViews = views;
-      temaVencedor = tema;
-    }
-  }
+  // Retornar o mais popular (primeiro da lista)
+  const temaVencedor = listaTemas.length > 0 ? listaTemas[0].tema : 'WhatsApp segurança';
+  const maxViews = listaTemas.length > 0 ? listaTemas[0].views : 0;
   
   return {
-    tema: temaVencedor || 'WhatsApp segurança',
+    tema: temaVencedor,
     views: maxViews,
     motivo: 'baseado em posts populares',
+    listaTemas: listaTemas, // NOVO: retorna lista completa ordenada
     postsAnalise: posts.slice(0, 5)
   };
+}
+
+/**
+ * Retorna lista de temas ordenados por popularidade
+ * Útil para escolher tema disponível (não usado recentemente)
+ */
+function temasOrdenadosPorPopularidade() {
+  const resultado = temaMaisPopular();
+  return resultado.listaTemas || [];
 }
 
 /**
@@ -194,6 +203,7 @@ module.exports = {
   postsPopularesTecnologia,
   extrairTemaDoPost,
   temaMaisPopular,
+  temasOrdenadosPorPopularidade,
   estatisticasGerais,
   PROPERTY_ID
 };

@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>60maisNews - Documento Completo da Redação Autônoma</title>
+    <style>
+        @page {
+            margin: 2cm;
+            size: A4;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #2980b9;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #27ae60;
+        }
+        h4 {
+            color: #8e44ad;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        code, pre {
+            background-color: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        pre {
+            padding: 15px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+        blockquote {
+            border-left: 4px solid #3498db;
+            margin: 15px 0;
+            padding-left: 15px;
+            color: #555;
+            font-style: italic;
+            background-color: #f9f9f9;
+            padding: 10px 15px;
+        }
+        .emoji {
+            font-size: 1.2em;
+        }
+        hr {
+            border: none;
+            border-top: 2px solid #eee;
+            margin: 30px 0;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            text-align: center;
+            color: #777;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+<h1>📰 60maisNews - Documento Completo da Redação Autônoma</h1>
+
+<h2>Visão Geral do Sistema</h2>
+
+<p>A <strong>60maisNews</strong> é uma newsletter diária automatizada que funciona como uma "carta de vendas disfarçada", utilizando a técnica <strong>StorySelling (S.L.P.C.)</strong> para engajar e converter idosos 60+ interessados em tecnologia.</p>
+
+<table>
+    <tr>
+        <th>Característica</th>
+        <th>Valor</th>
+    </tr>
+    <tr>
+        <td><strong>Público-alvo</strong></td>
+        <td>Idosos 60+ interessados em tecnologia</td>
+    </tr>
+    <tr>
+        <td><strong>Frequência</strong></td>
+        <td>Diária às 06:06</td>
+    </tr>
+    <tr>
+        <td><strong>Plataforma de envio</strong></td>
+        <td>Brevo (102 assinantes)</td>
+    </tr>
+    <tr>
+        <td><strong>Blog</strong></td>
+        <td>https://60maiscursos.com.br/blog/</td>
+    </tr>
+    <tr>
+        <td><strong>Técnica de escrita</strong></td>
+        <td>StorySelling (S.L.P.C.)</td>
+    </tr>
+</table>
+
+<hr>
+
+<h2>🏗️ Arquitetura do Sistema de Redação</h2>
+
+<p>O sistema funciona como uma <strong>redação autônoma</strong> com 4 agentes especializados, coordenados por um orquestrador central.</p>
+
+<pre>
+┌─────────────────────────────────────────────────────────────────┐
+│                    🎭 ORQUESTRADOR                               │
+│         (Agente principal que coordena todos os processos)      │
+└───────────────────────────┬─────────────────────────────────────┘
+                            │
+        ┌───────────────────┼───────────────────┐
+        │                   │                   │
+        ▼                   ▼                   ▼
+┌───────────────┐   ┌───────────────┐   ┌───────────────┐
+│ 📅 GANCHOS    │   │ ✍️ STORYTELLER │   │ 💰 VENDAS     │
+│               │   │               │   │               │
+│ • Trends      │   │ • StorySelling│   │ • CTAs        │
+│ • Analytics   │   │ • Narrativa   │   │ • Ofertas     │
+│ • Sazonalidade│   │ • Dicas 60+   │   │ • Produtos    │
+└───────────────┘   └───────────────┘   └───────────────┘
+        │                   │                   │
+        └───────────────────┼───────────────────┘
+                            ▼
+                   ┌─────────────────┐
+                   │ 📧 ENVIO        │
+                   │                 │
+                   │ • Brevo API     │
+                   │ • Agendamento   │
+                   │ • Métricas      │
+                   └─────────────────┘
+</pre>
+
+<hr>
+
+<h2>🤖 Agentes Autônomos - Descrição Detalhada</h2>
+
+<h3>AGENTE 1: GANCHOS 📅</h3>
+
+<h4>Função Principal</h4>
+<p>Identificar temas relevantes e em alta para a newsletter diária, priorizando dados de mercado reais.</p>
+
+<h4>Fontes de Dados (Ordem de Prioridade)</h4>
+
+<table>
+    <tr>
+        <th>Prioridade</th>
+        <th>Fonte</th>
+        <th>Peso</th>
+        <th>Função</th>
+    </tr>
+    <tr>
+        <td><strong>1ª</strong></td>
+        <td>🔥 Google Trends</td>
+        <td>50%</td>
+        <td>Temas em alta AGORA</td>
+    </tr>
+    <tr>
+        <td><strong>2ª</strong></td>
+        <td>📈 Google Analytics</td>
+        <td>35%</td>
+        <td>O que nosso público JÁ busca</td>
+    </tr>
+    <tr>
+        <td><strong>3ª</strong></td>
+        <td>🎉 Sazonalidade</td>
+        <td>15%</td>
+        <td>Datas comemorativas gerais</td>
+    </tr>
+</table>
+
+<h4>Como Funciona</h4>
+
+<p><strong>Passo 1: Consulta Google Trends (05:00)</strong></p>
+<ul>
+    <li>Consulta a API do Google Trends com parâmetros:
+        <ul>
+            <li><code>geo: "BR"</code> (Brasil)</li>
+            <li><code>hl: "pt-BR"</code> (português)</li>
+        </ul>
+    </li>
+    <li>Monitora termos relevantes para público 60+:
+        <ul>
+            <li>WhatsApp, golpe celular, segurança digital</li>
+            <li>Videochamada, celular para idosos</li>
+            <li>PIX segurança, senha celular</li>
+            <li>Aplicativos para idosos, Zoom, Google Fotos</li>
+        </ul>
+    </li>
+</ul>
+
+<p><strong>Passo 2: Análise de Tendências</strong></p>
+<ul>
+    <li>Identifica variação de busca (+% nas últimas 24h)</li>
+    <li>Detecta temas virais e emergentes</li>
+    <li>Compara popularidade de termos relacionados</li>
+</ul>
+
+<p><strong>Passo 3: Consulta Google Analytics (backup)</strong></p>
+<ul>
+    <li>Se Trends não retornar tema forte:
+        <ul>
+            <li>Verifica páginas mais visitadas no blog</li>
+            <li>Analisa termos de busca internos</li>
+            <li>Identifica horários de pico de leitura</li>
+        </ul>
+    </li>
+</ul>
+
+<p><strong>Passo 4: Sazonalidade (complementar)</strong></p>
+<ul>
+    <li>Datas comemorativas: Dia dos Avós (26/07), Dia do Idoso (01/10)</li>
+    <li>Eventos nacionais: Black Friday, Natal, Volta às aulas</li>
+</ul>
+
+<h4>O que o Agente Produz</h4>
+
+<pre>
+{
+  "tema": "Proteção contra golpe do PIX",
+  "titulo": "Golpe do PIX: Como Se Proteger Hoje",
+  "tituloSEO": "Golpe do PIX: 5 Dicas para Se Proteger Agora",
+  "palavrasChave": ["golpe pix", "segurança pix", "proteger pix"],
+  "metaDescricao": "Aprenda a se proteger do golpe do PIX com 5 dicas simples.",
+  "gancho": "Notícia de golpe viralizada +340% no Google",
+  "urgencia": 9,
+  "seoScore": 85,
+  "fontePrincipal": "Google Trends"
+}
+</pre>
+
+<h4>Output Final</h4>
+<ul>
+    <li><strong>Tema definido</strong> para a newsletter do dia</li>
+    <li><strong>Título otimizado</strong> para SEO (50-60 caracteres)</li>
+    <li><strong>Palavras-chave</strong> selecionadas (3-5)</li>
+    <li><strong>Meta descrição</strong> para compartilhamento</li>
+    <li><strong>Score de urgência</strong> (1-10)</li>
+</ul>
+
+<hr>
+
+<h3>AGENTE 2: STORYTELLER ✍️</h3>
+
+<h4>Função Principal</h4>
+<p>Criar o conteúdo da newsletter utilizando a técnica StorySelling (S.L.P.C.), mantendo o tom afetuoso e acessível do público 60+.</p>
+
+<h4>Técnica: Fórmula S.L.P.C.</h4>
+
+<pre>
+S → L → P → C
+
+Story → Lesson → Pivot → Call to Action
+História → Lição → Conexão → Chamada para Ação
+</pre>
+
+<h4>Estrutura de Palavras</h4>
+
+<table>
+    <tr>
+        <th>Seção</th>
+        <th>Palavras</th>
+        <th>Função</th>
+    </tr>
+    <tr>
+        <td>Story (História)</td>
+        <td>100-250</td>
+        <td>Conexão emocional</td>
+    </tr>
+    <tr>
+        <td>Lesson (Lição)</td>
+        <td>25-50</td>
+        <td>Aprendizado</td>
+    </tr>
+    <tr>
+        <td>Pivot (Conexão)</td>
+        <td>50-100</td>
+        <td>Transição para dica</td>
+    </tr>
+    <tr>
+        <td>CTA (Ação)</td>
+        <td>25-75</td>
+        <td>Chamada para oferta</td>
+    </tr>
+    <tr>
+        <td><strong>TOTAL</strong></td>
+        <td><strong>250-450</strong></td>
+        <td></td>
+    </tr>
+</table>
+
+<h4>Como Funciona</h4>
+
+<p><strong>Passo 1: Recebe Input do Agente Ganchos</strong></p>
+<ul>
+    <li>Tema: "Proteção contra golpe do PIX"</li>
+    <li>Urgência: 9 (alta)</li>
+    <li>Palavras-chave: ["golpe pix", "segurança pix"]</li>
+</ul>
+
+<p><strong>Passo 2: Gera Reflexão do Dia</strong></p>
+<ul>
+    <li>Frase inspiradora relacionada ao tema</li>
+    <li>Tom: afetuoso, próximo, acolhedor</li>
+</ul>
+
+<p><strong>Passo 3: Cria STORY (S)</strong></p>
+<ul>
+    <li>Narra uma situação pessoal ou observação</li>
+    <li>Usa metáforas familiares (ex: "celular engasgado = armário cheio")</li>
+    <li>Mantém linguagem simples, sem jargões</li>
+    <li>Inclui emojis para leveza</li>
+</ul>
+
+<p><strong>Passo 4: Extrai LESSON (L)</strong></p>
+<ul>
+    <li>Transforma a história em aprendizado</li>
+    <li>Conexão emocional com o público 60+</li>
+    <li>Frase curta e impactante</li>
+</ul>
+
+<p><strong>Passo 5: Desenvolve PIVOT + DICAS (P)</strong></p>
+<ul>
+    <li>Transição: "Isso me fez pensar em vocês..."</li>
+    <li>Dica prática passo a passo</li>
+    <li>Inclui dicas de segurança digital</li>
+    <li>Tutorial visual com setas (→)</li>
+</ul>
+
+<p><strong>Passo 6: Passa para Agente Vendas</strong></p>
+<ul>
+    <li>Envia conteúdo completo SEM CTA</li>
+    <li>Aguarda inserção de oferta relevante</li>
+</ul>
+
+<h4>Tom e Estilo Característicos</h4>
+
+<table>
+    <tr>
+        <th>Característica</th>
+        <th>Exemplos</th>
+    </tr>
+    <tr>
+        <td><strong>Afetuoso</strong></td>
+        <td>"Queridos amigos", "com carinho"</td>
+    </tr>
+    <tr>
+        <td><strong>Proximidade</strong></td>
+        <td>"Estamos juntos nessa jornada"</td>
+    </tr>
+    <tr>
+        <td><strong>Metáforas familiares</strong></td>
+        <td>"Memória = armário", "Faxina digital"</td>
+    </tr>
+    <tr>
+        <td><strong>Emojis frequentes</strong></td>
+        <td>🌟 💪 📞 🎉 ❤️ 🔒 🛡️ 🎓 🤝</td>
+    </tr>
+    <tr>
+        <td><strong>Linguagem simples</strong></td>
+        <td>Sem jargões técnicos</td>
+    </tr>
+</table>
+
+<h4>Exemplo de Output</h4>
+
+<blockquote>
+    <p><strong>🌟 Reflexão do Dia:</strong><br>
+    "Cada momento com a família é um tesouro que guardamos no coração."</p>
+    
+    <p><strong>📖 STORY (S):</strong><br>
+    Outro dia, liguei para minha mãe e ela disse: "Filho, não consigo ver suas fotos, meu celular está muito lento!"<br><br>
+    Fui visitá-la e descobri que ela tinha <strong>3.000 fotos</strong> no celular, cada álbum duplicado, e o WhatsApp guardava vídeos que ela nem lembrava de ter recebido. 😅<br><br>
+    O celular dela estava "engasgado" - parece aquele armário que a gente enche de coisas e depois não consegue encontrar nada!</p>
+    
+    <p><strong>💭 LESSON (L):</strong><br>
+    Isso me ensinou que <strong>organizar o celular é como organizar a casa</strong>: um pouco de manutenção faz toda a diferença no dia a dia.</p>
+    
+    <p><strong>💡 PIVOT + DICAS (P):</strong><br>
+    E pensei comigo: quantos de vocês estão com o celular "cansado" também? Então vou ensinar uma faxina rápida:<br><br>
+    <strong>1. Limpe o WhatsApp:</strong><br>
+    Configurações → Armazenamento → Gerenciar armazenamento<br>
+    Apague vídeos e fotos antigas das conversas maiores.<br><br>
+    <strong>2. Desinstale apps que não usa:</strong><br>
+    Toque e segure → "Desinstalar"<br><br>
+    <strong>🛡️ Dica de Segurança:</strong><br>
+    Antes de apagar fotos, faça backup no Google Fotos!</p>
+</blockquote>
+
+<hr>
+
+<h3>AGENTE 3: VENDAS 💰</h3>
+
+<h4>Função Principal</h4>
+<p>Inserir ofertas de produtos de forma natural e casual, sem pressão agressiva.</p>
+
+<h4>Catálogo de Produtos Disponíveis</h4>
+
+<table>
+    <tr>
+        <th>Categoria</th>
+        <th>Produto</th>
+        <th>Preço</th>
+        <th>Quando Ofertar</th>
+    </tr>
+    <tr>
+        <td><strong>Cursos Pílula</strong></td>
+        <td>18 cursos</td>
+        <td>R$ 47-97</td>
+        <td>Temas técnicos</td>
+    </tr>
+    <tr>
+        <td><strong>Workshops</strong></td>
+        <td>Eventos ao vivo</td>
+        <td>R$ 47-97</td>
+        <td>Datas especiais</td>
+    </tr>
+    <tr>
+        <td><strong>Aulas Particulares</strong></td>
+        <td>1:1 com Luís</td>
+        <td>R$ 197/h</td>
+        <td>Alta urgência</td>
+    </tr>
+    <tr>
+        <td><strong>E-books</strong></td>
+        <td>Materiais digitais</td>
+        <td>R$ 27-47</td>
+        <td>Conteúdos de referência</td>
+    </tr>
+    <tr>
+        <td><strong>60maisPlay</strong></td>
+        <td>Plataforma completa</td>
+        <td>Mensal</td>
+        <td>Ofertas principais</td>
+    </tr>
+</table>
+
+<h4>Calendário Comercial 2026</h4>
+<ul>
+    <li><strong>36 eventos</strong> programados para ganchos promocionais</li>
+    <li>Datas de Black Friday, Natal, Dia do Idoso, etc.</li>
+    <li>Lançamentos de novos cursos</li>
+</ul>
+
+<h4>Como Funciona</h4>
+
+<p><strong>Passo 1: Analisa Conteúdo do Storyteller</strong></p>
+<ul>
+    <li>Tema da newsletter</li>
+    <li>Nível de urgência</li>
+    <li>Conteúdo das dicas</li>
+</ul>
+
+<p><strong>Passo 2: Seleciona Produto Relevante</strong></p>
+<pre>
+IF tema = "segurança digital" → Curso "Proteção Digital 60+"
+IF tema = "WhatsApp" → Workshop "WhatsApp para Idosos"
+IF tema = "fotos/memória" → Curso "Google Fotos para Idosos"
+IF urgencia >= 8 → Aula Particular (resolução rápida)
+IF data especial → Promoção do calendário
+</pre>
+
+<p><strong>Passo 3: Cria CTA Casual</strong></p>
+<ul>
+    <li>Oferta aparece apenas no final</li>
+    <li>Linguagem: "Se quiser aprender mais..."</li>
+    <li>Sem pressão, sem urgência falsa</li>
+    <li>Contato: WhatsApp (11) 95354-5939</li>
+</ul>
+
+<p><strong>Passo 4: Regras de Inserção</strong></p>
+<ul>
+    <li>✅ Relevância com o tema</li>
+    <li>✅ Tom casual e amigável</li>
+    <li>✅ Oferece valor antes de pedir</li>
+    <li>❌ Nunca agressivo</li>
+    <li>❌ Nunca múltiplas ofertas</li>
+</ul>
+
+<h4>Exemplo de Output</h4>
+
+<blockquote>
+    <p><strong>🎯 CTA (C):</strong><br>
+    Se quiser aprender mais dicas como essa com calma e carinho, nosso <strong>Curso 60+ Presencial</strong> é o lugar certo!<br><br>
+    📱 Chame no WhatsApp: (11) 95354-5939</p>
+</blockquote>
+
+<hr>
+
+<h3>AGENTE 4: ENVIO 📧</h3>
+
+<h4>Função Principal</h4>
+<p>Formatar, agendar e enviar a newsletter, além de coletar métricas.</p>
+
+<h4>Configurações Brevo</h4>
+
+<table>
+    <tr>
+        <th>Info</th>
+        <th>Valor</th>
+    </tr>
+    <tr>
+        <td><strong>Conta</strong></td>
+        <td>Luis Canabarra</td>
+    </tr>
+    <tr>
+        <td><strong>Email remetente</strong></td>
+        <td>benfranklinassistente@gmail.com</td>
+    </tr>
+    <tr>
+        <td><strong>Lista de contatos</strong></td>
+        <td>102 assinantes</td>
+    </tr>
+    <tr>
+        <td><strong>API</strong></td>
+        <td>Configurada em brevo-config.json</td>
+    </tr>
+</table>
+
+<h4>Como Funciona</h4>
+
+<p><strong>Passo 1: Formatação HTML</strong></p>
+<ul>
+    <li>Converte markdown para HTML responsivo</li>
+    <li>Adiciona estilos inline para compatibilidade</li>
+    <li>Testa renderização em mobile e desktop</li>
+</ul>
+
+<p><strong>Passo 2: Validação</strong></p>
+<ul>
+    <li>✅ Verifica todos os links</li>
+    <li>✅ Testa CTA (WhatsApp)</li>
+    <li>✅ Confirma imagens carregando</li>
+    <li>✅ Preview em múltiplos clientes de email</li>
+</ul>
+
+<p><strong>Passo 3: Agendamento</strong></p>
+<ul>
+    <li>Horário padrão: <strong>06:06</strong> (horário de pico do público 60+)</li>
+    <li>Timezone: America/Sao_Paulo (UTC-3)</li>
+</ul>
+
+<p><strong>Passo 4: Envio</strong></p>
+<ul>
+    <li>Usa API Brevo para envio transacional</li>
+    <li>Segmenta por engajamento se necessário</li>
+</ul>
+
+<p><strong>Passo 5: Coleta de Métricas</strong></p>
+<ul>
+    <li>Taxa de abertura</li>
+    <li>Taxa de clique</li>
+    <li>Descadastros</li>
+    <li>Respostas</li>
+</ul>
+
+<h4>Funções Disponíveis</h4>
+
+<table>
+    <tr>
+        <th>Função</th>
+        <th>Descrição</th>
+    </tr>
+    <tr>
+        <td>enviarEmail()</td>
+        <td>Email transacional simples</td>
+    </tr>
+    <tr>
+        <td>enviarTemplate()</td>
+        <td>Email com template HTML</td>
+    </tr>
+    <tr>
+        <td>listarContatos()</td>
+        <td>Ver assinantes</td>
+    </tr>
+    <tr>
+        <td>criarContato()</td>
+        <td>Adicionar novo contato</td>
+    </tr>
+    <tr>
+        <td>listarCampanhas()</td>
+        <td>Ver campanhas criadas</td>
+    </tr>
+    <tr>
+        <td>estatisticasEmails()</td>
+        <td>Métricas de desempenho</td>
+    </tr>
+</table>
+
+<hr>
+
+<h2>🔄 Fluxo Completo de Trabalho</h2>
+
+<h3>Timeline Diária</h3>
+
+<pre>
+05:00 ─────────────────────────────────────────────────────────────
+  │
+  ▼
+┌─────────────────────────────────────────────────────────────────┐
+│ AGENTE GANCHOS inicia                                            │
+│ • Consulta Google Trends                                         │
+│ • Analisa variações de busca                                     │
+│ • Seleciona tema do dia                                          │
+│ • Gera título e palavras-chave                                   │
+└─────────────────────────────────────────────────────────────────┘
+  │
+  ▼ Output: { tema, titulo, palavrasChave, urgencia }
+  │
+┌─────────────────────────────────────────────────────────────────┐
+│ AGENTE STORYTELLER recebe tema                                   │
+│ • Gera Reflexão do Dia                                           │
+│ • Cria Story (S) com metáforas e emojis                          │
+│ • Extrai Lesson (L) emocional                                    │
+│ • Desenvolve Pivot + Dicas (P) práticas                          │
+│ • Passa para Agente Vendas                                       │
+└─────────────────────────────────────────────────────────────────┘
+  │
+  ▼ Output: { reflexao, story, lesson, pivot+dicass }
+  │
+┌─────────────────────────────────────────────────────────────────┐
+│ AGENTE VENDAS analisa conteúdo                                   │
+│ • Identifica produto relevante                                   │
+│ • Cria CTA casual                                                │
+│ • Insere no final do conteúdo                                    │
+└─────────────────────────────────────────────────────────────────┘
+  │
+  ▼ Output: { cta, produtoSelecionado }
+  │
+┌─────────────────────────────────────────────────────────────────┐
+│ AGENTE ENVIO processa                                            │
+│ • Formata HTML responsivo                                        │
+│ • Valida links e CTA                                             │
+│ • Agenda para 06:06                                              │
+└─────────────────────────────────────────────────────────────────┘
+  │
+  ▼
+06:06 ─────────────────────────────────────────────────────────────
+  │
+  ▼
+┌─────────────────────────────────────────────────────────────────┐
+│ NEWSLETTER ENVIADA                                               │
+│ • 102 assinantes recebem                                         │
+│ • Métricas coletadas automaticamente                             │
+└─────────────────────────────────────────────────────────────────┘
+</pre>
+
+<hr>
+
+<h2>📊 Interação Entre os Agentes</h2>
+
+<h3>Pipeline de Dados</h3>
+
+<table>
+    <tr>
+        <th>Etapa</th>
+        <th>Input</th>
+        <th>Agente</th>
+        <th>Output</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>Data/hora</td>
+        <td>GANCHOS</td>
+        <td>Tema + título + SEO</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Tema + título</td>
+        <td>STORYTELLER</td>
+        <td>Conteúdo S.L.P.</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>Conteúdo</td>
+        <td>VENDAS</td>
+        <td>Conteúdo + CTA</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>Conteúdo final</td>
+        <td>ENVIO</td>
+        <td>Newsletter enviada</td>
+    </tr>
+</table>
+
+<hr>
+
+<h2>🎯 O Produto Final: A Newsletter</h2>
+
+<h3>Estrutura Completa de Uma Newsletter</h3>
+
+<div style="border: 2px solid #3498db; padding: 20px; margin: 20px 0; border-radius: 10px;">
+    <h4 style="margin-top: 0;">📰 60maisNews</h4>
+    
+    <p><strong>🌟 REFLEXÃO DO DIA</strong><br>
+    Frase inspiradora relacionada ao tema.</p>
+    
+    <hr style="border: 1px solid #eee;">
+    
+    <p><strong>📖 STORY (S)</strong><br>
+    História pessoal ou observação com metáforas familiares.<br>
+    Tom afetuoso, emojis, linguagem simples.<br>
+    (100-250 palavras)</p>
+    
+    <hr style="border: 1px solid #eee;">
+    
+    <p><strong>💭 LESSON (L)</strong><br>
+    Aprendizado extraído da história.<br>
+    Conexão emocional com o público 60+.<br>
+    (25-50 palavras)</p>
+    
+    <hr style="border: 1px solid #eee;">
+    
+    <p><strong>💡 PIVOT + DICAS PRÁTICAS (P)</strong><br>
+    Transição para dicas práticas.<br>
+    Passo a passo com setas (→).<br>
+    Dicas de segurança digital.<br>
+    (50-100 palavras + tutorial)</p>
+    
+    <hr style="border: 1px solid #eee;">
+    
+    <p><strong>🎯 CTA (C)</strong><br>
+    Oferta casual para produto relevante.<br>
+    Contato via WhatsApp.<br>
+    Sem pressão agressiva.<br>
+    (25-75 palavras)</p>
+    
+    <hr style="border: 1px solid #eee;">
+    
+    <p style="text-align: center; color: #666;">
+        60maisNews | 60maiscursos.com.br<br>
+        📱 WhatsApp: (11) 95354-5939
+    </p>
+</div>
+
+<hr>
+
+<h2>🔧 Tecnologias Utilizadas</h2>
+
+<table>
+    <tr>
+        <th>Componente</th>
+        <th>Tecnologia</th>
+        <th>Status</th>
+    </tr>
+    <tr>
+        <td><strong>Orquestrador</strong></td>
+        <td>Node.js + OpenClaw</td>
+        <td>✅ Ativo</td>
+    </tr>
+    <tr>
+        <td><strong>Ganchos</strong></td>
+        <td>Google Trends API</td>
+        <td>⏳ Configurar</td>
+    </tr>
+    <tr>
+        <td><strong>Storyteller</strong></td>
+        <td>Claude/OpenAI API</td>
+        <td>⏳ Configurar</td>
+    </tr>
+    <tr>
+        <td><strong>Vendas</strong></td>
+        <td>Node.js + Catálogo</td>
+        <td>✅ Ativo</td>
+    </tr>
+    <tr>
+        <td><strong>Envio</strong></td>
+        <td>Brevo API</td>
+        <td>✅ Ativo</td>
+    </tr>
+    <tr>
+        <td><strong>Blog</strong></td>
+        <td>WordPress REST API</td>
+        <td>✅ Ativo</td>
+    </tr>
+    <tr>
+        <td><strong>Analytics</strong></td>
+        <td>Google Analytics</td>
+        <td>⏳ Configurar</td>
+    </tr>
+</table>
+
+<hr>
+
+<h2>✅ Próximos Passos</h2>
+
+<ol>
+    <li>Configurar API Google Trends</li>
+    <li>Configurar API Google Analytics</li>
+    <li>Configurar API Claude/OpenAI para Storyteller</li>
+    <li>Criar catálogo completo de produtos</li>
+    <li>Testar primeiro ciclo completo</li>
+    <li>Automatizar 100% do fluxo</li>
+</ol>
+
+<hr>
+
+<h2>📁 Arquivos do Sistema</h2>
+
+<table>
+    <tr>
+        <th>Arquivo</th>
+        <th>Função</th>
+    </tr>
+    <tr>
+        <td>60maisNews-newsletter.md</td>
+        <td>Documentação principal</td>
+    </tr>
+    <tr>
+        <td>agente-ganchos-config.json</td>
+        <td>Configurações do Agente Ganchos</td>
+    </tr>
+    <tr>
+        <td>agente-storyteller-config.json</td>
+        <td>Configurações do Agente Storyteller</td>
+    </tr>
+    <tr>
+        <td>agente-vendas-config.json</td>
+        <td>Configurações do Agente Vendas</td>
+    </tr>
+    <tr>
+        <td>calendario-comercial-60mais-2026.json</td>
+        <td>36 eventos para ganchos</td>
+    </tr>
+    <tr>
+        <td>catalogo-produtos.json</td>
+        <td>Produtos para oferta</td>
+    </tr>
+    <tr>
+        <td>brevo-config.json</td>
+        <td>Credenciais Brevo</td>
+    </tr>
+    <tr>
+        <td>google-trends.js</td>
+        <td>Módulo de consulta Trends</td>
+    </tr>
+    <tr>
+        <td>orquestrador-newsletter.js</td>
+        <td>Script principal</td>
+    </tr>
+</table>
+
+<div class="footer">
+    <p><strong>Documento gerado em:</strong> 17/02/2026<br>
+    <strong>Versão:</strong> 1.0<br>
+    <strong>Sistema:</strong> 60maisNews - Redação Autônoma</p>
+</div>
+
+</body>
+</html>

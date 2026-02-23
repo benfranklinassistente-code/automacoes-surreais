@@ -1,0 +1,217 @@
+/**
+ * 👤 Memória Estruturada por Usuário
+ * Armazena apenas FATOS importantes, não conversas inteiras
+ * 
+ * ESTRUTURA:
+ * - perfil: informações do usuário
+ * - preferencias: likes/dislikes
+ * - historico_topicos: tópicos discutidos
+ * - proximos_passos: ações pendentes
+ */
+
+const fs = require('fs');
+const path = require('path');
+
+const PERFIS_DIR = '/root/.openclaw/workspace/memory/perfis';
+
+// Schema de perfil
+const PERFIL_SCHEMA = {
+  usuario_id: '',
+  criado_em: null,
+  atualizado_em: null,
+  
+  // Informações básicas
+  perfil: {
+    nome: null,
+    nivel_tecnologico: null, // 'iniciante', 'intermediario', 'avancado'
+    faixa_etaria: null
+  },
+  
+  // Interesses identificados
+  interesses: [], // ['whatsapp', 'fotos', 'email']
+  
+  // Dificuldades conhecidas
+  dificuldades: [], // ['envio de fotos', 'senha']
+  
+  // Últimas interações
+  ultimos_topicos: [], // [{ topico, data, status }]
+  
+  // Próximos passos sugeridos
+  proximos_passos: [], // [{ acao, prioridade }]
+  
+  // Métricas
+  metricas: {
+    total_interacoes: 0,
+    ultima_interacao: null,
+    perguntas_feitas: 0,
+    problemas_resolvidos: 0
+  }
+};
+
+// Garante diretório
+function ensureDir() {
+  if (!fs.existsSync(PERFIS_DIR)) {
+    fs.mkdirSync(PERFIS_DIR, { recursive: true });
+  }
+}
+
+/**
+ * Cria ou carrega perfil do usuário
+ */
+function getPerfil(usuarioId) {
+  ensureDir();
+  const arquivo = path.join(PERFIS_DIR, `${usuarioId}.json`);
+  
+  if (fs.existsSync(arquivo)) {
+    return JSON.parse(fs.readFileSync(arquivo, 'utf8'));
+  }
+  
+  // Criar novo perfil
+  const novoPerfil = {
+    ...PERFIL_SCHEMA,
+    usuario_id: usuarioId,
+    criado_em: Date.now(),
+    atualizado_em: Date.now()
+  };
+  
+  fs.writeFileSync(arquivo, JSON.stringify(novoPerfil, null, 2));
+  return novoPerfil;
+}
+
+/**
+ * Atualiza perfil do usuário
+ */
+function atualizarPerfil(usuarioId, dados) {
+  ensureDir();
+  const perfil = getPerfil(usuarioId);
+  
+  // Atualizar campos
+  if (dados.nome) perfil.perfil.nome = dados.nome;
+  if (dados.nivel) perfil.perfil.nivel_tecnologico = dados.nivel;
+  if (dados.interesse && !perfil.interesses.includes(dados.interesse)) {
+    perfil.interesses.push(dados.interesse);
+  }
+  if (dados.dificuldade && !perfil.dificuldades.includes(dados.dificuldade)) {
+    perfil.dificuldades.push(dados.dificuldade);
+  }
+  
+  // Atualizar métricas
+  perfil.metricas.total_interacoes++;
+  perfil.metricas.ultima_interacao = Date.now();
+  perfil.atualizado_em = Date.now();
+  
+  // Salvar
+  const arquivo = path.join(PERFIS_DIR, `${usuarioId}.json`);
+  fs.writeFileSync(arquivo, JSON.stringify(perfil, null, 2));
+  
+  return perfil;
+}
+
+/**
+ * Registra tópico discutido
+ */
+function registrarTopico(usuarioId, topico, status = 'discutido') {
+  const perfil = getPerfil(usuarioId);
+  
+  // Adicionar aos tópicos recentes
+  perfil.ultimos_topicos.push({
+    topico,
+    data: Date.now(),
+    status
+  });
+  
+  // Manter apenas últimos 20
+  if (perfil.ultimos_topicos.length > 20) {
+    perfil.ultimos_topicos = perfil.ultimos_topicos.slice(-20);
+  }
+  
+  // Atualizar
+  const arquivo = path.join(PERFIS_DIR, `${usuarioId}.json`);
+  fs.writeFileSync(arquivo, JSON.stringify(perfil, null, 2));
+  
+  return perfil;
+}
+
+/**
+ * Adiciona próximo passo
+ */
+function adicionarProximoPasso(usuarioId, acao, prioridade = 'normal') {
+  const perfil = getPerfil(usuarioId);
+  
+  perfil.proximos_passos.push({
+    acao,
+    prioridade,
+    criado_em: Date.now()
+  });
+  
+  // Manter apenas 5
+  if (perfil.proximos_passos.length > 5) {
+    perfil.proximos_passos = perfil.proximos_passos.slice(-5);
+  }
+  
+  const arquivo = path.join(PERFIS_DIR, `${usuarioId}.json`);
+  fs.writeFileSync(arquivo, JSON.stringify(perfil, null, 2));
+  
+  return perfil;
+}
+
+/**
+ * Gera contexto resumido para o modelo
+ * Retorna apenas informações relevantes sobre o usuário
+ */
+function gerarContextoResumido(usuarioId) {
+  const perfil = getPerfil(usuarioId);
+  
+  let contexto = `[Perfil do Usuário]\n`;
+  
+  if (perfil.perfil.nivel_tecnologico) {
+    contexto += `Nível: ${perfil.perfil.nivel_tecnologico}\n`;
+  }
+  
+  if (perfil.interesses.length > 0) {
+    contexto += `Interesses: ${perfil.interesses.slice(-5).join(', ')}\n`;
+  }
+  
+  if (perfil.dificuldades.length > 0) {
+    contexto += `Dificuldades: ${perfil.dificuldades.slice(-3).join(', ')}\n`;
+  }
+  
+  if (perfil.ultimos_topicos.length > 0) {
+    const recentes = perfil.ultimos_topicos.slice(-3);
+    contexto += `Últimos tópicos: ${recentes.map(t => t.topico).join(', ')}\n`;
+  }
+  
+  if (perfil.proximos_passos.length > 0) {
+    contexto += `Próximos passos: ${perfil.proximos_passos.map(p => p.acao).join('; ')}\n`;
+  }
+  
+  return contexto;
+}
+
+/**
+ * Lista todos os perfis
+ */
+function listarPerfis() {
+  ensureDir();
+  const arquivos = fs.readdirSync(PERFIS_DIR).filter(f => f.endsWith('.json'));
+  
+  return arquivos.map(arquivo => {
+    const perfil = JSON.parse(fs.readFileSync(path.join(PERFIS_DIR, arquivo), 'utf8'));
+    return {
+      usuario_id: perfil.usuario_id,
+      nome: perfil.perfil.nome,
+      total_interacoes: perfil.metricas.total_interacoes,
+      ultima_interacao: perfil.metricas.ultima_interacao
+    };
+  });
+}
+
+module.exports = {
+  getPerfil,
+  atualizarPerfil,
+  registrarTopico,
+  adicionarProximoPasso,
+  gerarContextoResumido,
+  listarPerfis,
+  PERFIS_DIR
+};

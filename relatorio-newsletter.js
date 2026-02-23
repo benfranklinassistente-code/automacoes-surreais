@@ -1,6 +1,6 @@
 /**
  * 📊 RELATÓRIO DIÁRIO DA NEWSLETTER
- * Envia estatísticas para o Telegram às 20:00 UTC
+ * Envia estatísticas completas para o Telegram às 20:00 UTC
  */
 
 const brevo = require('./brevo.js');
@@ -10,45 +10,46 @@ async function gerarRelatorio() {
   console.log('📊 Gerando relatório diário...\n');
   
   try {
-    // Ler última campanha enviada
-    const ultimaCampanha = JSON.parse(fs.readFileSync('./ultima-campanha.json', 'utf8'));
-    const campaignId = ultimaCampanha.campaignId;
-    
-    if (!campaignId) {
-      return '⚠️ Nenhuma newsletter enviada ainda.';
-    }
-    
-    // Buscar estatísticas da campanha
-    const stats = await brevo.estatisticasCampanha(campaignId);
-    
-    if (!stats) {
-      return '⚠️ Campanha não encontrada.';
-    }
-    
-    const campStats = stats.statistics?.campaignStats?.[0] || {};
-    
-    // Calcular taxa de entrega
-    const taxaEntrega = campStats.sent > 0 
-      ? ((campStats.delivered / campStats.sent) * 100).toFixed(1) 
-      : 0;
-    
-    // Obter eventos de abertura em tempo real
+    // Buscar TODOS os eventos de email
     const eventos = await brevo.estatisticasEmails();
-    const eventosHoje = eventos.events.filter(e => 
-      e.subject === stats.subject && 
-      new Date(e.date).getDate() === new Date().getDate()
-    );
-    const aberturasUnicas = [...new Set(
-      eventosHoje.filter(e => e.event === 'opened').map(e => e.email)
-    )];
     
-    // Calcular taxa de abertura
-    const taxaAbertura = campStats.delivered > 0 
-      ? ((aberturasUnicas.length / campStats.delivered) * 100).toFixed(1) 
-      : 0;
+    // Filtrar eventos de HOJE
+    const hoje = new Date().toDateString();
+    const eventosHoje = eventos.events?.filter(e => 
+      new Date(e.date).toDateString() === hoje
+    ) || [];
+    
+    // Contabilizar por tipo
+    const aberturasHoje = eventosHoje.filter(e => e.event === 'opened');
+    const cliquesHoje = eventosHoje.filter(e => e.event === 'clicked');
+    
+    // Emails únicos que abriram
+    const emailsAberturas = [...new Set(aberturasHoje.map(e => e.email))];
+    
+    // Emails únicos que clicaram
+    const emailsCliques = [...new Set(cliquesHoje.map(e => e.email))];
+    
+    // Top engajados (mais aberturas)
+    const contagemAberturas = {};
+    aberturasHoje.forEach(e => {
+      contagemAberturas[e.email] = (contagemAberturas[e.email] || 0) + 1;
+    });
+    const topEngajados = Object.entries(contagemAberturas)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 3)
+      .map(([email, count]) => `• ${email.split('@')[0]}: ${count}x`);
+    
+    // Última campanha enviada (se existir)
+    let campanhaInfo = '';
+    try {
+      const ultimaCampanha = JSON.parse(fs.readFileSync('./ultima-campanha.json', 'utf8'));
+      if (ultimaCampanha.tema) {
+        campanhaInfo = `\n📰 *Última Newsletter:* ${ultimaCampanha.tema.toUpperCase()}`;
+      }
+    } catch (e) {}
     
     // Formatar data
-    const hoje = new Date().toLocaleDateString('pt-BR', {
+    const dataFormatada = new Date().toLocaleDateString('pt-BR', {
       weekday: 'long',
       day: 'numeric',
       month: 'long'
@@ -56,32 +57,32 @@ async function gerarRelatorio() {
     
     // Montar mensagem
     const mensagem = `📊 *RELATÓRIO DIÁRIO - 60maisNews*
-📅 ${hoje}
+📅 ${dataFormatada}
+${campanhaInfo}
 
 ━━━━━━━━━━━━━━━━━━━━
 
-📰 *TEMA:* ${stats.name.toUpperCase()}
-📧 ${stats.subject}
+👁️ *ABERTURAS HOJE:* ${aberturasHoje.length}
+📧 *Emails únicos:* ${emailsAberturas.length}
 
 ━━━━━━━━━━━━━━━━━━━━
 
-📤 *ENVIADOS:* ${campStats.sent || 0}
-✅ *ENTREGUES:* ${campStats.delivered || 0}
-📊 *Taxa de Entrega:* ${taxaEntrega}%
+👆 *CLIQUES HOJE:* ${cliquesHoje.length}
+📧 *Emails únicos:* ${emailsCliques.length}
 
 ━━━━━━━━━━━━━━━━━━━━
 
-👁️ *ABERTURAS:* ${aberturasUnicas.length} pessoas
-📊 *Taxa de Abertura:* ${taxaAbertura}%
+🏆 *TOP 3 MAIS ATIVOS:*
+${topEngajados.join('\n') || '• Sem dados suficientes'}
 
 ━━━━━━━━━━━━━━━━━━━━
 
-🖱️ *Cliques:* ${stats.statistics?.globalStats?.uniqueClicks || 0}
-🚫 *Descadastros:* ${stats.statistics?.globalStats?.unsubscriptions || 0}
+📈 *Engajamento:*
+${emailsAberturas.length > 0 ? `✅ ${emailsAberturas.length} pessoas engajadas hoje!` : '⚠️ Nenhuma abertura registrada'}
 
 ━━━━━━━━━━━━━━━━━━━━
 
-_Gerado automaticamente às 20:00 UTC_`;
+_Gerado automaticamente às 17:00 (Brasília)_`;
     
     return mensagem;
     

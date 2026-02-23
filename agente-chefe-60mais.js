@@ -25,6 +25,7 @@ const wordpress = require('./wordpress.js');
 const trello = require('./trello.js');
 const produtos = require('./produtos-60mais.js');
 const template = require('./newsletter-template.js');
+const historico = require('./historico-temas.js');
 const fs = require('fs');
 
 // Configuração
@@ -32,8 +33,9 @@ const CREDENCIAIS = JSON.parse(fs.readFileSync('./credenciais-60mais.json', 'utf
 const CALENDARIO = JSON.parse(fs.readFileSync('./calendario-comercial-60mais-2026.json', 'utf8'));
 const LISTA_BREVO_ID = 4;
 
-// Modo teste = true (só envia para Luis)
-const MODO_TESTE = true;
+// ⚠️ PRODUÇÃO ATIVO - Envia para lista real de assinantes
+// NUNCA mudar para true sem autorização do Luis
+const MODO_TESTE = false;
 
 // ═══════════════════════════════════════════════════════════════
 // 🔒 SISTEMA DE GARANTIA DE EXECUÇÃO
@@ -210,12 +212,14 @@ async function corrigirPassoFalho(nomePasso, erro) {
 /**
  * SUB-AGENTE 1: GANCHOS
  * Usa Brave Search + Google Analytics para descobrir tema
+ * NÃO REPETE tema nos últimos 30 dias
  */
 async function subAgenteGanchos() {
   console.log('\n🔍 PESQUISADOR DE PAUTAS: Buscando dados reais...\n');
   
   const brave = require('./brave-search.js');
   const analytics = require('./analytics-maton.js');
+  const historico = require('./historico-temas.js');
   
   const hoje = new Date();
   const data = hoje.toLocaleDateString('pt-BR', { weekday: 'long', day: 'numeric', month: 'long' });
@@ -229,40 +233,82 @@ async function subAgenteGanchos() {
     console.log(`   ℹ️ Sem resultados (usando Analytics como fallback)`);
   }
   
-  // 2. Google Analytics - posts populares
+  // 2. Google Analytics - lista ORDENADA de temas por popularidade
   console.log('   📈 Google Analytics...');
-  let temaAnalytics = null;
+  let listaTemasAnalytics = [];
   try {
-    const info = analytics.temaMaisPopular();
-    temaAnalytics = info.tema;
-    console.log(`   ✅ Tema popular: ${temaAnalytics}`);
+    listaTemasAnalytics = analytics.temasOrdenadosPorPopularidade();
+    console.log(`   ✅ ${listaTemasAnalytics.length} temas encontrados`);
+    listaTemasAnalytics.forEach(t => console.log(`      • ${t.tema}: ${t.views} views`));
   } catch (e) {
     console.log(`   ⚠️ Analytics indisponível: ${e.message}`);
   }
   
-  // 3. Selecionar tema (Analytics > Brave > Temporal)
-  let tema = temaAnalytics;
-  let fonte = 'Google Analytics';
-  let urgencia = 9;
+  // 3. Selecionar tema - percorrer lista ORDENADA e pegar primeiro DISPONÍVEL
+  let tema = null;
+  let fonte = '';
+  let urgencia = 7;
   
-  if (!tema && tendenciasBrave.length > 0) {
-    const titulos = tendenciasBrave.map(t => t.titulo?.toLowerCase() || '').join(' ');
-    if (titulos.includes('golpe') || titulos.includes('pix')) {
-      tema = 'golpe PIX';
-      urgencia = 10;
-    } else if (titulos.includes('whatsapp')) {
-      tema = 'WhatsApp segurança';
-    } else if (titulos.includes('videochamada')) {
-      tema = 'videochamada';
+  // Prioridade 1: Analytics - percorrer lista ordenada e pegar primeiro disponível
+  for (const item of listaTemasAnalytics) {
+    if (!historico.temaRecente(item.tema)) {
+      tema = item.tema;
+      fonte = 'Google Analytics';
+      urgencia = 9;
+      console.log(`   ✅ Tema disponível: ${tema}`);
+      break;
+    } else {
+      console.log(`   ⏭️ ${item.tema} já usado, pulando...`);
     }
-    fonte = 'Brave Search';
   }
   
+  // Prioridade 2: Brave Search (se não foi usado recentemente)
+  if (!tema && tendenciasBrave.length > 0) {
+    const titulos = tendenciasBrave.map(t => t.titulo?.toLowerCase() || '').join(' ');
+    
+    const temasCandidatos = [
+      { nome: 'golpe PIX', keys: ['golpe', 'pix'], urgencia: 10 },
+      { nome: 'WhatsApp segurança', keys: ['whatsapp'], urgencia: 8 },
+      { nome: 'videochamada', keys: ['videochamada', 'neto'], urgencia: 8 },
+      { nome: 'segurança celular', keys: ['segurança', 'celular'], urgencia: 7 },
+      { nome: 'aplicativo idoso', keys: ['aplicativo', 'app', 'idoso'], urgencia: 7 },
+      { nome: 'celular roubado', keys: ['roubado', 'roubo', 'perdi'], urgencia: 10 }
+    ];
+    
+    for (const candidato of temasCandidatos) {
+      const match = candidato.keys.some(k => titulos.includes(k));
+      if (match && !historico.temaRecente(candidato.nome)) {
+        tema = candidato.nome;
+        urgencia = candidato.urgencia;
+        fonte = 'Brave Search';
+        break;
+      }
+    }
+  }
+  
+  // Prioridade 3: Fallback temporal (escolher entre disponíveis)
   if (!tema) {
-    const diaSemana = hoje.getDay();
-    tema = (diaSemana === 0 || diaSemana === 6) ? 'videochamada' : 'WhatsApp segurança';
-    fonte = 'Fallback temporal';
-    urgencia = 8;
+    const status = historico.statusHistorico();
+    const disponiveis = status.disponiveis;
+    
+    if (disponiveis.length > 0) {
+      tema = disponiveis[0];
+      urgencia = 7;
+      fonte = 'Fallback temporal';
+    } else {
+      // TODOS foram usados - escolher o mais antigo
+      console.log('   ⚠️ TODOS os temas foram usados. Reutilizando o mais antigo...');
+      const h = historico.carregarHistorico();
+      if (h.temas.length > 0) {
+        const maisAntigo = h.temas.sort((a, b) => a.timestamp - b.timestamp)[0];
+        tema = maisAntigo.tema;
+        fonte = 'Reutilização (mais antigo)';
+        urgencia = 7;
+      } else {
+        tema = 'WhatsApp segurança';
+        fonte = 'Padrão';
+      }
+    }
   }
   
   const titulo = gerarTituloSEO(tema);
@@ -281,7 +327,12 @@ function gerarTituloSEO(tema) {
     'golpe PIX': 'Golpe do PIX: 5 Dicas para Se Proteger Hoje',
     'WhatsApp segurança': 'WhatsApp Seguro: 5 Dicas Essenciais para Idosos',
     'videochamada': 'Videochamada: Como Ver Seus Netos de Qualquer Lugar',
-    'aplicativo idoso': 'Aplicativos para Idosos: Os 5 Melhores e Gratuitos'
+    'aplicativo idoso': 'Aplicativos para Idosos: Os 5 Melhores e Gratuitos',
+    'celular roubado': 'Celular Roubado: O Que Fazer Passo a Passo',
+    'segurança celular': 'Segurança no Celular: Proteja Seus Dados',
+    'Google Fotos': 'Google Fotos: Salve Suas Memórias Para Sempre',
+    'senha banco': 'Senha do Banco: Como Proteger Seu Dinheiro',
+    'Facebook segurança': 'Facebook Seguro: Como Usar Sem Perigo'
   };
   return titulos[tema] || `${tema}: Guia Completo`;
 }
@@ -377,13 +428,193 @@ async function subAgenteWriter(temaInfo) {
       oQueMaisAprender: '🎓 No Mini Apps Essenciais você aprende todos! Acesse: 60maiscursos.com.br',
       seguranca: 'Só baixe apps da loja oficial!',
       score: 8.5
+    },
+    'celular roubado': {
+      titulo: '🚨 Celular Roubado: O Que Fazer Passo a Passo',
+      reflexao: '🌟 "Perder o celular é perder uma parte da nossa vida. Mas saber o que fazer pode minimizar o prejuízo e proteger seu dinheiro."',
+      story: 'Dona Carmem, 71 anos, estava no mercado quando sentiu a bolsa mais leve. O celular tinha sumido. O susto foi enorme! Seu primeiro pensamento foi: "Meu banco! Minhas fotos!" Ela entrou em pânico. Por sorte, a neta tinha ensinado o que fazer. Em menos de 1 hora, Dona Carmem já tinha bloqueado o celular, cancelado os cartões e impedido que os ladrões mexessem no seu banco. O celular foi perdido, mas o dinheiro dela estava seguro.',
+      lesson: 'Se seu celular for roubado, NÃO entre em pânico. Aja rápido seguindo os passos certos.',
+      tutorial: {
+        titulo: '🛡️ TUTORIAL: 7 Passos Se Seu Celular For Roubado',
+        introducao: 'Anote esses passos e guarde em casa!',
+        passos: [
+          { numero: 1, titulo: 'Bloqueie o chip na operadora', explicacao: 'Ligue na operadora e peça para bloquear.', acao: 'Vivo: 1058, Claro: 1052, TIM: 1056, Oi: 1057', exemplo: 'Ligue de outro telefone' },
+          { numero: 2, titulo: 'Apague o celular remotamente', explicacao: 'Use Find My (iPhone) ou Encontre Meu Dispositivo (Android).', acao: 'Acesse android.com/find ou icloud.com/find', exemplo: 'Clique em "Apagar dispositivo"' },
+          { numero: 3, titulo: 'Altere a senha do email', explicacao: 'O email é a chave para todas as contas.', acao: 'Entre no email e mude a senha.', exemplo: 'Gmail: Minha Conta → Segurança → Senha' },
+          { numero: 4, titulo: 'Ligue para o banco', explicacao: 'Peça para bloquear o acesso pelo app.', acao: 'Anote os telefones do banco em casa!', exemplo: 'Bradesco: 4002-0022, Itaú: 4004-4828' },
+          { numero: 5, titulo: 'Altere senhas das redes sociais', explicacao: 'WhatsApp, Facebook e Instagram.', acao: 'Ative seu WhatsApp em outro celular para derrubar o roubo.', exemplo: 'Isso impede golpes em seu nome' },
+          { numero: 6, titulo: 'Faça boletim de ocorrência', explicacao: 'Necessário para seguro e banco.', acao: 'Vá à delegacia ou use a Delegacia Eletrônica.', exemplo: 'Leve documento' },
+          { numero: 7, titulo: 'Avise sua família', explicacao: 'Para não caírem em golpes.', acao: 'Ligue para parentes próximos.', exemplo: 'Avise que perdeu o celular' }
+        ],
+        checklist: '☐ Bloqueei o chip\n☐ Apaguei o celular remotamente\n☐ Alterei senha do email\n☐ Liguei para o banco\n☐ Alterei redes sociais\n☐ Fiz boletim de ocorrência\n☐ Avisei a família'
+      },
+      oQueMaisAprender: '🎓 No Mini Segurança Digital você aprende a proteger seu celular ANTES de precisar! Acesse: 60maiscursos.com.br',
+      seguranca: '⚠️ PREVENÇÃO: Anote em casa os telefones do banco e configure o Encontre Meu Dispositivo ANTES de precisar!',
+      score: 9.5
     }
   };
   
-  const conteudo = conteudos[temaInfo.tema] || conteudos['WhatsApp segurança'];
+  // Verificar se tem conteúdo fixo
+  let conteudo = conteudos[temaInfo.tema];
+  
+  if (!conteudo) {
+    // Gerar conteúdo dinamicamente para temas novos
+    console.log(`   📝 Gerando conteúdo dinâmico para: ${temaInfo.tema}`);
+    conteudo = gerarConteudoDinamico(temaInfo.tema);
+  }
+  
   console.log(`✅ Conteúdo gerado | Score: ${conteudo.score}/10\n`);
   
   return { ...conteudo, tema: temaInfo.tema };
+}
+
+/**
+ * Gera conteúdo dinâmico para qualquer tema
+ */
+function gerarConteudoDinamico(tema) {
+  // Buscar informações do tema na lista
+  const listaTemas = require('./lista-temas.json');
+  const temaInfo = listaTemas.temas.find(t => t.tema === tema) || { urgencia: 7 };
+  
+  // Gerar título formatado
+  const titulo = gerarTituloSEO(tema);
+  
+  // Template de conteúdo genérico mas personalizado
+  const templates = {
+    seguranca: {
+      reflexao: '🌟 "Na era digital, proteger-se é cuidar de quem amamos."',
+      lesson: 'Aprenda a se proteger antes que aconteça com você.',
+      oQueMaisAprender: '🎓 No Mini Segurança Digital você aprende todas as dicas de proteção! Acesse: 60maiscursos.com.br',
+      seguranca: '⚠️ Sempre desconfie de mensagens de desconhecidos e nunca compartilhe senhas!'
+    },
+    comunicacao: {
+      reflexao: '🌟 "A tecnologia aproxima quem a gente ama."',
+      lesson: 'Com as ferramentas certas, você fica mais perto da família.',
+      oQueMaisAprender: '🎓 No Mini WhatsApp você aprende tudo sobre comunicação! Acesse: 60maiscursos.com.br',
+      seguranca: '📱 Use a tecnologia com confiança, mas sempre com cuidado!'
+    },
+    apps: {
+      reflexao: '🌟 "Os aplicativos certos podem transformar seu dia a dia."',
+      lesson: 'Aplicativos bem usados facilitam muito a vida!',
+      oQueMaisAprender: '🎓 No Mini Apps Essenciais você conhece os melhores apps! Acesse: 60maiscursos.com.br',
+      seguranca: '📱 Só baixe aplicativos da loja oficial do seu celular!'
+    },
+    banco: {
+      reflexao: '🌟 "Seu dinheiro seguro é sua tranquilidade garantida."',
+      lesson: 'Proteger suas finanças digitais é mais fácil do que parece.',
+      oQueMaisAprender: '🎓 No Mini Segurança Digital você aprende a proteger seu banco! Acesse: 60maiscursos.com.br',
+      seguranca: '🏦 Nunca passe senhas ou códigos por telefone ou mensagem!'
+    },
+    governo: {
+      reflexao: '🌟 "Seus direitos ao alcance de um clique."',
+      lesson: 'Os serviços digitais do governo podem facilitar sua vida.',
+      oQueMaisAprender: '🎓 Acesse o site oficial do governo para mais informações!',
+      seguranca: '🏛️ Só acesse sites oficiais do governo (terminam em .gov.br)!'
+    },
+    saude: {
+      reflexao: '🌟 "Cuidar da saúde ficou mais fácil com tecnologia."',
+      lesson: 'Use a tecnologia a favor da sua saúde.',
+      oQueMaisAprender: '🎓 Consulte sempre seu médico para dúvidas de saúde!',
+      seguranca: '🩺 Nunca se automedique baseado em informações da internet!'
+    },
+    manutencao: {
+      reflexao: '🌟 "Um celular bem cuidado dura muito mais."',
+      lesson: 'Manter o celular organizado melhora sua experiência.',
+      oQueMaisAprender: '🎓 No Mini Apps Essenciais você aprende dicas de manutenção! Acesse: 60maiscursos.com.br',
+      seguranca: '🔧 Faça backup regular das suas fotos e arquivos importantes!'
+    },
+    conectividade: {
+      reflexao: '🌟 "Conectado com o mundo, perto de quem importa."',
+      lesson: 'Entender sua internet ajuda a usar melhor.',
+      oQueMaisAprender: '🎓 No Mini Segurança Digital você aprende sobre conexões seguras! Acesse: 60maiscursos.com.br',
+      seguranca: '🌐 Evite usar Wi-Fi público para acessar banco ou fazer compras!'
+    },
+    compras: {
+      reflexao: '🌟 "Comprar online pode ser seguro e prático."',
+      lesson: 'Com os cuidados certos, você economiza sem sair de casa.',
+      oQueMaisAprender: '🎓 No Mini Segurança Digital você aprende a comprar com segurança! Acesse: 60maiscursos.com.br',
+      seguranca: '🛒 Só compre em sites conhecidos e verifique se tem cadeado no endereço!'
+    },
+    dicas: {
+      reflexao: '🌟 "Todo dia é dia de aprender algo novo."',
+      lesson: 'Pequenas dicas fazem grande diferença no dia a dia.',
+      oQueMaisAprender: '🎓 No 60maisPlay você encontra cursos para todas as dúvidas! Acesse: 60maiscursos.com.br',
+      seguranca: '💡 Dica: anote suas dúvidas e peça ajuda de alguém de confiança!'
+    },
+    tecnologia: {
+      reflexao: '🌟 "A tecnologia evolui, e você pode acompanhar."',
+      lesson: 'Não tenha medo de aprender coisas novas.',
+      oQueMaisAprender: '🎓 No 60maisPlay você encontra cursos sobre as novidades! Acesse: 60maiscursos.com.br',
+      seguranca: '🤖 Curiosidade e cuidado andam juntos no mundo digital!'
+    },
+    direitos: {
+      reflexao: '🌟 "Conhecer seus direitos é o primeiro passo para exercê-los."',
+      lesson: 'Você tem direitos como consumidor digital.',
+      oQueMaisAprender: '🎓 Procure o PROCON em caso de problemas com compras online!',
+      seguranca: '⚖️ Guarde sempre os comprovantes das suas compras digitais!'
+    }
+  };
+  
+  // Selecionar template baseado na categoria
+  const categoria = temaInfo.categoria || 'dicas';
+  const template = templates[categoria] || templates.dicas;
+  
+  // Gerar tutorial genérico baseado no tema
+  const tutorialPassos = gerarPassosTutorial(tema, categoria);
+  
+  return {
+    titulo: `📱 ${titulo}`,
+    reflexao: template.reflexao,
+    story: gerarStory(tema, categoria),
+    lesson: template.lesson,
+    tutorial: {
+      titulo: `🛠️ TUTORIAL: ${titulo}`,
+      introducao: `Vou te ensinar sobre ${tema} de forma simples!`,
+      passos: tutorialPassos,
+      checklist: tutorialPassos.map(p => `☐ ${p.titulo}`).join('\n')
+    },
+    oQueMaisAprender: template.oQueMaisAprender,
+    seguranca: template.seguranca,
+    score: temaInfo.urgencia ? temaInfo.urgencia / 10 * 10 : 8.0
+  };
+}
+
+/**
+ * Gera história personalizada para o tema
+ */
+function gerarStory(tema, categoria) {
+  const historias = {
+    seguranca: `Dona Maria, 70 anos, achava que golpes só aconteciam com outras pessoas. Até que um dia, recebeu uma mensagem sobre ${tema}. Por sorte, lembrou de uma dica que tinha lido e não caiu no golpe. Hoje ela diz: "Melhor prevenir do que remediar!"`,
+    comunicacao: `Seu João, 68 anos, queria falar mais com os netos que moravam longe. Um dia, descobriu como usar ${tema} e agora conversa toda semana com a família. A tecnologia aproximou quem o amor une.`,
+    apps: `Dona Carmem, 72 anos, achava que aplicativos eram complicados. Até que a neta mostrou como usar ${tema}. Hoje ela diz: "Se eu aprendi, qualquer um pode!"`,
+    banco: `Seu Antônio, 75 anos, tinha medo de usar o banco no celular. Depois que aprendeu sobre ${tema}, percebeu que podia fazer tudo com segurança, sem enfrentar filas.`,
+    governo: `Dona Lucia, 70 anos, sempre ia presencial resolver coisas do INSS. Quando descobriu ${tema}, começou a resolver tudo pelo celular, sem sair de casa.`,
+    saude: `Seu Carlos, 68 anos, aprendeu a usar ${tema} para acompanhar sua saúde. Agora marca consultas e vê resultados sem precisar ir ao médico para tudo.`,
+    manutencao: `Dona Tereza, 73 anos, reclamava que o celular estava lento. Aprendeu sobre ${tema} e agora o celular funciona como novo. "Era só organizar!", ela diz.`,
+    conectividade: `Seu Pedro, 69 anos, não entendia por que a internet falhava. Depois que aprendeu sobre ${tema}, consegue resolver sozinho a maioria dos problemas.`,
+    compras: `Dona Rita, 71 anos, tinha medo de comprar online. Aprendeu sobre ${tema} e agora compara preços sem sair de casa. "É mais fácil do que eu pensava!"`,
+    dicas: `Seu Manuel, 70 anos, achava que celular era só para ligar. Descobriu ${tema} e agora usa recursos que nem imaginava existir. "Todo dia aprendo algo novo!"`,
+    tecnologia: `Dona Lurdes, 74 anos, ouvia falar de novas tecnologias mas achava que não era para ela. Quando aprendeu sobre ${tema}, descobriu que tecnologia é para todas as idades.`,
+    direitos: `Seu Francisco, 72 anos, teve um problema com uma compra online. Descobriu sobre ${tema} e conseguiu resolver. "Conhecer seus direitos faz diferença!"`
+  };
+  
+  return historias[categoria] || historias.dicas;
+}
+
+/**
+ * Gera passos do tutorial baseado no tema
+ */
+function gerarPassosTutorial(tema, categoria) {
+  // Passos genéricos mas relevantes
+  const passosBase = [
+    { numero: 1, titulo: 'Entenda o básico', explicacao: `Primeiro, vamos entender o que é ${tema}.`, acao: 'Leia com calma e sem pressa.', exemplo: 'Anote suas dúvidas.' },
+    { numero: 2, titulo: 'Verifique as configurações', explicacao: 'Confira as opções disponíveis.', acao: 'Vá nas configurações do seu celular ou app.', exemplo: 'Geralmente fica no ícone de engrenagem.' },
+    { numero: 3, titulo: 'Peça ajuda se precisar', explicacao: 'Não tenha vergonha de perguntar.', acao: 'Chame um filho, neto ou amigo de confiança.', exemplo: 'Duas cabeças pensam melhor que uma!' },
+    { numero: 4, titulo: 'Pratique com calma', explicacao: 'A prática leva à perfeição.', acao: 'Tente fazer sozinho depois de aprender.', exemplo: 'Repetição ajuda a memorizar.' },
+    { numero: 5, titulo: 'Anote o que aprendeu', explicacao: 'Escrever ajuda a lembrar.', acao: 'Tenha um caderninho de anotações.', exemplo: 'Anote os passos principais.' }
+  ];
+  
+  return passosBase;
 }
 
 /**
@@ -654,12 +885,26 @@ async function agenteChefe() {
   
   const todosSucesso = relatorioIntegridade();
   
+  // ═══════════════════════════════════════════════════════════════
+  // PASSO 7: REGISTRAR TEMA NO HISTÓRICO (CRÍTICO PARA NÃO REPETIR)
+  // ═══════════════════════════════════════════════════════════════
+  if (todosSucesso) {
+    console.log('\n📝 REGISTRANDO TEMA NO HISTÓRICO...');
+    try {
+      historico.registrarTema(temaInfo.tema);
+      console.log(`   ✅ Tema "${temaInfo.tema}" registrado - não será repetido por 30 dias!\n`);
+    } catch (e) {
+      console.log(`   ⚠️ Erro ao registrar tema: ${e.message}\n`);
+    }
+  }
+  
   if (todosSucesso) {
     console.log('🎉 REDAÇÃO 60maisNews - EDIÇÃO CONCLUÍDA!');
     console.log(`   📰 Tema: ${temaInfo.tema}`);
     console.log(`   📧 Email: ${envio?.messageId || 'OK'}`);
     console.log(`   📝 Blog: ${blog?.url || 'Não publicado'}`);
     console.log(`   📋 Trello: ${trelloResult?.url || 'Não criado'}`);
+    console.log(`   📅 Tema bloqueado por 30 dias`);
   } else {
     console.log('⚠️ EDIÇÃO CONCLUÍDA COM RESSALVAS');
     console.log('   Alguns membros da equipe falharam mas a edição foi adaptada.');

@@ -7,10 +7,10 @@ const CONVEX_URL = "https://ceaseless-puma-611.convex.site";
 async function fetchRealData() {
   const now = Date.now();
   
-  // Buscar status do gateway
+  // Buscar status do gateway (porta correta: 18789)
   let gatewayStatus = "unknown";
   try {
-    const res = await fetch("http://localhost:3010/status");
+    const res = await fetch("http://localhost:18789/status");
     if (res.ok) gatewayStatus = "online";
   } catch {
     gatewayStatus = "offline";
@@ -19,7 +19,7 @@ async function fetchRealData() {
   // Buscar jobs do cron
   let cronJobs = [];
   try {
-    const res = await fetch("http://localhost:3010/cron/list");
+    const res = await fetch("http://localhost:18789/cron/list");
     if (res.ok) {
       const data = await res.json();
       cronJobs = data.jobs || [];
@@ -31,7 +31,7 @@ async function fetchRealData() {
   let totalTokens = 0;
   let totalContextTokens = 0;
   try {
-    const res = await fetch("http://localhost:3010/sessions/list");
+    const res = await fetch("http://localhost:18789/sessions/list");
     if (res.ok) {
       const data = await res.json();
       sessions = data.sessions || [];
@@ -47,7 +47,7 @@ async function fetchRealData() {
   // Buscar status de uso detalhado
   let usageData = null;
   try {
-    const res = await fetch("http://localhost:3010/status");
+    const res = await fetch("http://localhost:18789/status");
     if (res.ok) {
       usageData = await res.json();
     }

@@ -1,0 +1,621 @@
+{
+  "descricao": "Lista completa de temas para Newsletter 60maisNews",
+  "total": 100,
+  "temas": [
+    {
+      "id": 1,
+      "tema": "golpe PIX",
+      "categoria": "seguranca",
+      "urgencia": 10
+    },
+    {
+      "id": 2,
+      "tema": "WhatsApp segurança",
+      "categoria": "seguranca",
+      "urgencia": 9
+    },
+    {
+      "id": 3,
+      "tema": "celular roubado",
+      "categoria": "seguranca",
+      "urgencia": 10
+    },
+    {
+      "id": 4,
+      "tema": "senha banco",
+      "categoria": "seguranca",
+      "urgencia": 9
+    },
+    {
+      "id": 5,
+      "tema": "segurança celular",
+      "categoria": "seguranca",
+      "urgencia": 8
+    },
+    {
+      "id": 6,
+      "tema": "Facebook segurança",
+      "categoria": "seguranca",
+      "urgencia": 7
+    },
+    {
+      "id": 7,
+      "tema": "Instagram segurança",
+      "categoria": "seguranca",
+      "urgencia": 7
+    },
+    {
+      "id": 8,
+      "tema": "email falso",
+      "categoria": "seguranca",
+      "urgencia": 9
+    },
+    {
+      "id": 9,
+      "tema": "phishing",
+      "categoria": "seguranca",
+      "urgencia": 9
+    },
+    {
+      "id": 10,
+      "tema": "clonagem WhatsApp",
+      "categoria": "seguranca",
+      "urgencia": 10
+    },
+    {
+      "id": 11,
+      "tema": "golpe do amor",
+      "categoria": "seguranca",
+      "urgencia": 8
+    },
+    {
+      "id": 12,
+      "tema": "golpe falso sextape",
+      "categoria": "seguranca",
+      "urgencia": 8
+    },
+    {
+      "id": 13,
+      "tema": "ligação falsa banco",
+      "categoria": "seguranca",
+      "urgencia": 9
+    },
+    {
+      "id": 14,
+      "tema": "SMS falso",
+      "categoria": "seguranca",
+      "urgencia": 8
+    },
+    {
+      "id": 15,
+      "tema": "antivirus celular",
+      "categoria": "seguranca",
+      "urgencia": 7
+    },
+    {
+      "id": 16,
+      "tema": "videochamada",
+      "categoria": "comunicacao",
+      "urgencia": 7
+    },
+    {
+      "id": 17,
+      "tema": "aplicativo idoso",
+      "categoria": "apps",
+      "urgencia": 7
+    },
+    {
+      "id": 18,
+      "tema": "Google Fotos",
+      "categoria": "apps",
+      "urgencia": 6
+    },
+    {
+      "id": 19,
+      "tema": "Google Maps",
+      "categoria": "apps",
+      "urgencia": 6
+    },
+    {
+      "id": 20,
+      "tema": "YouTube",
+      "categoria": "apps",
+      "urgencia": 5
+    },
+    {
+      "id": 21,
+      "tema": "Netflix",
+      "categoria": "apps",
+      "urgencia": 4
+    },
+    {
+      "id": 22,
+      "tema": "Spotify",
+      "categoria": "apps",
+      "urgencia": 4
+    },
+    {
+      "id": 23,
+      "tema": "Uber",
+      "categoria": "apps",
+      "urgencia": 6
+    },
+    {
+      "id": 24,
+      "tema": "iFood",
+      "categoria": "apps",
+      "urgencia": 5
+    },
+    {
+      "id": 25,
+      "tema": "99Pop",
+      "categoria": "apps",
+      "urgencia": 6
+    },
+    {
+      "id": 26,
+      "tema": "farmacia popular app",
+      "categoria": "apps",
+      "urgencia": 7
+    },
+    {
+      "id": 27,
+      "tema": "app banco",
+      "categoria": "apps",
+      "urgencia": 8
+    },
+    {
+      "id": 28,
+      "tema": "Google Agenda",
+      "categoria": "apps",
+      "urgencia": 5
+    },
+    {
+      "id": 29,
+      "tema": "alarme remedio",
+      "categoria": "apps",
+      "urgencia": 7
+    },
+    {
+      "id": 30,
+      "tema": "Zoom",
+      "categoria": "apps",
+      "urgencia": 6
+    },
+    {
+      "id": 31,
+      "tema": "Google Meet",
+      "categoria": "apps",
+      "urgencia": 6
+    },
+    {
+      "id": 32,
+      "tema": "Telegram",
+      "categoria": "apps",
+      "urgencia": 5
+    },
+    {
+      "id": 33,
+      "tema": "Signal",
+      "categoria": "apps",
+      "urgencia": 5
+    },
+    {
+      "id": 34,
+      "tema": "Amazon Prime",
+      "categoria": "apps",
+      "urgencia": 4
+    },
+    {
+      "id": 35,
+      "tema": "Globoplay",
+      "categoria": "apps",
+      "urgencia": 4
+    },
+    {
+      "id": 36,
+      "tema": "WhatsApp Web",
+      "categoria": "comunicacao",
+      "urgencia": 6
+    },
+    {
+      "id": 37,
+      "tema": "grupo WhatsApp",
+      "categoria": "comunicacao",
+      "urgencia": 5
+    },
+    {
+      "id": 38,
+      "tema": "enviar foto WhatsApp",
+      "categoria": "comunicacao",
+      "urgencia": 5
+    },
+    {
+      "id": 39,
+      "tema": "audio WhatsApp",
+      "categoria": "comunicacao",
+      "urgencia": 5
+    },
+    {
+      "id": 40,
+      "tema": "figurinha WhatsApp",
+      "categoria": "comunicacao",
+      "urgencia": 4
+    },
+    {
+      "id": 41,
+      "tema": "pix",
+      "categoria": "banco",
+      "urgencia": 8
+    },
+    {
+      "id": 42,
+      "tema": "pix agendado",
+      "categoria": "banco",
+      "urgencia": 7
+    },
+    {
+      "id": 43,
+      "tema": "pix automatico",
+      "categoria": "banco",
+      "urgencia": 7
+    },
+    {
+      "id": 44,
+      "tema": "transferencia banco",
+      "categoria": "banco",
+      "urgencia": 7
+    },
+    {
+      "id": 45,
+      "tema": "pagar conta online",
+      "categoria": "banco",
+      "urgencia": 7
+    },
+    {
+      "id": 46,
+      "tema": "extrato banco",
+      "categoria": "banco",
+      "urgencia": 6
+    },
+    {
+      "id": 47,
+      "tema": "cartao virtual",
+      "categoria": "banco",
+      "urgencia": 6
+    },
+    {
+      "id": 48,
+      "tema": "Nubank",
+      "categoria": "banco",
+      "urgencia": 6
+    },
+    {
+      "id": 49,
+      "tema": "inss digital",
+      "categoria": "governo",
+      "urgencia": 8
+    },
+    {
+      "id": 50,
+      "tema": "meu inss",
+      "categoria": "governo",
+      "urgencia": 8
+    },
+    {
+      "id": 51,
+      "tema": "auxilio brasil",
+      "categoria": "governo",
+      "urgencia": 7
+    },
+    {
+      "id": 52,
+      "tema": "saude digital",
+      "categoria": "saude",
+      "urgencia": 7
+    },
+    {
+      "id": 53,
+      "tema": "consulta online",
+      "categoria": "saude",
+      "urgencia": 6
+    },
+    {
+      "id": 54,
+      "tema": "receita federal",
+      "categoria": "governo",
+      "urgencia": 6
+    },
+    {
+      "id": 55,
+      "tema": "declarar imposto renda",
+      "categoria": "governo",
+      "urgencia": 7
+    },
+    {
+      "id": 56,
+      "tema": "senha forte",
+      "categoria": "seguranca",
+      "urgencia": 8
+    },
+    {
+      "id": 57,
+      "tema": "guardar senhas",
+      "categoria": "seguranca",
+      "urgencia": 8
+    },
+    {
+      "id": 58,
+      "tema": "biometria",
+      "categoria": "seguranca",
+      "urgencia": 7
+    },
+    {
+      "id": 59,
+      "tema": "reconhecimento facial",
+      "categoria": "seguranca",
+      "urgencia": 7
+    },
+    {
+      "id": 60,
+      "tema": "backup celular",
+      "categoria": "manutencao",
+      "urgencia": 7
+    },
+    {
+      "id": 61,
+      "tema": "limpar celular",
+      "categoria": "manutencao",
+      "urgencia": 5
+    },
+    {
+      "id": 62,
+      "tema": "atualizar celular",
+      "categoria": "manutencao",
+      "urgencia": 6
+    },
+    {
+      "id": 63,
+      "tema": "armazenamento cheio",
+      "categoria": "manutencao",
+      "urgencia": 6
+    },
+    {
+      "id": 64,
+      "tema": "bateria celular",
+      "categoria": "manutencao",
+      "urgencia": 5
+    },
+    {
+      "id": 65,
+      "tema": "celular lento",
+      "categoria": "manutencao",
+      "urgencia": 5
+    },
+    {
+      "id": 66,
+      "tema": "internet celular",
+      "categoria": "conectividade",
+      "urgencia": 6
+    },
+    {
+      "id": 67,
+      "tema": "wi-fi",
+      "categoria": "conectividade",
+      "urgencia": 6
+    },
+    {
+      "id": 68,
+      "tema": "senha wi-fi",
+      "categoria": "conectividade",
+      "urgencia": 6
+    },
+    {
+      "id": 69,
+      "tema": "dados moveis",
+      "categoria": "conectividade",
+      "urgencia": 6
+    },
+    {
+      "id": 70,
+      "tema": "4g 5g",
+      "categoria": "conectividade",
+      "urgencia": 5
+    },
+    {
+      "id": 71,
+      "tema": "comprar online",
+      "categoria": "compras",
+      "urgencia": 6
+    },
+    {
+      "id": 72,
+      "tema": "Mercado Livre",
+      "categoria": "compras",
+      "urgencia": 5
+    },
+    {
+      "id": 73,
+      "tema": "Amazon compras",
+      "categoria": "compras",
+      "urgencia": 5
+    },
+    {
+      "id": 74,
+      "tema": "Shopee",
+      "categoria": "compras",
+      "urgencia": 5
+    },
+    {
+      "id": 75,
+      "tema": "golpe compras online",
+      "categoria": "seguranca",
+      "urgencia": 8
+    },
+    {
+      "id": 76,
+      "tema": "rastrear pedido",
+      "categoria": "compras",
+      "urgencia": 5
+    },
+    {
+      "id": 77,
+      "tema": "trocar celular",
+      "categoria": "dicas",
+      "urgencia": 5
+    },
+    {
+      "id": 78,
+      "tema": "escolher celular",
+      "categoria": "dicas",
+      "urgencia": 5
+    },
+    {
+      "id": 79,
+      "tema": "smartphone idoso",
+      "categoria": "dicas",
+      "urgencia": 6
+    },
+    {
+      "id": 80,
+      "tema": "celular com botao",
+      "categoria": "dicas",
+      "urgencia": 6
+    },
+    {
+      "id": 81,
+      "tema": "letra grande celular",
+      "categoria": "dicas",
+      "urgencia": 6
+    },
+    {
+      "id": 82,
+      "tema": "acessibilidade celular",
+      "categoria": "dicas",
+      "urgencia": 7
+    },
+    {
+      "id": 83,
+      "tema": "voz celular",
+      "categoria": "dicas",
+      "urgencia": 6
+    },
+    {
+      "id": 84,
+      "tema": "dictado voz",
+      "categoria": "dicas",
+      "urgencia": 5
+    },
+    {
+      "id": 85,
+      "tema": "Siri Google Assistente",
+      "categoria": "dicas",
+      "urgencia": 6
+    },
+    {
+      "id": 86,
+      "tema": "Alexa",
+      "categoria": "dicas",
+      "urgencia": 5
+    },
+    {
+      "id": 87,
+      "tema": "smart tv",
+      "categoria": "dicas",
+      "urgencia": 5
+    },
+    {
+      "id": 88,
+      "tema": "Netflix smart tv",
+      "categoria": "dicas",
+      "urgencia": 4
+    },
+    {
+      "id": 89,
+      "tema": "YouTube tv",
+      "categoria": "dicas",
+      "urgencia": 4
+    },
+    {
+      "id": 90,
+      "tema": "email gmail",
+      "categoria": "comunicacao",
+      "urgencia": 6
+    },
+    {
+      "id": 91,
+      "tema": "criar email",
+      "categoria": "comunicacao",
+      "urgencia": 6
+    },
+    {
+      "id": 92,
+      "tema": "spam email",
+      "categoria": "seguranca",
+      "urgencia": 7
+    },
+    {
+      "id": 93,
+      "tema": "scam",
+      "categoria": "seguranca",
+      "urgencia": 8
+    },
+    {
+      "id": 94,
+      "tema": "deepfake",
+      "categoria": "seguranca",
+      "urgencia": 9
+    },
+    {
+      "id": 95,
+      "tema": "inteligencia artificial",
+      "categoria": "tecnologia",
+      "urgencia": 6
+    },
+    {
+      "id": 96,
+      "tema": "ChatGPT idoso",
+      "categoria": "tecnologia",
+      "urgencia": 5
+    },
+    {
+      "id": 97,
+      "tema": "estelionato digital",
+      "categoria": "seguranca",
+      "urgencia": 9
+    },
+    {
+      "id": 98,
+      "tema": "policia digital",
+      "categoria": "seguranca",
+      "urgencia": 7
+    },
+    {
+      "id": 99,
+      "tema": "denunciar golpe",
+      "categoria": "seguranca",
+      "urgencia": 7
+    },
+    {
+      "id": 100,
+      "tema": "consumidor digital",
+      "categoria": "direitos",
+      "urgencia": 6
+    }
+  ],
+  "categorias": [
+    "seguranca",
+    "comunicacao",
+    "apps",
+    "banco",
+    "governo",
+    "saude",
+    "manutencao",
+    "conectividade",
+    "compras",
+    "dicas",
+    "tecnologia",
+    "direitos"
+  ],
+  "atualizado": "2026-02-19T11:50:00.000Z"
+}

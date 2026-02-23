@@ -101,6 +101,7 @@ await createMemory({
 
 | Item | URL |
 |------|-----|
+| **Mission Control (Público)** | https://mission-control-60mais.loca.lt |
 | Convex Dashboard | https://ceaseless-puma-611.convex.cloud |
 | HTTP Actions API | https://ceaseless-puma-611.convex.site |
 | Local Dev | http://localhost:3000 |

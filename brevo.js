@@ -42,6 +42,42 @@ async function enviarEmail({ to, subject, htmlContent, textContent, sender }) {
 }
 
 /**
+ * Enviar email com anexo
+ */
+async function enviarEmailComAnexo({ to, subject, htmlContent, textContent, sender, attachment }) {
+  const body = {
+    sender: sender || { name: 'Ben - Assistente', email: 'benjamin@60maiscursos.com.br' },
+    to: [{ email: to }],
+    subject: subject,
+    htmlContent: htmlContent,
+    textContent: textContent || '',
+    attachment: [{
+      name: attachment.name,
+      content: attachment.content,
+      contentType: attachment.contentType || 'application/octet-stream'
+    }]
+  };
+
+  const response = await fetch(`${BREVO_API_URL}/smtp/email`, {
+    method: 'POST',
+    headers: {
+      'accept': 'application/json',
+      'content-type': 'application/json',
+      'api-key': BREVO_API_KEY
+    },
+    body: JSON.stringify(body)
+  });
+
+  const data = await response.json();
+  
+  if (!response.ok) {
+    throw new Error(data.message || 'Erro ao enviar email com anexo');
+  }
+  
+  return data;
+}
+
+/**
  * Listar contatos
  */
 async function listarContatos(limit = 50, offset = 0) {
@@ -334,13 +370,22 @@ async function enviarCampanha(campaignId) {
     }
   });
 
-  const data = await response.json();
-  
-  if (!response.ok) {
-    throw new Error(data.message || 'Erro ao enviar campanha');
+  // Tratar resposta vazia (Brevo retorna 204 em sucesso)
+  const text = await response.text();
+  let data = {};
+  if (text && text.trim()) {
+    try {
+      data = JSON.parse(text);
+    } catch (e) {
+      // Resposta não é JSON, mas se status OK, está correto
+    }
   }
   
-  return data;
+  if (!response.ok) {
+    throw new Error(data.message || `Erro ao enviar campanha (status ${response.status})`);
+  }
+  
+  return { success: true, campaignId };
 }
 
 /**
@@ -396,6 +441,7 @@ async function criarEEnviarCampanha({ tema, subject, htmlContent, textContent, l
 
 module.exports = {
   enviarEmail,
+  enviarEmailComAnexo,
   listarContatos,
   criarContato,
   estatisticasEmails,

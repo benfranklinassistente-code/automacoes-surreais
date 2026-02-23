@@ -247,9 +247,34 @@ O sistema **NÃO REPETE** o mesmo tema por 30 dias:
 
 ## 📋 PRÓXIMOS PASSOS (Opcionais)
 
-1. **Produção** - Mudar `MODO_TESTE = false` para lista real
-2. **IA Dinâmica** - Investigar sessions_spawn timeout
-3. **Trello** - Corrigir erro menor na publicação
+1. **Trello** - Corrigir erro menor na publicação
+
+---
+
+## ⚠️ INFORMAÇÕES CRÍTICAS - NÃO ESQUECER
+
+### 📚 Lista de 100 Temas
+- **Arquivo:** `/root/.openclaw/workspace/lista-temas.json`
+- **Total:** 100 temas organizados em 12 categorias
+- **Integração:** ✅ Já está integrada no `historico-temas.js`
+- **Sistema:** Não repete tema por 30 dias
+
+### ⏰ CRON Jobs Ativos
+
+| Job | Horário | Comando |
+|-----|---------|---------|
+| Newsletter Diária | 06:06 Brasília | `node agente-chefe-60mais.js` |
+| Relatório Telegram | 17:00 Brasília | Envia para Luis (id: 1007517562) |
+| Monitor Manhã | 06:00 Brasília | `node monitor-emails.js` |
+| Monitor Tarde | 15:00 Brasília | `node monitor-emails.js` |
+
+### 🔧 Arquivos Principais
+- `ganchos-tema.js` - Seleciona tema (usa lista de 100)
+- `historico-temas.js` - Controla repetição 30 dias
+- `agente-chefe-60mais.js` - Executa fluxo completo
+- `lista-temas.json` - **100 temas disponíveis**
+
+**⚠️ IMPORTANTE:** Este sistema está em PRODUÇÃO e não deve ser alterado sem necessidade.
 
 ---
 
@@ -297,5 +322,38 @@ Ver documentação completa: `memory/mission-control.md`
 
 ---
 
-*Documentação atualizada por Ben - 17/02/2026*
+## 🧠 PROBLEM SOLVER - Metodologia
+
+> "Sempre que houver um problema, buscar skills existentes. Se não encontrar, criar uma nova e resolver."
+
+### Fluxo de Resolução
+
+```
+1. IDENTIFICAR → Qual é o problema?
+2. BUSCAR → Verificar em /skills/ e memory/
+3. AVALIAR → Encontrou? Executar. Não? Criar.
+4. CRIAR → Implementar + Testar
+5. DOCUMENTAR → Salvar em /skills/ + memory/
+```
+
+### Skills Disponíveis
+
+| Skill | Função | Arquivo |
+|-------|--------|---------|
+| Problem Solver | Metodologia de resolução | `problem-solver.md` |
+| Skill Manager | Gerenciar skills | `skill-manager.js` |
+| YouTube Channel | Listar vídeos de canais | `youtube-channel.js` |
+
+### Local
+
+```
+/root/.openclaw/workspace/skills/
+├── problem-solver.md
+├── skill-manager.js
+└── youtube-channel.js
+```
+
+---
+
+*Documentação atualizada por Ben - 22/02/2026*
 *Sistema 60maisNews v2.0*

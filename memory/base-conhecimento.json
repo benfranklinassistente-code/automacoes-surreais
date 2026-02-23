@@ -1,0 +1,150 @@
+{
+  "fatos": [
+    {
+      "id": "fato-1771849792167-yu5ixthan",
+      "tipo": "curso",
+      "conteudo": "WhatsApp sem Mistérios - 5 aulas",
+      "tags": [
+        "whatsapp",
+        "curso"
+      ],
+      "fonte": "sistema",
+      "data": 1771849792167,
+      "acessos": 0
+    },
+    {
+      "id": "fato-1771849792167-nud4s3mly",
+      "tipo": "curso",
+      "conteudo": "Compras na Internet - 5 aulas",
+      "tags": [
+        "internet",
+        "compras",
+        "curso"
+      ],
+      "fonte": "sistema",
+      "data": 1771849792167,
+      "acessos": 0
+    },
+    {
+      "id": "fato-1771849792167-xr4sqb94t",
+      "tipo": "curso",
+      "conteudo": "Inteligência Artificial - 3 aulas",
+      "tags": [
+        "ia",
+        "chatgpt",
+        "curso"
+      ],
+      "fonte": "sistema",
+      "data": 1771849792167,
+      "acessos": 0
+    },
+    {
+      "id": "fato-1771849792168-cx02wpspm",
+      "tipo": "curso",
+      "conteudo": "SmartPhone - 3 aulas",
+      "tags": [
+        "celular",
+        "smartphone",
+        "curso"
+      ],
+      "fonte": "sistema",
+      "data": 1771849792168,
+      "acessos": 0
+    },
+    {
+      "id": "fato-1771849792168-meva9iw4b",
+      "tipo": "dica",
+      "conteudo": "Nunca compartilhe código do WhatsApp",
+      "tags": [
+        "seguranca",
+        "whatsapp",
+        "golpe"
+      ],
+      "fonte": "sistema",
+      "data": 1771849792168,
+      "acessos": 0
+    },
+    {
+      "id": "fato-1771849792168-6hgznm203",
+      "tipo": "dica",
+      "conteudo": "Use senhas de 8+ caracteres com letras, números e símbolos",
+      "tags": [
+        "senha",
+        "seguranca"
+      ],
+      "fonte": "sistema",
+      "data": 1771849792168,
+      "acessos": 0
+    },
+    {
+      "id": "fato-1771849792168-9xnhdtvfr",
+      "tipo": "dica",
+      "conteudo": "Verifique o cadeado do site antes de colocar dados",
+      "tags": [
+        "seguranca",
+        "internet"
+      ],
+      "fonte": "sistema",
+      "data": 1771849792168,
+      "acessos": 0
+    },
+    {
+      "id": "fato-1771849792168-k5dpho76p",
+      "tipo": "dica",
+      "conteudo": "Não clique em links suspeitos recebidos por mensagem",
+      "tags": [
+        "seguranca",
+        "golpe"
+      ],
+      "fonte": "sistema",
+      "data": 1771849792168,
+      "acessos": 0
+    },
+    {
+      "id": "fato-1771849792168-0du5salr0",
+      "tipo": "problema",
+      "conteudo": "Celular lento - fechar apps, apagar fotos, reiniciar",
+      "tags": [
+        "celular",
+        "lento",
+        "problema"
+      ],
+      "fonte": "sistema",
+      "data": 1771849792168,
+      "acessos": 0
+    },
+    {
+      "id": "fato-1771849792169-9qnkbgt6t",
+      "tipo": "problema",
+      "conteudo": "Sem internet - reiniciar roteador, verificar conta",
+      "tags": [
+        "internet",
+        "wifi",
+        "problema"
+      ],
+      "fonte": "sistema",
+      "data": 1771849792169,
+      "acessos": 0
+    },
+    {
+      "id": "fato-1771849792169-30rjndvc7",
+      "tipo": "solucao",
+      "conteudo": "Para enviar foto no WhatsApp: clique no clipe, escolha câmera, envie",
+      "tags": [
+        "whatsapp",
+        "foto",
+        "tutorial"
+      ],
+      "fonte": "sistema",
+      "data": 1771849792169,
+      "acessos": 0
+    }
+  ],
+  "regras": [],
+  "ultimas_atualizacoes": {
+    "curso": 1771849792168,
+    "dica": 1771849792168,
+    "problema": 1771849792169,
+    "solucao": 1771849792169
+  }
+}

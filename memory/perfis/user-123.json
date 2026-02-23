@@ -1,0 +1,18 @@
+{
+  "usuario_id": "user-123",
+  "criado_em": 1771849792176,
+  "atualizado_em": 1771849792176,
+  "perfil": {
+    "nome": null,
+    "nivel_tecnologico": null,
+    "faixa_etaria": null
+  },
+  "interesses": [],
+  "dificuldades": [],
+  "ultimos_topicos": [],
+  "proximos_passos": [],
+  "metricas": {
+    "total_interacoes": 0,
+    "ultima_interacao": null
+  }
+}

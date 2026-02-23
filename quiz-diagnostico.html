@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Descubra seu Nível de Tecnologia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .quiz-container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transition: width 0.3s ease;
+            border-radius: 10px;
+        }
+        
+        .question {
+            display: none;
+        }
+        
+        .question.active {
+            display: block;
+        }
+        
+        .question h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 20px;
+            line-height: 1.5;
+        }
+        
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .option {
+            padding: 15px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 16px;
+        }
+        
+        .option:hover {
+            border-color: #667eea;
+            background: #f8f9ff;
+        }
+        
+        .option.selected {
+            border-color: #667eea;
+            background: linear-gradient(135deg, #667eea20, #764ba220);
+        }
+        
+        .btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: transform 0.2s;
+        }
+        
+        .btn:hover {
+            transform: scale(1.02);
+        }
+        
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        /* Resultado */
+        .result {
+            display: none;
+            text-align: center;
+        }
+        
+        .result.active {
+            display: block;
+        }
+        
+        .result-level {
+            font-size: 80px;
+            margin-bottom: 20px;
+        }
+        
+        .result h2 {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+        
+        .result p {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .cta-box {
+            background: linear-gradient(135deg, #667eea10, #764ba210);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+        
+        .cta-box h3 {
+            color: #764ba2;
+            margin-bottom: 10px;
+        }
+        
+        .cta-box ul {
+            text-align: left;
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+        
+        .cta-box li {
+            margin: 8px 0;
+            color: #555;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #333;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 10px;
+            transition: transform 0.2s;
+        }
+        
+        .cta-btn:hover {
+            transform: scale(1.05);
+        }
+        
+        .form-capture {
+            background: #f8f9ff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        .form-capture input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .form-capture input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>📱 Quiz de Tecnologia</h1>
+        <p class="subtitle">Descubra seu nível em apenas 2 minutos!</p>
+        
+        <div class="progress-bar">
+            <div class="progress-fill" id="progress"></div>
+        </div>
+        
+        <!-- Pergunta 1 -->
+        <div class="question active" id="q1">
+            <h2>1. Com que frequência você usa o celular no dia a dia?</h2>
+            <div class="options">
+                <div class="option" data-value="1" onclick="selectOption(this)">Apenas para ligações</div>
+                <div class="option" data-value="2" onclick="selectOption(this)">Para WhatsApp e algumas fotos</div>
+                <div class="option" data-value="3" onclick="selectOption(this)">Para tudo: banco, compras, fotos</div>
+                <div class="option" data-value="4" onclick="selectOption(this)">Sou viciado(a)! Uso o dia todo</div>
+            </div>
+        </div>
+        
+        <!-- Pergunta 2 -->
+        <div class="question" id="q2">
+            <h2>2. Já caiu em algum golpe ou golpe tentou aplicar no seu?</h2>
+            <div class="options">
+                <div class="option" data-value="4" onclick="selectOption(this)">Não, nunca passou perto</div>
+                <div class="option" data-value="3" onclick="selectOption(this)">Já recebi mensagens suspeitas, mas não caí</div>
+                <div class="option" data-value="2" onclick="selectOption(this)">Quase caí, mas desconfiei a tempo</div>
+                <div class="option" data-value="1" onclick="selectOption(this)">Sim, já fui vítima de golpe</div>
+            </div>
+        </div>
+        
+        <!-- Pergunta 3 -->
+        <div class="question" id="q3">
+            <h2>3. Você sabe como proteger suas senhas?</h2>
+            <div class="options">
+                <div class="option" data-value="1" onclick="selectOption(this)">Uso a mesma senha para tudo</div>
+                <div class="option" data-value="2" onclick="selectOption(this)">Tenho 2 ou 3 senhas diferentes</div>
+                <div class="option" data-value="3" onclick="selectOption(this)">Uso senhas diferentes mas esqueço às vezes</div>
+                <div class="option" data-value="4" onclick="selectOption(this)">Uso gerenciador de senhas e senhas fortes</div>
+            </div>
+        </div>
+        
+        <!-- Pergunta 4 -->
+        <div class="question" id="q4">
+            <h2>4. Como você faz compras online?</h2>
+            <div class="options">
+                <div class="option" data-value="1" onclick="selectOption(this)">Não compro online, tenho medo</div>
+                <div class="option" data-value="2" onclick="selectOption(this)">Peço para alguém fazer por mim</div>
+                <div class="option" data-value="3" onclick="selectOption(this)">Compro, mas com muito cuidado</div>
+                <div class="option" data-value="4" onclick="selectOption(this)">Compro tranquilo(a), sei identificar sites seguros</div>
+            </div>
+        </div>
+        
+        <!-- Pergunta 5 -->
+        <div class="question" id="q5">
+            <h2>5. Você sabe usar apps como Uber, iFood, bancos?</h2>
+            <div class="options">
+                <div class="option" data-value="1" onclick="selectOption(this)">Não uso nenhum desses</div>
+                <div class="option" data-value="2" onclick="selectOption(this)">Uso 1 ou 2 com dificuldade</div>
+                <div class="option" data-value="3" onclick="selectOption(this)">Uso vários, mas às vezes travo</div>
+                <div class="option" data-value="4" onclick="selectOption(this)">Domino todos que preciso</div>
+            </div>
+        </div>
+        
+        <!-- Pergunta 6 -->
+        <div class="question" id="q6">
+            <h2>6. Se seu WhatsApp fosse clonado, você saberia o que fazer?</h2>
+            <div class="options">
+                <div class="option" data-value="1" onclick="selectOption(this)">Não faria ideia do que fazer</div>
+                <div class="option" data-value="2" onclick="selectOption(this)">Ligaria para alguém pedir ajuda</div>
+                <div class="option" data-value="3" onclick="selectOption(this)">Sabia que tem um jeito, mas não lembraria</div>
+                <div class="option" data-value="4" onclick="selectOption(this)">Sim! Sei todos os passos para recuperar</div>
+            </div>
+        </div>
+        
+        <!-- Pergunta 7 -->
+        <div class="question" id="q7">
+            <h2>7. Como você aprende coisas novas no celular?</h2>
+            <div class="options">
+                <div class="option" data-value="1" onclick="selectOption(this)">Peço para filhos/netos me ensinarem</div>
+                <div class="option" data-value="2" onclick="selectOption(this)">Tento sozinho(a), mas é difícil</div>
+                <div class="option" data-value="3" onclick="selectOption(this)">Busco vídeos no YouTube</div>
+                <div class="option" data-value="4" onclick="selectOption(this)">Consigo aprender sozinho(a) facilmente</div>
+            </div>
+        </div>
+        
+        <!-- Pergunta 8 -->
+        <div class="question" id="q8">
+            <h2>8. O que mais te preocupa no mundo digital?</h2>
+            <div class="options">
+                <div class="option" data-value="1" onclick="selectOption(this)">Tudo! Tenho muito medo</div>
+                <div class="option" data-value="2" onclick="selectOption(this)">Golpes e perda de dinheiro</div>
+                <div class="option" data-value="3" onclick="selectOption(this)">Privacidade e dados pessoais</div>
+                <div class="option" data-value="4" onclick="selectOption(this)">Já me sinto seguro(a), não me preocupo tanto</div>
+            </div>
+        </div>
+        
+        <!-- Pergunta 9 -->
+        <div class="question" id="q9">
+            <h2>9. Você faz backup das suas fotos e arquivos?</h2>
+            <div class="options">
+                <div class="option" data-value="1" onclick="selectOption(this)">Não sei o que é backup</div>
+                <div class="option" data-value="2" onclick="selectOption(this)">Já perdi fotos por não fazer</div>
+                <div class="option" data-value="3" onclick="selectOption(this)">Faço de vez em quando</div>
+                <div class="option" data-value="4" onclick="selectOption(this)">Tenho backup automático na nuvem</div>
+            </div>
+        </div>
+        
+        <!-- Pergunta 10 -->
+        <div class="question" id="q10">
+            <h2>10. O que gostaria de aprender mais sobre tecnologia?</h2>
+            <div class="options">
+                <div class="option" data-value="1" onclick="selectOption(this)">Segurança e proteção contra golpes</div>
+                <div class="option" data-value="2" onclick="selectOption(this)">Usar melhor o WhatsApp</div>
+                <div class="option" data-value="3" onclick="selectOption(this)">Fazer compras online com segurança</div>
+                <div class="option" data-value="4" onclick="selectOption(this)">Tudo! Quero me sentir confiante</div>
+            </div>
+        </div>
+        
+        <!-- Resultado -->
+        <div class="result" id="result">
+            <div class="result-level" id="resultEmoji">🎯</div>
+            <h2 id="resultTitle">Seu Nível</h2>
+            <p id="resultText">Descrição do resultado</p>
+            
+            <div class="cta-box">
+                <h3>🎯 Recomendação Personalizada</h3>
+                <p id="recommendation">Baseado nas suas respostas...</p>
+                <ul id="benefits">
+                    <li>Aulas práticas e didáticas</li>
+                    <li>Suporte humanizado</li>
+                    <li>Conteúdo para pessoas 60+</li>
+                </ul>
+                <a href="#" class="cta-btn" id="ctaBtn">QUERO APRENDER AGORA!</a>
+            </div>
+            
+            <div class="form-capture">
+                <h4 style="margin-bottom: 15px;">📧 Receba seu resultado completo por email:</h4>
+                <input type="text" id="userName" placeholder="Seu nome">
+                <input type="email" id="userEmail" placeholder="Seu melhor email">
+                <input type="tel" id="userWhatsapp" placeholder="WhatsApp (opcional)">
+                <button class="btn" onclick="submitForm()">RECEBER RESULTADO</button>
+            </div>
+        </div>
+        
+        <button class="btn" id="nextBtn" onclick="nextQuestion()" disabled>Próxima Pergunta</button>
+    </div>
+    
+    <script>
+        let currentQuestion = 1;
+        let answers = [];
+        const totalQuestions = 10;
+        
+        function selectOption(element) {
+            // Remove seleção anterior
+            const options = element.parentElement.querySelectorAll('.option');
+            options.forEach(opt => opt.classList.remove('selected'));
+            
+            // Seleciona atual
+            element.classList.add('selected');
+            
+            // Salva resposta
+            answers[currentQuestion - 1] = parseInt(element.dataset.value);
+            
+            // Habilita botão
+            document.getElementById('nextBtn').disabled = false;
+        }
+        
+        function nextQuestion() {
+            if (currentQuestion < totalQuestions) {
+                // Esconde pergunta atual
+                document.getElementById(`q${currentQuestion}`).classList.remove('active');
+                
+                // Mostra próxima
+                currentQuestion++;
+                document.getElementById(`q${currentQuestion}`).classList.add('active');
+                
+                // Atualiza barra de progresso
+                const progress = (currentQuestion / totalQuestions) * 100;
+                document.getElementById('progress').style.width = `${progress}%`;
+                
+                // Desabilita botão
+                document.getElementById('nextBtn').disabled = true;
+            } else {
+                showResult();
+            }
+        }
+        
+        function showResult() {
+            // Calcula pontuação
+            const total = answers.reduce((a, b) => a + b, 0);
+            const average = total / totalQuestions;
+            
+            // Esconde última pergunta e botão
+            document.getElementById(`q${currentQuestion}`).classList.remove('active');
+            document.getElementById('nextBtn').style.display = 'none';
+            
+            // Mostra resultado
+            document.getElementById('result').classList.add('active');
+            
+            // Define nível
+            let level, emoji, text, recommendation;
+            
+            if (average <= 1.5) {
+                level = 'Iniciante';
+                emoji = '🌱';
+                text = 'Você está começando sua jornada digital. Não se preocupe, todos começam assim! Com as orientações certas, você vai se sentir muito mais confiante.';
+                recommendation = 'O curso ideal para você é o <strong>60maisPlay</strong>, onde você vai aprender desde o básico até se sentir seguro no mundo digital.';
+            } else if (average <= 2.5) {
+                level = 'Em Desenvolvimento';
+                emoji = '📈';
+                text = 'Você já sabe algumas coisas, mas ainda tem muitas dúvidas. Isso é normal! Com um pouco de prática, você vai dominar tudo.';
+                recommendation = 'O <strong>60maisClube</strong> é perfeito para você! Aulas toda semana e suporte para tirar todas as dúvidas.';
+            } else if (average <= 3.5) {
+                level = 'Confiante';
+                emoji = '💪';
+                text = 'Você já se sente bem no mundo digital! Mas ainda pode melhorar em alguns pontos específicos.';
+                recommendation = 'Continue evoluindo com o <strong>60maisClube</strong>! Aulas avançadas e dicas para se tornar um expert.';
+            } else {
+                level = 'Expert 60+';
+                emoji = '🏆';
+                text = 'Parabéns! Você domina a tecnologia como poucos da sua idade. Continue assim e ajude outras pessoas!';
+                recommendation = 'Você está pronto para o <strong>60maisClube Avançado</strong>! Conteúdo exclusivo e comunidade de experts.';
+            }
+            
+            // Atualiza interface
+            document.getElementById('resultEmoji').textContent = emoji;
+            document.getElementById('resultTitle').textContent = `Nível: ${level}`;
+            document.getElementById('resultText').textContent = text;
+            document.getElementById('recommendation').innerHTML = recommendation;
+        }
+        
+        function submitForm() {
+            const name = document.getElementById('userName').value;
+            const email = document.getElementById('userEmail').value;
+            const whatsapp = document.getElementById('userWhatsapp').value;
+            
+            if (!name || !email) {
+                alert('Por favor, preencha nome e email!');
+                return;
+            }
+            
+            // Aqui enviaria para API/Google Sheets
+            alert(`Obrigado, ${name}! Seu resultado será enviado para ${email} em instantes.`);
+            
+            // Redireciona para página de vendas
+            setTimeout(() => {
+                window.location.href = 'https://web-production-df2db.up.railway.app';
+            }, 2000);
+        }
+    </script>
+</body>
+</html>

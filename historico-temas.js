@@ -63,18 +63,27 @@ function temaRecente(tema) {
 
 /**
  * Lista temas disponíveis (não usados nos últimos 30 dias)
+ * Carrega da lista completa de 100 temas
  */
 function temasDisponiveis() {
-  const todosTemas = [
-    'golpe PIX',
-    'WhatsApp segurança', 
-    'videochamada',
-    'aplicativo idoso',
-    'segurança celular',
-    'Google Fotos',
-    'senha banco',
-    'Facebook segurança'
-  ];
+  // Carregar lista completa de 100 temas
+  let todosTemas = [];
+  try {
+    const lista = JSON.parse(fs.readFileSync('./lista-temas.json', 'utf8'));
+    todosTemas = lista.temas.map(t => t.tema);
+  } catch (e) {
+    // Fallback para lista básica se arquivo não existir
+    todosTemas = [
+      'golpe PIX',
+      'WhatsApp segurança', 
+      'videochamada',
+      'aplicativo idoso',
+      'segurança celular',
+      'Google Fotos',
+      'senha banco',
+      'Facebook segurança'
+    ];
+  }
   
   const disponiveis = todosTemas.filter(t => !temaRecente(t));
   

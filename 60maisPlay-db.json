@@ -1,0 +1,74 @@
+{
+  "status": "online",
+  "ultima_verificacao": "2026-02-21T17:57:00Z",
+  "criado_em": "2026-02-21T13:30:00Z",
+  "usuarios": [
+    {
+      "id": 1,
+      "telefone": "5511999999999",
+      "nome": "Maria Silva",
+      "email": "maria@email.com",
+      "nivel": "iniciante",
+      "data_cadastro": "2026-02-21T13:30:00Z",
+      "ultima_interacao": "2026-02-21T17:08:39.763Z"
+    },
+    {
+      "id": 2,
+      "telefone": "5511988888888",
+      "nome": null,
+      "email": null,
+      "nivel": "iniciante",
+      "data_cadastro": "2026-02-21T16:40:43.022Z",
+      "ultima_interacao": "2026-02-21T16:40:43.022Z"
+    },
+    {
+      "id": 3,
+      "telefone": "5511953545939",
+      "nome": null,
+      "email": null,
+      "nivel": "iniciante",
+      "data_cadastro": "2026-02-21T17:45:52.866Z",
+      "ultima_interacao": "2026-02-21T19:28:13.169Z"
+    }
+  ],
+  "progresso": [
+    {
+      "id": 1,
+      "usuario_id": 1,
+      "curso_slug": "whatsapp",
+      "percentual": 50,
+      "data_inicio": "2026-02-21T13:30:00Z",
+      "data_ultima_aula": "2026-02-21T13:30:00Z"
+    }
+  ],
+  "conversas": [
+    {
+      "id": 1,
+      "usuario_id": 1,
+      "mensagem_usuario": "oi",
+      "resposta_bot": "Olá Maria Silva! 👋 Que bom ver você de novo!\n\nO que você gostaria de fazer hoje?\n\n1️⃣ Ver cursos disponíveis\n2️⃣ Tirar uma dúvida\n3️⃣ Ver meu progresso\n\n💡 *Dica: Você também pode me fazer qualquer pergunta sobre tecnologia!*",
+      "data": "2026-02-21T17:08:39.765Z"
+    },
+    {
+      "id": 2,
+      "usuario_id": 3,
+      "mensagem_usuario": "oi",
+      "resposta_bot": "Olá! Seja bem-vindo ao 60maisPlay! 🎉\n\nSou seu assistente de tecnologia. Estou aqui para te ajudar!\n\nO que você gostaria de fazer hoje?\n\n1️⃣ Ver cursos disponíveis\n2️⃣ Tirar uma dúvida\n3️⃣ Ver meu progresso\n\n💡 *Dica: Você também pode me fazer qualquer pergunta sobre tecnologia!*",
+      "data": "2026-02-21T17:45:52.867Z"
+    },
+    {
+      "id": 3,
+      "usuario_id": 3,
+      "mensagem_usuario": "oi",
+      "resposta_bot": "Olá ! 👋 Que bom ver você de novo!\n\nO que você gostaria de fazer hoje?\n\n1️⃣ Ver cursos disponíveis\n2️⃣ Tirar uma dúvida\n3️⃣ Ver meu progresso\n\n💡 *Dica: Você também pode me fazer qualquer pergunta sobre tecnologia!*",
+      "data": "2026-02-21T18:57:32.841Z"
+    },
+    {
+      "id": 4,
+      "usuario_id": 3,
+      "mensagem_usuario": "cursos",
+      "resposta_bot": "📚 *CURSOS DISPONÍVEIS*\n\n1. Rede Social Facebook\n2. SmartPhone 1\n3. Rede Social Instagram\n4. Podcast 60maisPlay\n5. Gov.br\n6. WhatsApp sem Mistérios\n7. Compras na Internet\n8. Netflix na TV e SmartPhone\n9. Precisa de ajuda no dia a dia\n10. Identificando Boletos Falsos\n\n💡 *Digite o nome do curso que você quer saber mais!*\n\n Ou me diga o que você quer aprender!",
+      "data": "2026-02-21T19:28:13.170Z"
+    }
+  ]
+}

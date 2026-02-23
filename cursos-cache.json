@@ -1,0 +1,247 @@
+{
+  "extraido_em": "2026-02-21T13:20:00Z",
+  "total": 25,
+  "cursos": [
+    {
+      "id": 1,
+      "nome": "Inteligência Artificial no Dia a Dia",
+      "slug": "inteligencia_artificial",
+      "url": "https://60maiscursos.com.br/cursos/inteligencia_artificial",
+      "categoria": "tecnologia",
+      "nivel": "intermediario",
+      "descricao": "Aprenda a usar IA no cotidiano de forma simples"
+    },
+    {
+      "id": 2,
+      "nome": "Rede Social Facebook",
+      "slug": "facebook",
+      "url": "https://60maiscursos.com.br/cursos/facebook",
+      "categoria": "redes-sociais",
+      "nivel": "iniciante",
+      "descricao": "Como usar o Facebook de forma segura"
+    },
+    {
+      "id": 3,
+      "nome": "SmartPhone 1",
+      "slug": "smartphone-1",
+      "url": "https://60maiscursos.com.br/cursos/smartphone-1",
+      "categoria": "celular",
+      "nivel": "iniciante",
+      "descricao": "Primeiros passos com smartphone"
+    },
+    {
+      "id": 4,
+      "nome": "Rede Social Instagram",
+      "slug": "instagram",
+      "url": "https://60maiscursos.com.br/cursos/instagram",
+      "categoria": "redes-sociais",
+      "nivel": "iniciante",
+      "descricao": "Aprenda a usar o Instagram"
+    },
+    {
+      "id": 5,
+      "nome": "SmartPhone 2",
+      "slug": "smartphone-2",
+      "url": "https://60maiscursos.com.br/cursos/smartphone-2",
+      "categoria": "celular",
+      "nivel": "intermediario",
+      "descricao": "Recursos avançados do smartphone"
+    },
+    {
+      "id": 6,
+      "nome": "Podcast 60maisPlay",
+      "slug": "podcast",
+      "url": "https://60maiscursos.com.br/cursos/podcast",
+      "categoria": "audio",
+      "nivel": "iniciante",
+      "descricao": "Como ouvir podcasts"
+    },
+    {
+      "id": 7,
+      "nome": "Gov.br",
+      "slug": "govbr",
+      "url": "https://60maiscursos.com.br/cursos/govbr",
+      "categoria": "governo",
+      "nivel": "iniciante",
+      "descricao": "Acessar serviços governamentais online"
+    },
+    {
+      "id": 8,
+      "nome": "WhatsApp sem Mistérios",
+      "slug": "whatsapp",
+      "url": "https://60maiscursos.com.br/cursos/whatsapp",
+      "categoria": "comunicacao",
+      "nivel": "iniciante",
+      "descricao": "Domine o WhatsApp completamente"
+    },
+    {
+      "id": 9,
+      "nome": "Compras na Internet",
+      "slug": "compras-internet",
+      "url": "https://60maiscursos.com.br/cursos/compras-internet",
+      "categoria": "compras",
+      "nivel": "iniciante",
+      "descricao": "Compre online com segurança"
+    },
+    {
+      "id": 10,
+      "nome": "Netflix na TV e SmartPhone",
+      "slug": "netflix",
+      "url": "https://60maiscursos.com.br/cursos/netflix",
+      "categoria": "entretenimento",
+      "nivel": "iniciante",
+      "descricao": "Assista séries e filmes na Netflix"
+    },
+    {
+      "id": 11,
+      "nome": "Precisa de ajuda no dia a dia",
+      "slug": "ajuda-dia-a-dia",
+      "url": "https://60maiscursos.com.br/cursos/ajuda-dia-a-dia",
+      "categoria": "dicas",
+      "nivel": "iniciante",
+      "descricao": "Dicas práticas para o cotidiano"
+    },
+    {
+      "id": 12,
+      "nome": "Vamos falar um pouco sobre Nuvem",
+      "slug": "nuvem",
+      "url": "https://60maiscursos.com.br/cursos/nuvem",
+      "categoria": "tecnologia",
+      "nivel": "intermediario",
+      "descricao": "Entenda o que é nuvem e como usar"
+    },
+    {
+      "id": 13,
+      "nome": "ChatGPT nosso secretário",
+      "slug": "chatgpt",
+      "url": "https://60maiscursos.com.br/cursos/chatgpt",
+      "categoria": "ia",
+      "nivel": "intermediario",
+      "descricao": "Use o ChatGPT para facilitar sua vida"
+    },
+    {
+      "id": 14,
+      "nome": "Identificando Boletos Falsos",
+      "slug": "boletos-falsos",
+      "url": "https://60maiscursos.com.br/cursos/boletos-falsos",
+      "categoria": "seguranca",
+      "nivel": "iniciante",
+      "descricao": "Não caia em golpes de boletos"
+    },
+    {
+      "id": 15,
+      "nome": "Tradução simultânea com WhatsApp",
+      "slug": "traducao-whatsapp",
+      "url": "https://60maiscursos.com.br/cursos/traducao-whatsapp",
+      "categoria": "comunicacao",
+      "nivel": "iniciante",
+      "descricao": "Traduza mensagens no WhatsApp"
+    },
+    {
+      "id": 16,
+      "nome": "Usando o QrCode",
+      "slug": "qrcode",
+      "url": "https://60maiscursos.com.br/cursos/qrcode",
+      "categoria": "tecnologia",
+      "nivel": "iniciante",
+      "descricao": "Leia e crie QR Codes"
+    },
+    {
+      "id": 17,
+      "nome": "Aprendendo a usar o Gmail",
+      "slug": "gmail",
+      "url": "https://60maiscursos.com.br/cursos/gmail",
+      "categoria": "email",
+      "nivel": "iniciante",
+      "descricao": "Domine seu email Gmail"
+    },
+    {
+      "id": 18,
+      "nome": "Zoom",
+      "slug": "zoom",
+      "url": "https://60maiscursos.com.br/cursos/zoom",
+      "categoria": "videochamada",
+      "nivel": "iniciante",
+      "descricao": "Faça videochamadas com Zoom"
+    },
+    {
+      "id": 19,
+      "nome": "Aprendendo a tirar fotos no Smartphone",
+      "slug": "fotos-smartphone",
+      "url": "https://60maiscursos.com.br/cursos/fotos-smartphone",
+      "categoria": "celular",
+      "nivel": "iniciante",
+      "descricao": "Tire ótimas fotos com o celular"
+    },
+    {
+      "id": 20,
+      "nome": "Aprendendo a usar o Yahoo Mail",
+      "slug": "yahoo-mail",
+      "url": "https://60maiscursos.com.br/cursos/yahoo-mail",
+      "categoria": "email",
+      "nivel": "iniciante",
+      "descricao": "Use o email do Yahoo"
+    },
+    {
+      "id": 21,
+      "nome": "Aprendendo a usar o Outlook",
+      "slug": "outlook",
+      "url": "https://60maiscursos.com.br/cursos/outlook",
+      "categoria": "email",
+      "nivel": "iniciante",
+      "descricao": "Use o email Outlook"
+    },
+    {
+      "id": 22,
+      "nome": "Segurança Digital para Idosos",
+      "slug": "seguranca-digital",
+      "url": "https://60maiscursos.com.br/cursos/seguranca-digital",
+      "categoria": "seguranca",
+      "nivel": "iniciante",
+      "descricao": "Proteja-se de golpes online"
+    },
+    {
+      "id": 23,
+      "nome": "PIX Seguro",
+      "slug": "pix-seguro",
+      "url": "https://60maiscursos.com.br/cursos/pix-seguro",
+      "categoria": "banco",
+      "nivel": "iniciante",
+      "descricao": "Use o PIX com segurança"
+    },
+    {
+      "id": 24,
+      "nome": "Celular Roubado",
+      "slug": "celular-roubado",
+      "url": "https://60maiscursos.com.br/cursos/celular-roubado",
+      "categoria": "seguranca",
+      "nivel": "iniciante",
+      "descricao": "O que fazer se roubarem seu celular"
+    },
+    {
+      "id": 25,
+      "nome": "Senha do Banco",
+      "slug": "senha-banco",
+      "url": "https://60maiscursos.com.br/cursos/senha-banco",
+      "categoria": "banco",
+      "nivel": "iniciante",
+      "descricao": "Proteja suas senhas bancárias"
+    }
+  ],
+  "categorias": [
+    {"id": "tecnologia", "nome": "Tecnologia"},
+    {"id": "redes-sociais", "nome": "Redes Sociais"},
+    {"id": "celular", "nome": "Celular"},
+    {"id": "audio", "nome": "Áudio"},
+    {"id": "governo", "nome": "Governo"},
+    {"id": "comunicacao", "nome": "Comunicação"},
+    {"id": "compras", "nome": "Compras"},
+    {"id": "entretenimento", "nome": "Entretenimento"},
+    {"id": "dicas", "nome": "Dicas"},
+    {"id": "ia", "nome": "Inteligência Artificial"},
+    {"id": "seguranca", "nome": "Segurança"},
+    {"id": "email", "nome": "Email"},
+    {"id": "videochamada", "nome": "Videochamada"},
+    {"id": "banco", "nome": "Banco"}
+  ]
+}

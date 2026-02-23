@@ -1,52 +1,66 @@
 {
-  "titulo": "📱 Aplicativos Que Facilitam Sua Vida",
-  "tema": "aplicativo idoso",
-  "reflexao": "🌟 A tecnologia foi feita para servir as pessoas, não para intimidar. Cada aplicativo que você aprende a usar é uma porta que se abre para mais independência e conexão com quem você ama.",
-  "story": "Dona Maria, 72 anos, morava sozinha e sentia falta dos netos que moravam em outra cidade. Achava que tecnologia era 'coisa de jovem' e que nunca ia conseguir. Até que a neta instalou 3 aplicativos no celular dela: WhatsApp para conversar, Google Fotos para ver as fotos da família, e um aplicativo de banco para não precisar ir à agência. Hoje, Dona Maria faz videochamadas toda semana, vê as fotos do bisneto crescendo, e paga as contas sem sair de casa. Ela mesma diz: 'Eu me sinto mais jovem agora do que há 10 anos!' A tecnologia não tem idade. Ela está aí para facilitar a sua vida.",
-  "lesson": "Não tenha medo de experimentar novos aplicativos. Comece com um de cada vez, peça ajuda de alguém de confiança, e vá no seu ritmo. Aos poucos, você vai ver como sua vida fica mais prática.",
+  "titulo": "🚨 Celular Roubado: O Que Fazer Passo a Passo",
+  "tema": "celular roubado",
+  "reflexao": "🌟 'Perder o celular é perder uma parte da nossa vida. Mas saber o que fazer pode minimizar o prejuízo e proteger seu dinheiro.'",
+  "story": "Dona Carmem, 71 anos, estava no mercado quando sentiu a bolsa mais leve. O celular tinha sumido. O susto foi enorme! Seu primeiro pensamento foi: 'Meu banco! Minhas fotos!' Ela entrou em pânico. Por sorte, a neta tinha ensinado o que fazer. Em menos de 1 hora, Dona Carmem já tinha bloqueado o celular, cancelado os cartões e impedido que os ladrões mexessem no seu banco. O celular foi perdido, mas o dinheiro dela estava seguro. Hoje ela diz: 'Aprendi que o celular é importante, mas saber agir rápido é mais importante ainda!'",
+  "lesson": "Se seu celular for roubado, NÃO entre em pânico. Aja rápido e seguindo os passos certos. Você pode proteger seu dinheiro e seus dados em menos de 30 minutos.",
   "tutorial": {
-    "titulo": "🛠️ TUTORIAL: 5 Aplicativos Gratuitos Para Começar",
-    "introducao": "Estes aplicativos são gratuitos, fáceis de usar e vão facilitar muito seu dia a dia. Anote!",
+    "titulo": "🛡️ TUTORIAL: 7 Passos Para Tomar Seu Celular For Roubado",
+    "introducao": "Anote esses passos e guarde em casa! Se acontecer com você, siga na ordem:",
     "passos": [
       {
         "numero": 1,
-        "titulo": "WhatsApp - Converse com a família",
-        "explicacao": "O aplicativo mais popular do Brasil. Permite mandar mensagens, fotos e fazer ligações gratuitas.",
-        "acao": "Baixe na loja do seu celular (Play Store ou App Store) e peça para um filho ou neto te ajudar a configurar.",
-        "exemplo": "Você pode mandar 'Bom dia!' para toda a família de uma vez só, sem gastar nada!"
+        "titulo": "Peça para bloquear o chip (operadora)",
+        "explicacao": "O chip é a porta de entrada para suas contas. Ligue na operadora e peça para bloquear.",
+        "acao": "Anote os números das operadoras: Vivo (1058), Claro (1052), TIM (1056), Oi (1057). Ligue de outro telefone.",
+        "exemplo": "Oi, meu celular foi roubado. Preciso bloquear o chip número (seu número)."
       },
       {
         "numero": 2,
-        "titulo": "Google Fotos - Suas fotos seguras",
-        "explicacao": "Guarda todas as suas fotos automaticamente. Mesmo que perca o celular, suas memórias ficam salvas.",
-        "acao": "Instale e faça login com seu email. As fotos salvam sozinhas!",
-        "exemplo": "Todas as fotos dos netos ficam guardadas para sempre, sem ocupar espaço no celular."
+        "titulo": "Bloqueie o celular pelo Find My ou Encontre Meu Dispositivo",
+        "explicacao": "Isso apaga tudo do celular e impede que usem suas contas.",
+        "acao": "No celular de alguém ou computador, acesse: android.com/find (Android) ou icloud.com/find (iPhone). Entre com seu email e senha, e clique em 'Apagar dispositivo'.",
+        "exemplo": "O celular será bloqueado e ninguém conseguirá acessar suas informações."
       },
       {
         "numero": 3,
-        "titulo": "App do seu banco - Sem fila!",
-        "explicacao": "Consulte saldo, pague contas e faça transferências sem sair de casa.",
-        "acao": "Baixe o aplicativo do seu banco (Itaú, Bradesco, BB, Nubank...) e peça ajuda para ativar.",
-        "exemplo": "Pagar a conta de luz em 2 minutos, de qualquer lugar, sem pegar fila."
+        "titulo": "Altere a senha do seu email",
+        "explicacao": "O email é a chave para todas as outras contas. Proteja primeiro!",
+        "acao": "No computador ou celular de alguém, entre no seu email e mude a senha imediatamente.",
+        "exemplo": "Gmail: vá em 'Minha Conta' → 'Segurança' → 'Senha'. Crie uma senha nova forte."
       },
       {
         "numero": 4,
-        "titulo": "Google Maps - Nunca se perca",
-        "explicacao": "Mostra o caminho para qualquer lugar. Útil para ir a consultas médicos, visitar amigos...",
-        "acao": "Abra o aplicativo, digite o endereço e ele mostra o caminho passo a passo.",
-        "exemplo": "Vai ao médico novo? O aplicativo mostra exatamente como chegar, de ônibus ou a pé."
+        "titulo": "Ligue para o banco e bloqueie o app",
+        "explicacao": "Seus apps de banco podem ser acessados pelo celular roubado.",
+        "acao": "Ligue no telefone do seu banco (anote em casa!): Bradesco (4002-0022), Itaú (4004-4828), BB (4004-0001), Nubank (11 3004-6326). Peça para bloquear o acesso pelo app.",
+        "exemplo": "Meu celular foi roubado. Preciso bloquear o acesso ao app do banco."
       },
       {
         "numero": 5,
-        "titulo": "Farmácia Popular - Medicamentos grátis",
-        "explicacao": "Muitos remédios para diabetes, hipertensão e outros são GRATUITOS pelo governo.",
-        "acao": "Baixe o app 'Farmácia Popular' e veja se seus remédios são gratuitos.",
-        "exemplo": "Economize muito em medicamentos de uso contínuo, sem burocracia."
+        "titulo": "Altere a senha das redes sociais",
+        "explicacao": "WhatsApp, Facebook e Instagram podem ser usados para aplicar golpes em seus amigos.",
+        "acao": "No computador, entre em cada rede social e mude a senha. Ative verificação em duas etapas.",
+        "exemplo": "WhatsApp: peça para alguém ativar seu WhatsApp em outro celular (isso derruba o roubo)."
+      },
+      {
+        "numero": 6,
+        "titulo": "Faça o Boletim de Ocorrência",
+        "explicacao": "Necessário para o seguro e para o banco repôr dinheiro se houver fraude.",
+        "acao": "Vá à delegacia mais próxima ou acesse a Delegacia Eletrônica do seu estado. Leve documento.",
+        "exemplo": "Diga: 'Quero registrar um boletim de ocorrência de roubo de celular.'"
+      },
+      {
+        "numero": 7,
+        "titulo": "Avise sua família",
+        "explicacao": "Para que não caiam em golpes fingindo ser você.",
+        "acao": "Ligue para filhos, netos e amigos próximos. Avise que perdeu o celular.",
+        "exemplo": "Meu celular foi roubado. Se receberem mensagem minha pedindo dinheiro, não acreditem!"
       }
     ],
-    "checklist": "☐ WhatsApp instalado e configurado\n☐ Google Fotos salvando suas fotos\n☐ App do banco funcionando\n☐ Google Maps testado uma vez\n☐ Farmácia Popular consultado"
+    "checklist": "☐ Bloqueei o chip na operadora\n☐ Apaguei o celular pelo Find My/Encontre\n☐ Alterei a senha do email\n☐ Liguei para o banco\n☐ Alterei senhas das redes sociais\n☐ Fiz o boletim de ocorrência\n☐ Avisei minha família"
   },
-  "oQueMaisAprender": "Quer aprender a usar esses aplicativos com calma, no seu ritmo, com vídeos explicativos? O Mini Apps Essenciais do 60maisPlay ensina cada um passo a passo. Clique no botão abaixo!",
-  "seguranca": "🔒 Dica de segurança: Só baixe aplicativos da loja oficial do seu celular (Play Store no Android ou App Store no iPhone). Nunca clique em links de mensagens que prometem 'atualizar' aplicativos - isso pode ser golpe!",
-  "score": 9.0
+  "oQueMaisAprender": "Quer aprender a proteger seu celular ANTES que algo aconteça? O Mini Segurança Digital do 60maisPlay ensina como configurar seu celular para ficar seguro. Clique no botão abaixo!",
+  "seguranca": "⚠️ PREVENÇÃO: Anote em casa os telefones do banco e operadora. Configure o 'Encontre Meu Dispositivo' ANTES de precisar. Anote seu IMEI (disque *#06# para ver).",
+  "score": 9.5
 }

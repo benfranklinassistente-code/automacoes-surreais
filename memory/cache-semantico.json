@@ -1,0 +1,191 @@
+{
+  "entries": [
+    {
+      "query": "ola",
+      "response": "Olá! 👋 Sou o assistente 60maisPlay. Como posso te ajudar?",
+      "intent": "saudacao",
+      "tokens": 80,
+      "timestamp": 1771849792137
+    },
+    {
+      "query": "bom dia",
+      "response": "Bom dia! ☀️ Como posso te ajudar hoje?",
+      "intent": "saudacao",
+      "tokens": 80,
+      "timestamp": 1771849792137
+    },
+    {
+      "query": "boa tarde",
+      "response": "Boa tarde! 🌤️ Como posso te ajudar?",
+      "intent": "saudacao",
+      "tokens": 80,
+      "timestamp": 1771849792138
+    },
+    {
+      "query": "boa noite",
+      "response": "Boa noite! 🌙 Precisando de alguma ajuda?",
+      "intent": "saudacao",
+      "tokens": 80,
+      "timestamp": 1771849792138
+    },
+    {
+      "query": "quem e voce",
+      "response": "Sou o assistente virtual 60maisPlay! 🤖 Ajudo com tecnologia, cursos e muito mais.",
+      "intent": "geral",
+      "tokens": 80,
+      "timestamp": 1771849792139
+    },
+    {
+      "query": "cursos",
+      "response": "📚 *Cursos 60+:*\n1. Smartphone Básico\n2. WhatsApp Completo\n3. Internet Segura\n4. Facebook Social\n\nDigite \"aula [nome]\" para começar!",
+      "intent": "curso",
+      "tokens": 80,
+      "timestamp": 1771849792139
+    },
+    {
+      "query": "quanto custa",
+      "response": "Nossos cursos começam em R$ 37,00. 💰 Temos opções parceladas!",
+      "intent": "preco",
+      "tokens": 80,
+      "timestamp": 1771849792140
+    },
+    {
+      "query": "preco",
+      "response": "Cursos a partir de R$ 37,00. 💰 Fale com suporte para condições especiais!",
+      "intent": "preco",
+      "tokens": 80,
+      "timestamp": 1771849792141
+    },
+    {
+      "query": "valor",
+      "response": "Investimento a partir de R$ 37,00 por mini curso. 📚",
+      "intent": "preco",
+      "tokens": 80,
+      "timestamp": 1771849792141
+    },
+    {
+      "query": "suporte",
+      "response": "📞 Para falar com atendente humano, aguarde que já respondemos!",
+      "intent": "suporte",
+      "tokens": 80,
+      "timestamp": 1771849792142
+    },
+    {
+      "query": "falar com humano",
+      "response": "📞 Para atendimento humano: aguarde, respondemos em até 24h.",
+      "intent": "suporte",
+      "tokens": 80,
+      "timestamp": 1771849792143
+    },
+    {
+      "query": "obrigado",
+      "response": "Por nada! 😊 Estou aqui pra ajudar. Mais alguma dúvida?",
+      "intent": "geral",
+      "tokens": 80,
+      "timestamp": 1771849792144
+    },
+    {
+      "query": "obrigada",
+      "response": "Por nada! 😊 Estou aqui pra ajudar. Mais alguma dúvida?",
+      "intent": "geral",
+      "tokens": 80,
+      "timestamp": 1771849792144
+    },
+    {
+      "query": "valeu",
+      "response": "De nada! 👍 Precisando, é só chamar!",
+      "intent": "geral",
+      "tokens": 80,
+      "timestamp": 1771849792145
+    },
+    {
+      "query": "tchau",
+      "response": "Até logo! 👋 Foi um prazer ajudar. Volte sempre!",
+      "intent": "geral",
+      "tokens": 80,
+      "timestamp": 1771849792146
+    },
+    {
+      "query": "ate mais",
+      "response": "Até mais! 👋 Qualquer coisa é só chamar!",
+      "intent": "geral",
+      "tokens": 80,
+      "timestamp": 1771849792146
+    },
+    {
+      "query": "menu",
+      "response": "📱 *Menu Principal:*\n• \"cursos\" - ver cursos\n• \"aula [tema]\" - fazer aula\n• \"dica\" - dica tech\n• \"suporte\" - falar humano",
+      "intent": "geral",
+      "tokens": 80,
+      "timestamp": 1771849792147
+    },
+    {
+      "query": "ajuda",
+      "response": "📱 Digite \"menu\" para ver todas as opções disponíveis!",
+      "intent": "ajuda",
+      "tokens": 80,
+      "timestamp": 1771849792147
+    },
+    {
+      "query": "esqueci a senha",
+      "response": "🔐 Para recuperar senha:\n1. Vá em \"Esqueci senha\"\n2. Digite seu email\n3. Verifique sua caixa de entrada",
+      "intent": "geral",
+      "tokens": 80,
+      "timestamp": 1771849792148
+    },
+    {
+      "query": "nao consigo entrar",
+      "response": "Problemas de acesso:\n1. Verifique email/senha\n2. Tente \"Esqueci senha\"\n3. Limpe cache do navegador",
+      "intent": "problema",
+      "tokens": 80,
+      "timestamp": 1771849792149
+    },
+    {
+      "query": "nao funciona",
+      "response": "Vou te ajudar! 🤔 Me conta melhor o que está acontecendo.",
+      "intent": "problema",
+      "tokens": 80,
+      "timestamp": 1771849792149
+    },
+    {
+      "query": "o que e pdf",
+      "response": "📄 PDF é um formato de documento que pode ser aberto em qualquer aparelho sem perder a formatação.",
+      "intent": "geral",
+      "tokens": 80,
+      "timestamp": 1771849792150
+    },
+    {
+      "query": "o que e app",
+      "response": "📱 App = Aplicativo. É um programinha que você instala no celular.",
+      "intent": "geral",
+      "tokens": 80,
+      "timestamp": 1771849792150
+    },
+    {
+      "query": "o que e wifi",
+      "response": "📶 WiFi é internet sem fio. Conecta seu celular/PC à internet pelo ar!",
+      "intent": "geral",
+      "tokens": 80,
+      "timestamp": 1771849792151
+    },
+    {
+      "query": "golpe",
+      "response": "⚠️ *CUIDADO COM GOLPES!*\n• Não passe códigos do WhatsApp\n• Não clique em links suspeitos\n• Não faça PIX para desconhecidos",
+      "intent": "geral",
+      "tokens": 80,
+      "timestamp": 1771849792151
+    },
+    {
+      "query": "pix",
+      "response": "💰 Antes de fazer PIX:\n• Verifique o nome do destinatário\n• Confirme o valor\n• Não faça para desconhecidos",
+      "intent": "geral",
+      "tokens": 80,
+      "timestamp": 1771849792152
+    }
+  ],
+  "stats": {
+    "hits": 35,
+    "misses": 30,
+    "tokensSaved": 3500
+  }
+}

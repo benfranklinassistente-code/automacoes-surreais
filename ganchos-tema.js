@@ -29,13 +29,14 @@ async function descobrirTema() {
     console.log(`   ⚠️ ${e.message}\n`);
   }
   
-  // 2. Google Analytics
+  // 2. Google Analytics - buscar lista ordenada de temas
   console.log('📈 Google Analytics...');
-  let temaAnalytics = null;
+  let listaTemasAnalytics = [];
   try {
-    const info = analytics.temaMaisPopular();
-    temaAnalytics = info.tema;
-    console.log(`   ✅ Tema popular: ${temaAnalytics}\n`);
+    listaTemasAnalytics = analytics.temasOrdenadosPorPopularidade();
+    console.log(`   ✅ ${listaTemasAnalytics.length} temas encontrados`);
+    listaTemasAnalytics.forEach(t => console.log(`      • ${t.tema}: ${t.views} views`));
+    console.log('');
   } catch (e) {
     console.log(`   ⚠️ ${e.message}\n`);
   }
@@ -45,11 +46,17 @@ async function descobrirTema() {
   let fonte = '';
   let urgencia = 7;
   
-  // Prioridade 1: Analytics (se não foi usado recentemente)
-  if (temaAnalytics && !historico.temaRecente(temaAnalytics)) {
-    tema = temaAnalytics;
-    fonte = 'Google Analytics';
-    urgencia = 9;
+  // Prioridade 1: Analytics - percorrer lista ORDENADA e pegar primeiro disponível
+  for (const item of listaTemasAnalytics) {
+    if (!historico.temaRecente(item.tema)) {
+      tema = item.tema;
+      fonte = 'Google Analytics';
+      urgencia = 9;
+      console.log(`   ✅ Tema disponível encontrado: ${tema}`);
+      break;
+    } else {
+      console.log(`   ⏭️ ${item.tema} já usado recentemente, pulando...`);
+    }
   }
   
   // Prioridade 2: Brave Search (se não foi usado recentemente)
@@ -75,34 +82,18 @@ async function descobrirTema() {
     }
   }
   
-  // Prioridade 3: Temporal (escolher entre disponíveis)
+  // Prioridade 3: Fallback - primeiro disponível da lista de 100 temas
   if (!tema) {
     const disponiveis = status.disponiveis;
     
     if (disponiveis.length > 0) {
-      // Escolher baseado no dia da semana
-      const diaSemana = hoje.getDay();
-      const diaMes = hoje.getDate();
-      
-      // Priorizar por contexto
-      if (diaMes <= 5 && disponiveis.includes('golpe PIX')) {
-        tema = 'golpe PIX';
-        urgencia = 10;
-      } else if ((diaSemana === 0 || diaSemana === 6) && disponiveis.includes('videochamada')) {
-        tema = 'videochamada';
-        urgencia = 9;
-      } else if (diaSemana === 1 && disponiveis.includes('WhatsApp segurança')) {
-        tema = 'WhatsApp segurança';
-        urgencia = 8;
-      } else {
-        // Pegar o primeiro disponível
-        tema = disponiveis[0];
-        urgencia = 7;
-      }
-      fonte = 'Fallback temporal (sem repetição)';
+      // Pegar o primeiro disponível (sem repetir)
+      tema = disponiveis[0];
+      urgencia = 7;
+      fonte = 'Lista de temas (sem repetição)';
     } else {
-      // TODOS foram usados - escolher o mais antigo
-      console.log('⚠️ TODOS os temas foram usados no mês. Escolhendo o mais antigo...\n');
+      // TODOS foram usados - escolher o mais antigo (30+ dias)
+      console.log('   ⚠️ TODOS os temas foram usados. Reutilizando o mais antigo...');
       const h = historico.carregarHistorico();
       if (h.temas.length > 0) {
         const maisAntigo = h.temas.sort((a, b) => a.timestamp - b.timestamp)[0];
@@ -112,7 +103,6 @@ async function descobrirTema() {
       } else {
         tema = 'WhatsApp segurança';
         fonte = 'Padrão';
-        urgencia = 7;
       }
     }
   }
