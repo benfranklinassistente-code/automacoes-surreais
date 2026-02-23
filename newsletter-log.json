@@ -1,0 +1,26 @@
+[
+  {
+    "data": "2026-02-23T20:36:26.513Z",
+    "erro": "Cannot read properties of undefined (reading 'filter')",
+    "sucesso": false
+  },
+  {
+    "data": "2026-02-23T20:37:31.384Z",
+    "erro": "List ids or Segment ids are mandatory if Scheduled date is set",
+    "sucesso": false
+  },
+  {
+    "data": "2026-02-23T21:04:39.819Z",
+    "tema": "Antivírus Grátis",
+    "titulo": "🛡️ Antivírus Grátis: Seu Celular Precisa?",
+    "messageId": "<202602232104.49971892951@smtp-relay.mailin.fr>",
+    "sucesso": true
+  },
+  {
+    "data": "2026-02-23T21:11:50.749Z",
+    "tema": "Google Fotos - Backup",
+    "titulo": "📸 Google Fotos: Nunca Perca Suas Fotos!",
+    "messageId": "<202602232111.86309471951@smtp-relay.mailin.fr>",
+    "sucesso": true
+  }
+]
