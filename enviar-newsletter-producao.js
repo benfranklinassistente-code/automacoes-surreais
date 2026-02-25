@@ -1,79 +1,21 @@
 /**
- * Sistema Automático de Newsletter 60maisNews
- * Usa cache-newsletter-completo.json
- * Executado pelo CRON às 06:06 (Brasília)
+ * Enviar Newsletter em Produção
+ * Lista completa: NewsLetter_2026 (ID: 4)
  */
 
 const fs = require('fs');
-const path = require('path');
 
-// Caminhos dos arquivos
-const CACHE_FILE = path.join(__dirname, 'cache-newsletter-completo.json');
-const HISTORICO_FILE = path.join(__dirname, 'historico-temas.json');
+// Carregar cache
+const cache = JSON.parse(fs.readFileSync('./cache-newsletter-completo.json', 'utf8'));
 
-// Carregar credenciais
-const brevoConfig = JSON.parse(fs.readFileSync(path.join(__dirname, 'brevo-config.json'), 'utf8'));
-const credenciais = JSON.parse(fs.readFileSync(path.join(__dirname, 'credenciais-60mais.json'), 'utf8'));
+// Encontrar o tema "Netflix para Iniciantes" (id: 4)
+const tema = cache.temas.find(t => t.id === 4);
 
-/**
- * Seleciona próximo tema não usado nos últimos 30 dias
- */
-function selecionarTema() {
-  const cache = JSON.parse(fs.readFileSync(CACHE_FILE, 'utf8'));
-  
-  // Carregar histórico de temas usados
-  let historico = { temas: [] };
-  if (fs.existsSync(HISTORICO_FILE)) {
-    historico = JSON.parse(fs.readFileSync(HISTORICO_FILE, 'utf8'));
-  }
-  
-  // Calcular data de 30 dias atrás
-  const trintaDiasAtras = Date.now() - (30 * 24 * 60 * 60 * 1000);
-  
-  // Filtrar temas usados nos últimos 30 dias
-  const temasUsadosRecente = historico.temas
-    .filter(t => t.timestamp > trintaDiasAtras)
-    .map(t => t.tema.toLowerCase());
-  
-  console.log('📋 Temas usados nos últimos 30 dias:', temasUsadosRecente.length);
-  
-  // Encontrar tema disponível
-  const temaDisponivel = cache.temas.find(t => {
-    const nomeTema = t.tema.toLowerCase();
-    return !temasUsadosRecente.some(usado => 
-      usado.includes(nomeTema) || nomeTema.includes(usado)
-    );
-  });
-  
-  // Se todos foram usados, usar o primeiro
-  return temaDisponivel || cache.temas[0];
-}
+// Carregar credenciais Brevo
+const brevoConfig = JSON.parse(fs.readFileSync('./brevo-config.json', 'utf8'));
 
-/**
- * Registrar tema como usado
- */
-function registrarTemaUsado(nomeTema) {
-  let historico = { temas: [] };
-  if (fs.existsSync(HISTORICO_FILE)) {
-    historico = JSON.parse(fs.readFileSync(HISTORICO_FILE, 'utf8'));
-  }
-  
-  historico.temas.push({
-    tema: nomeTema,
-    data: new Date().toISOString(),
-    timestamp: Date.now()
-  });
-  
-  historico.atualizado = new Date().toISOString();
-  
-  fs.writeFileSync(HISTORICO_FILE, JSON.stringify(historico, null, 2));
-}
-
-/**
- * Gerar HTML da newsletter
- */
-function gerarHTML(tema, imagens) {
-  return `
+// HTML da newsletter
+const htmlContent = `
 <!DOCTYPE html>
 <html>
 <head>
@@ -85,7 +27,7 @@ function gerarHTML(tema, imagens) {
   
   <!-- CABEÇALHO -->
   <div style="width: 100%; background-color: #2563eb; text-align: center; padding: 20px 0;">
-    <img src="${imagens.cabecalho}" alt="60maisNews" style="max-width: 550px; width: 100%;">
+    <img src="${cache.configuracao.imagens.cabecalho}" alt="60maisNews" style="max-width: 550px; width: 100%;">
   </div>
   
   <!-- CONTEÚDO -->
@@ -164,7 +106,7 @@ function gerarHTML(tema, imagens) {
   
   <!-- RODAPÉ -->
   <div style="width: 100%; text-align: center; padding: 20px 0;">
-    <img src="${imagens.rodape}" alt="60maisPlay" style="max-width: 600px; width: 100%;">
+    <img src="${cache.configuracao.imagens.rodape}" alt="60maisPlay" style="max-width: 600px; width: 100%;">
   </div>
   
   <!-- FOOTER -->
@@ -179,14 +121,13 @@ function gerarHTML(tema, imagens) {
 </body>
 </html>
 `;
-}
 
-/**
- * Enviar email usando API transacional do Brevo
- */
-async function enviarEmailTransacional(tema, html) {
-  // Usar API transacional para enviar para lista
-  const response = await fetch(`${brevoConfig.apiUrl}/smtp/email`, {
+async function criarEEnviarCampanha() {
+  console.log('🎬 Criando campanha: Netflix para Iniciantes');
+  console.log('📧 Lista: NewsLetter_2026 (ID: 4) - 98 contatos');
+  
+  // Passo 1: Criar a campanha
+  const criarResponse = await fetch(`${brevoConfig.apiUrl}/emailCampaigns`, {
     method: 'POST',
     headers: {
       'accept': 'application/json',
@@ -194,104 +135,69 @@ async function enviarEmailTransacional(tema, html) {
       'api-key': brevoConfig.apiKey
     },
     body: JSON.stringify({
-      sender: { name: '60maisNews', email: 'newsletter@60maiscursos.com.br' },
-      to: [{ email: 'luis7nico@gmail.com', name: 'Luis' }],
+      name: `Newsletter - ${tema.tema} - ${new Date().toLocaleDateString('pt-BR')}`,
       subject: tema.titulo,
-      htmlContent: html,
-      tags: ['newsletter', '60maisnews']
+      sender: { 
+        name: '60maisNews', 
+        email: 'newsletter@60maiscursos.com.br' 
+      },
+      type: 'classic',
+      htmlContent: htmlContent,
+      recipients: {
+        listIds: [4]
+      },
+      header: 'Newsletter 60maisNews',
+      footer: '60maisPlay - Professor Luis',
+      unsubscribeLink: true
     })
   });
 
-  const data = await response.json();
+  const criarData = await criarResponse.json();
   
-  if (!response.ok) {
-    throw new Error(data.message || 'Erro ao enviar email');
+  if (!criarResponse.ok) {
+    console.error('❌ Erro ao criar campanha:', criarData);
+    return;
   }
-  
-  return data;
-}
 
-/**
- * Executar fluxo completo
- */
-async function executar() {
-  console.log('📰 Iniciando envio da newsletter...');
-  console.log('⏰', new Date().toLocaleString('pt-BR'));
+  const campaignId = criarData.id;
+  console.log('✅ Campanha criada! ID:', campaignId);
+
+  // Passo 2: Enviar a campanha
+  console.log('📤 Enviando campanha...');
   
-  try {
-    // Carregar cache
-    const cache = JSON.parse(fs.readFileSync(CACHE_FILE, 'utf8'));
-    
-    // Selecionar tema
-    const tema = selecionarTema();
-    console.log('📌 Tema selecionado:', tema.tema);
-    console.log('   Título:', tema.titulo);
-    
-    // Gerar HTML
-    const html = gerarHTML(tema, cache.configuracao.imagens);
-    
-    // Enviar email
-    console.log('📧 Enviando email...');
-    const resultado = await enviarEmailTransacional(tema, html);
-    console.log('✅ Email enviado! Message ID:', resultado.messageId);
-    
-    // Registrar tema usado
-    registrarTemaUsado(tema.tema);
-    console.log('📝 Tema registrado no histórico');
-    
-    // 📝 PUBLICAR NO BLOG
-    console.log('📝 Publicando no blog...');
-    try {
-      const publicarBlog = require('./publicar-blog.js');
-      console.log('✅ Publicação no blog concluída!');
-    } catch (e) {
-      console.log('⚠️ Aviso: Não foi possível publicar no blog:', e.message);
+  const enviarResponse = await fetch(`${brevoConfig.apiUrl}/emailCampaigns/${campaignId}/sendNow`, {
+    method: 'POST',
+    headers: {
+      'accept': 'application/json',
+      'content-type': 'application/json',
+      'api-key': brevoConfig.apiKey
     }
-    
-    // Salvar log
-    const log = {
-      data: new Date().toISOString(),
-      tema: tema.tema,
-      titulo: tema.titulo,
-      messageId: resultado.messageId,
-      sucesso: true
-    };
-    
-    const logFile = path.join(__dirname, 'newsletter-log.json');
-    let logs = [];
-    if (fs.existsSync(logFile)) {
-      logs = JSON.parse(fs.readFileSync(logFile, 'utf8'));
-    }
-    logs.push(log);
-    fs.writeFileSync(logFile, JSON.stringify(logs, null, 2));
-    
-    console.log('🎉 Newsletter enviada com sucesso!');
-    
-    return { sucesso: true, tema: tema.tema, messageId: resultado.messageId };
-    
-  } catch (error) {
-    console.error('❌ Erro:', error.message);
-    
-    // Salvar erro no log
-    const logFile = path.join(__dirname, 'newsletter-log.json');
-    let logs = [];
-    if (fs.existsSync(logFile)) {
-      logs = JSON.parse(fs.readFileSync(logFile, 'utf8'));
-    }
-    logs.push({
-      data: new Date().toISOString(),
-      erro: error.message,
-      sucesso: false
-    });
-    fs.writeFileSync(logFile, JSON.stringify(logs, null, 2));
-    
-    return { sucesso: false, erro: error.message };
+  });
+
+  const enviarData = await enviarResponse.json();
+  
+  if (!enviarResponse.ok) {
+    console.error('❌ Erro ao enviar campanha:', enviarData);
+    return;
   }
+
+  console.log('🎉 CAMPANHA ENVIADA COM SUCESSO!');
+  console.log('📧 Tema:', tema.tema);
+  console.log('📌 Título:', tema.titulo);
+  console.log('👥 Lista: NewsLetter_2026 (98 contatos)');
+  
+  // Atualizar log
+  const log = JSON.parse(fs.readFileSync('./newsletter-log.json', 'utf8'));
+  log.push({
+    data: new Date().toISOString(),
+    tema: tema.tema,
+    titulo: tema.titulo,
+    campaignId: campaignId,
+    lista: 'NewsLetter_2026',
+    modo: 'producao',
+    sucesso: true
+  });
+  fs.writeFileSync('./newsletter-log.json', JSON.stringify(log, null, 2));
 }
 
-// Executar se chamado diretamente
-if (require.main === module) {
-  executar();
-}
-
-module.exports = { executar, selecionarTema, gerarHTML };
+criarEEnviarCampanha().catch(console.error);

@@ -1,16 +1,14 @@
 /**
  * Enviar Dica Diária para Grupo WhatsApp
  * Grupo: Curso Smartphone Inteligência Artificial 60+
- * Usa API local do OpenClaw Gateway
+ * Usa CLI do OpenClaw Gateway
  */
 
-const https = require('https');
-const http = require('http');
+const { execSync } = require('child_process');
+const fs = require('fs');
 
-const GATEWAY_HOST = '127.0.0.1';
-const GATEWAY_PORT = 18789;
-const GATEWAY_TOKEN = 'pUfMKh_QxGckUpL3TpMNuGRiQRyIaaoBjcQwvh247FE';
 const GRUPO_ID = '120363375518105627@g.us'; // Grupo: Curso Smartphone Inteligência Artificial 60+
+const LOG_FILE = '/tmp/dicas-whatsapp.log';
 
 // Banco de dicas rotativas
 const DICAS = [
@@ -32,51 +30,8 @@ function selecionarDica() {
   return DICAS[diaDoAno % DICAS.length];
 }
 
-async function enviarMensagem(mensagem) {
-  return new Promise((resolve, reject) => {
-    const data = JSON.stringify({
-      action: 'send',
-      channel: 'whatsapp',
-      target: GRUPO_ID,
-      message: mensagem
-    });
-
-    const options = {
-      hostname: GATEWAY_HOST,
-      port: GATEWAY_PORT,
-      path: '/api/message',
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${GATEWAY_TOKEN}`,
-        'Content-Length': Buffer.byteLength(data)
-      }
-    };
-
-    const req = http.request(options, (res) => {
-      let body = '';
-      res.on('data', chunk => body += chunk);
-      res.on('end', () => {
-        if (res.statusCode === 200) {
-          try {
-            resolve(JSON.parse(body));
-          } catch (e) {
-            resolve({ status: 'ok', raw: body });
-          }
-        } else {
-          reject(new Error(`HTTP ${res.statusCode}: ${body}`));
-        }
-      });
-    });
-
-    req.on('error', reject);
-    req.setTimeout(30000, () => {
-      req.destroy();
-      reject(new Error('Timeout'));
-    });
-    req.write(data);
-    req.end();
-  });
+function log(data) {
+  fs.appendFileSync(LOG_FILE, JSON.stringify(data) + '\n');
 }
 
 async function main() {
@@ -89,25 +44,29 @@ async function main() {
   const mensagem = `☀️ *${dica.titulo}*\n\n${dica.texto}\n\n_Dica do dia 60maisPlay_`;
   
   try {
-    const resultado = await enviarMensagem(mensagem);
-    console.log('✅ Dica enviada com sucesso!');
+    // Usar CLI do OpenClaw para enviar mensagem
+    const resultado = execSync(
+      `openclaw message send --channel whatsapp --target "${GRUPO_ID}" --message "${mensagem.replace(/"/g, '\\"').replace(/\n/g, '\\n')}" --json`,
+      { encoding: 'utf-8', timeout: 30000 }
+    );
     
-    const fs = require('fs');
-    fs.appendFileSync('/tmp/dicas-whatsapp.log', JSON.stringify({
+    console.log('✅ Dica enviada com sucesso!');
+    console.log(resultado);
+    
+    log({
       data: new Date().toISOString(),
-      dica: dica.titulo,
+      tema: dica.titulo,
       sucesso: true
-    }) + '\n');
+    });
     
   } catch (erro) {
     console.error('❌ Erro ao enviar:', erro.message);
     
-    const fs = require('fs');
-    fs.appendFileSync('/tmp/dicas-whatsapp.log', JSON.stringify({
+    log({
       data: new Date().toISOString(),
       erro: erro.message,
       sucesso: false
-    }) + '\n');
+    });
     
     process.exit(1);
   }

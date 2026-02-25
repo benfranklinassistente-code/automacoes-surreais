@@ -1,0 +1,27 @@
+# Dependências
+node_modules/
+
+# Credenciais e auth sensível
+.wwebjs_auth/
+credenciais-*.json
+google-credentials.json
+*.pem
+*.key
+
+# Cache e temporários
+*.log
+.cache/
+.DS_Store
+
+# Banco de dados local
+*.db
+*.sqlite
+
+# Arquivos de mídia grandes
+*.mp4
+*.mp3
+*.wav
+
+# Configurações locais
+.env
+.env.local

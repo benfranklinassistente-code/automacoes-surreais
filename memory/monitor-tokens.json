@@ -1,18 +1,88 @@
 {
+  "ultimaExecucao": "2026-02-24T23:00:00.000Z",
   "registros": [
     {
       "data": "2026-02-23",
-      "tokensEntrada": 40000000,
-      "tokensSaida": 20000000,
-      "total": 60000000,
+      "tokensEntrada": 80000000,
+      "tokensSaida": 38000000,
+      "total": 118000000,
       "meta": 60000000,
-      "percentualMeta": "100.0",
+      "percentualMeta": "196.7",
       "amostras": 1,
-      "timestamp": 1771853438449,
-      "ultimaAtualizacao": 1771853438449
+      "timestamp": 1771898765904,
+      "ultimaAtualizacao": 1771898765904,
+      "economia": {
+        "tokensEconomizados": 246000000,
+        "percentualEconomia": "67.6"
+      }
+    },
+    {
+      "data": "2026-02-24",
+      "tokensEntrada": 80000000,
+      "tokensSaida": 38000000,
+      "total": 118000000,
+      "meta": 60000000,
+      "percentualMeta": "196.7",
+      "amostras": 1,
+      "timestamp": 1771899900542,
+      "ultimaAtualizacao": 1771899900542,
+      "economia": {
+        "tokensEconomizados": 246000000,
+        "percentualEconomia": "67.6"
+      }
     }
   ],
-  "alertas": [],
-  "media7dias": 60000000,
-  "tendencia": "estavel"
+  "alertas": [
+    {
+      "data": "2026-02-24T02:25:00.542Z",
+      "tipo": "acima_meta",
+      "mensagem": "Consumo 196.7% acima da meta! (118.0M tokens)",
+      "valor": 118000000,
+      "meta": 60000000,
+      "percentual": "196.7"
+    }
+  ],
+  "media7dias": 118000000,
+  "tendencia": "estavel",
+  "resumo": {
+    "metaDiaria": 60000000,
+    "consumoAnterior": 364000000,
+    "reducaoPercentual": "67.6",
+    "cacheHits": 35,
+    "cacheMisses": 30,
+    "economiaDiaria": 246000000,
+    "economiaSemanal": 1722000000
+  },
+  "relatorioDiario": {
+    "data": "2026-02-24",
+    "consumo": {
+      "entrada": "80.0M",
+      "saida": "38.0M",
+      "total": "118.0M tokens"
+    },
+    "meta": "60M tokens",
+    "statusMeta": "196.7%",
+    "media7dias": "118.0M",
+    "tendencia": "ESTAVEL",
+    "alertasHoje": 1
+  },
+  "relatorioSemanal": {
+    "periodo": "2026-02-23 a 2026-02-24",
+    "consumoTotal": "236.0M tokens",
+    "mediaDiaria": "118.0M tokens",
+    "economiaEstimada": {
+      "diaria": "246.0M tokens",
+      "semanal": "1722.0M tokens"
+    },
+    "detalhamento": [
+      { "data": "2026-02-23", "total": "118.0M", "percentualMeta": "196.7%" },
+      { "data": "2026-02-24", "total": "118.0M", "percentualMeta": "196.7%" }
+    ]
+  },
+  "sugestoesOtimizacao": [
+    "⚠️ Acima da meta! Considere:",
+    "   • Aumentar threshold do cache semântico (70% → 75%)",
+    "   • Reduzir frequência de crons",
+    "   • Expandir cache FAQ"
+  ]
 }

@@ -29,5 +29,40 @@
     "titulo": "📘 Facebook Seguro: Aprenda a Se Proteger",
     "messageId": "<202602232157.63735335692@smtp-relay.mailin.fr>",
     "sucesso": true
+  },
+  {
+    "data": "2026-02-24T09:06:14.195Z",
+    "tema": "Netflix para Iniciantes",
+    "titulo": "🎬 Netflix: Como Assistir Filmes e Séries",
+    "messageId": "<202602240906.68728940281@smtp-relay.mailin.fr>",
+    "sucesso": true
+  },
+  {
+    "data": "2026-02-24T12:06:02.296Z",
+    "tema": "Netflix para Iniciantes",
+    "titulo": "🎬 Netflix: Como Assistir Filmes e Séries",
+    "messageId": "<202602241206.43805334921@smtp-relay.mailin.fr>",
+    "sucesso": true
+  },
+  {
+    "data": "2026-02-25T01:20:00.301Z",
+    "tema": "Gov.br - Acesso Fácil",
+    "titulo": "🏛️ Gov.br: Seus Documentos Online",
+    "messageId": "<202602250120.25130302214@smtp-relay.mailin.fr>",
+    "sucesso": true
+  },
+  {
+    "data": "2026-02-25T09:06:02.920Z",
+    "tema": "Golpe do Falso Entregador",
+    "titulo": "📦 Golpe do Falso Entregador: Cuidado!",
+    "messageId": "<202602250906.52026086680@smtp-relay.mailin.fr>",
+    "sucesso": true
+  },
+  {
+    "data": "2026-02-25T09:06:05.409Z",
+    "tema": "Uber - Primeira Viagem",
+    "titulo": "🚗 Uber: Sua Primeira Corrida",
+    "messageId": "<202602250906.45159889685@smtp-relay.mailin.fr>",
+    "sucesso": true
   }
 ]

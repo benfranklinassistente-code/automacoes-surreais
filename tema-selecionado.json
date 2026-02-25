@@ -1,5 +1,9 @@
 {
-  "tema": "senha banco",
-  "data": "2026-02-20T19:46:44.490Z",
-  "forcar": true
+  "tema": "clonagem WhatsApp",
+  "categoria": "seguranca",
+  "urgencia": 10,
+  "fonte": "seleção manual - variedade de categorias",
+  "motivo": "Variar categoria (ontem: apps, hoje: segurança). Urgência máxima para idosos.",
+  "data": "2026-02-25",
+  "selecionado_em": "2026-02-24T11:00:00.000Z"
 }

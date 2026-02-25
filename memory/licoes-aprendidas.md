@@ -4,6 +4,37 @@ Sessão diária de aprendizagem às 19:00 (Brasília)
 
 ---
 
+## 📅 23/02/2026 - Sessão das 19:00
+
+### ✅ O que funcionou bem hoje:
+- Newsletter 60maisNews com 30 temas implementada e funcionando
+- Imagens hospedadas no Imgur (HTTP 200)
+- WhatsApp CTA atualizado para 11 95354-5939
+- CRON Newsletter 06:06 funcionando
+- CRON Dicas WhatsApp 08:00 funcionando
+- ID do grupo WhatsApp correto identificado: 120363375518105627@g.us
+- Testes de envio confirmados pelo usuário
+- Sistema de aprendizagem diária ativado
+
+### ❌ O que pode melhorar:
+- Gateway com timeout às vezes
+- 2 CRONs com erro (Relatório Telegram, Lembrete MVP)
+- Formato de target WhatsApp precisa ser consistente
+
+### 💡 Insights importantes:
+- Grupo WhatsApp correto é "Curso Smartphone Inteligência Artificial 60+"
+- ID: 120363375518105627@g.us (NÃO usar @c.us)
+- Imgur funciona bem para hospedar imagens de newsletter
+- Cache de 30 temas evita repetição por 30 dias
+
+### 📋 Próximas ações:
+- [ ] Corrigir CRON Relatório Telegram (timeout)
+- [ ] Corrigir CRON Lembrete MVP (target incorreto)
+- [ ] Implementar webhooks para tempo real
+- [ ] MVP WhatsApp para escalar
+
+---
+
 ## 📅 20/02/2026
 
 ### 🔍 Sempre Pesquisar Antes de Perguntar
@@ -65,7 +96,7 @@ Sessão diária de aprendizagem às 19:00 (Brasília)
 
 ---
 
-*Próxima sessão: 20/02/2026 às 19:00*
+## 📅 21/02/2026
 
 ### 📚 Sessão de Aprendizagem - 21/02/2026
 
@@ -82,4 +113,24 @@ Sessão diária de aprendizagem às 19:00 (Brasília)
 - Precisa implementar webhooks para tempo real
 - MVP WhatsApp é prioridade para escalar
 
+---
+
+*Próxima sessão: 24/02/2026 às 19:00*
+
+
+---
+
+## 📅 24/02/2026 - Sessão das 16:00
+
+### ✅ O que funcionou bem hoje:
+- [Registre aqui]
+
+### ❌ O que pode melhorar:
+- [Registre aqui]
+
+### 💡 Insights importantes:
+- [Registre aqui]
+
+### 📋 Próximas ações:
+- [Registre aqui]
 

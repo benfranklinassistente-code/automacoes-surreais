@@ -1,66 +1,66 @@
 {
-  "titulo": "🚨 Celular Roubado: O Que Fazer Passo a Passo",
-  "tema": "celular roubado",
-  "reflexao": "🌟 'Perder o celular é perder uma parte da nossa vida. Mas saber o que fazer pode minimizar o prejuízo e proteger seu dinheiro.'",
-  "story": "Dona Carmem, 71 anos, estava no mercado quando sentiu a bolsa mais leve. O celular tinha sumido. O susto foi enorme! Seu primeiro pensamento foi: 'Meu banco! Minhas fotos!' Ela entrou em pânico. Por sorte, a neta tinha ensinado o que fazer. Em menos de 1 hora, Dona Carmem já tinha bloqueado o celular, cancelado os cartões e impedido que os ladrões mexessem no seu banco. O celular foi perdido, mas o dinheiro dela estava seguro. Hoje ela diz: 'Aprendi que o celular é importante, mas saber agir rápido é mais importante ainda!'",
-  "lesson": "Se seu celular for roubado, NÃO entre em pânico. Aja rápido e seguindo os passos certos. Você pode proteger seu dinheiro e seus dados em menos de 30 minutos.",
+  "titulo": "📺 Netflix: Como Assistir Séries e Filmes com Facilidade",
+  "tema": "Netflix",
+  "reflexao": "🌟 'A tecnologia nos presenteia com o cinema dentro de casa. Aprender a usar a Netflix é abrir as portas para um mundo de histórias, risadas e emoções — sem sair do sofá!'",
+  "story": "Seu João, 74 anos, sempre reclamava que não tinha nada para assistir na TV. 'Só tem bobagem!', ele dizia. Até que a neta Mariana instalou a Netflix na smart TV dele. No começo, ele ficou confuso: 'Cadê os canais? Como eu escolho?' Mariana teve paciência e mostrou o básico. Em uma semana, Seu João já navegava sozinho. Descobriu filmes antigos de faroeste que amava, documentários de história e até uma série de comédia que o fazia rir alto. Hoje, ele liga para a neta: 'Mariana! Vi um filme maravilhoso ontem! Você tem que assistir!' A tecnologia, que parecia distante, virou ponte para momentos de alegria e conversa em família.",
+  "lesson": "A Netflix é simples de usar quando aprendemos o básico. Com poucos cliques, você tem acesso a milhares de filmes e séries — e pode assistir quando quiser, no seu tempo.",
   "tutorial": {
-    "titulo": "🛡️ TUTORIAL: 7 Passos Para Tomar Seu Celular For Roubado",
-    "introducao": "Anote esses passos e guarde em casa! Se acontecer com você, siga na ordem:",
+    "titulo": "📺 TUTORIAL: Como Usar a Netflix Passo a Passo",
+    "introducao": "Vou te ensinar tudo o que você precisa para começar a assistir hoje mesmo!",
     "passos": [
       {
         "numero": 1,
-        "titulo": "Peça para bloquear o chip (operadora)",
-        "explicacao": "O chip é a porta de entrada para suas contas. Ligue na operadora e peça para bloquear.",
-        "acao": "Anote os números das operadoras: Vivo (1058), Claro (1052), TIM (1056), Oi (1057). Ligue de outro telefone.",
-        "exemplo": "Oi, meu celular foi roubado. Preciso bloquear o chip número (seu número)."
+        "titulo": "Entre na Netflix",
+        "explicacao": "Na smart TV, aperte o botão 'Netflix' no controle ou procure no menu. No celular, abra o app da Netflix.",
+        "acao": "Procure o ícone vermelho com a letra 'N'. É o símbolo da Netflix.",
+        "exemplo": "Na TV: botão 'Home' no controle → procure 'Netflix' → clique em 'N' vermelho"
       },
       {
         "numero": 2,
-        "titulo": "Bloqueie o celular pelo Find My ou Encontre Meu Dispositivo",
-        "explicacao": "Isso apaga tudo do celular e impede que usem suas contas.",
-        "acao": "No celular de alguém ou computador, acesse: android.com/find (Android) ou icloud.com/find (iPhone). Entre com seu email e senha, e clique em 'Apagar dispositivo'.",
-        "exemplo": "O celular será bloqueado e ninguém conseguirá acessar suas informações."
+        "titulo": "Faça login com seu email e senha",
+        "explicacao": "A Netflix pede seu email e senha para entrar. Se não tem conta, peça para um familiar criar para você.",
+        "acao": "Digite seu email e senha usando o controle da TV ou o celular.",
+        "exemplo": "Email: maria@email.com | Senha: ••••••••"
       },
       {
         "numero": 3,
-        "titulo": "Altere a senha do seu email",
-        "explicacao": "O email é a chave para todas as outras contas. Proteja primeiro!",
-        "acao": "No computador ou celular de alguém, entre no seu email e mude a senha imediatamente.",
-        "exemplo": "Gmail: vá em 'Minha Conta' → 'Segurança' → 'Senha'. Crie uma senha nova forte."
+        "titulo": "Escolha quem vai assistir",
+        "explicacao": "A Netflix mostra perfis de cada pessoa da casa. Escolha o seu nome.",
+        "acao": "Clique no seu nome ou foto. Isso personaliza as recomendações para você.",
+        "exemplo": "Clique em 'Maria' → entra na sua área personalizada"
       },
       {
         "numero": 4,
-        "titulo": "Ligue para o banco e bloqueie o app",
-        "explicacao": "Seus apps de banco podem ser acessados pelo celular roubado.",
-        "acao": "Ligue no telefone do seu banco (anote em casa!): Bradesco (4002-0022), Itaú (4004-4828), BB (4004-0001), Nubank (11 3004-6326). Peça para bloquear o acesso pelo app.",
-        "exemplo": "Meu celular foi roubado. Preciso bloquear o acesso ao app do banco."
+        "titulo": "Navegue pelos títulos",
+        "explicacao": "Use as setas do controle para ver filmes e séries. Eles ficam organizados em fileiras por categoria.",
+        "acao": "Seta para cima/baixo muda de categoria. Seta para esquerda/direita passa os títulos.",
+        "exemplo": "Fileiras: 'Filmes Brasileiros', 'Séries de Comédia', 'Documentários'..."
       },
       {
         "numero": 5,
-        "titulo": "Altere a senha das redes sociais",
-        "explicacao": "WhatsApp, Facebook e Instagram podem ser usados para aplicar golpes em seus amigos.",
-        "acao": "No computador, entre em cada rede social e mude a senha. Ative verificação em duas etapas.",
-        "exemplo": "WhatsApp: peça para alguém ativar seu WhatsApp em outro celular (isso derruba o roubo)."
+        "titulo": "Clique para assistir",
+        "explicacao": "Quando achar algo que gostar, clique em 'Assistir'. O filme ou série começa imediatamente!",
+        "acao": "Aperte o botão central do controle (OK ou Enter).",
+        "exemplo": "Clicou em 'Filme X' → começa a tocar automaticamente"
       },
       {
         "numero": 6,
-        "titulo": "Faça o Boletim de Ocorrência",
-        "explicacao": "Necessário para o seguro e para o banco repôr dinheiro se houver fraude.",
-        "acao": "Vá à delegacia mais próxima ou acesse a Delegacia Eletrônica do seu estado. Leve documento.",
-        "exemplo": "Diga: 'Quero registrar um boletim de ocorrência de roubo de celular.'"
+        "titulo": "Use os controles durante o filme",
+        "explicacao": "Você pode pausar, voltar ou adiantar. Basta apertar qualquer botão na tela.",
+        "acao": "Pausar: botão 'OK' ou 'Pausa'. Voltar/Adiantar: setas esquerda/direita.",
+        "exemplo": "Apertou 'OK' → filme pausa. Apertou de novo → continua."
       },
       {
         "numero": 7,
-        "titulo": "Avise sua família",
-        "explicacao": "Para que não caiam em golpes fingindo ser você.",
-        "acao": "Ligue para filhos, netos e amigos próximos. Avise que perdeu o celular.",
-        "exemplo": "Meu celular foi roubado. Se receberem mensagem minha pedindo dinheiro, não acreditem!"
+        "titulo": "Saia da Netflix quando terminar",
+        "explicacao": "Quando acabar de assistir, saia da Netflix para não gastar internet à toa.",
+        "acao": "Aperte o botão 'Home' ou 'Sair' no controle.",
+        "exemplo": "Botão 'Home' → volta para a TV normal"
       }
     ],
-    "checklist": "☐ Bloqueei o chip na operadora\n☐ Apaguei o celular pelo Find My/Encontre\n☐ Alterei a senha do email\n☐ Liguei para o banco\n☐ Alterei senhas das redes sociais\n☐ Fiz o boletim de ocorrência\n☐ Avisei minha família"
+    "checklist": "☐ Entrei na Netflix (ícone N vermelho)\n☐ Fiz login com email e senha\n☐ Escolhi meu perfil\n☐ Naveguei pelas categorias\n☐ Cliquei para assistir\n☐ Usei pause/play quando precisei\n☐ Saí da Netflix ao terminar"
   },
-  "oQueMaisAprender": "Quer aprender a proteger seu celular ANTES que algo aconteça? O Mini Segurança Digital do 60maisPlay ensina como configurar seu celular para ficar seguro. Clique no botão abaixo!",
-  "seguranca": "⚠️ PREVENÇÃO: Anote em casa os telefones do banco e operadora. Configure o 'Encontre Meu Dispositivo' ANTES de precisar. Anote seu IMEI (disque *#06# para ver).",
-  "score": 9.5
+  "oQueMaisAprender": "Quer aprender mais dicas como essas? O 60maisPlay tem cursos simples sobre Netflix, YouTube, celular e muito mais! Clique no botão abaixo para conhecer!",
+  "seguranca": "⚠️ DICA: Nunca empreste sua senha da Netflix para estranhos. Compartilhe apenas com pessoas de confiança da família. Se desconfiar que alguém está usando sem permissão, troque a senha!",
+  "score": 9.2
 }

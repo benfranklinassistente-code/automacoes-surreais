@@ -1,0 +1,19 @@
+{
+  "lembretes": [
+    {
+      "id": "obsidian-nuvem",
+      "data": "2026-02-27",
+      "diaSemana": "quinta-feira",
+      "titulo": "Configurar Obsidian na Nuvem",
+      "descricao": "Mover vault do Obsidian para nuvem (Google Drive/Dropbox/Syncthing) para que o Ben possa acessar e integrar",
+      "opcoes": [
+        "Google Drive + rclone",
+        "Dropbox",
+        "Syncthing",
+        "Obsidian Sync (pago)"
+      ],
+      "status": "pendente",
+      "criadoEm": "2026-02-24T22:15:00-03:00"
+    }
+  ]
+}

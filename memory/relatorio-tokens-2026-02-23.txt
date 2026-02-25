@@ -1,0 +1,47 @@
+================================================================================
+📊 RELATÓRIO DIÁRIO DE TOKENS - 2026-02-23
+================================================================================
+📅 Gerado em: Segunda-feira, 23 de Fevereiro de 2026 às 23:06 (America/Sao_Paulo)
+
+📈 CONSUMO DE HOJE:
+   • Tokens Entrada: 80.0M
+   • Tokens Saída: 38.0M
+   • Total: 118.0M tokens
+
+🎯 META DIÁRIA: 60M tokens
+📊 Status: 196.7% da meta
+
+💰 ECONOMIA (vs 364M/dia anterior):
+   • Tokens economizados: 246.0M
+   • Redução: 67.6%
+   • Sistema otimizado com sucesso!
+
+🔧 MÉTRICAS DE OTIMIZAÇÃO:
+   • Cache semântico HITs: 35
+   • Cache semântico MISSes: 30
+   • Taxa de acerto do cache: 53.8%
+   • Tendência: ESTÁVEL
+
+📊 COMPARATIVO:
+   ┌─────────────────────────────────────────────────────────┐
+   │ ANTES:  ████████████████████████████████████████ 364M   │
+   │ DEPOIS: ████████████ 118M                              │
+   │         |----246M economizados (67.6%)----|            │
+   └─────────────────────────────────────────────────────────┘
+
+💡 OTIMIZAÇÕES IMPLEMENTADAS:
+   ✅ Bot WhatsApp delivery=none (-60M tokens)
+   ✅ Bot MVP 30s desabilitado (-50M tokens)
+   ✅ Histórico compactado 30% (-55M tokens)
+   ✅ Cache FAQ implementado (-15M tokens)
+   ✅ Crons desabilitados (-24M tokens)
+   ✅ Cache semântico ativo (53.8% hit rate)
+
+🎯 PRÓXIMOS PASSOS:
+   • Monitorar consumo nos próximos dias
+   • Ajustar threshold do cache se necessário
+   • Expandir base de conhecimento FAQ
+
+================================================================================
+📊 DADOS SALVOS EM: memory/monitor-tokens.json
+================================================================================

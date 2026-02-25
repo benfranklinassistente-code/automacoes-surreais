@@ -1,0 +1,31 @@
+================================================================================
+📊 RELATÓRIO DIÁRIO DE TOKENS - 2026-02-24
+================================================================================
+
+📈 CONSUMO DE HOJE:
+   • Tokens Entrada: 80.0M
+   • Tokens Saída: 38.0M
+   • Total: 118.0M tokens
+
+🎯 META DIÁRIA: 60M tokens
+📊 Status: 196.7% da meta
+
+💰 ECONOMIA (vs 364M/dia anterior):
+   • Tokens economizados: 246.0M
+   • Redução: 67.6%
+
+🔧 MÉTRICAS DE OTIMIZAÇÃO:
+   • Cache semântico HITs: 35
+   • Cache semântico MISSes: 30
+   • Média 7 dias: 118.0M
+   • Tendência: ESTAVEL
+
+💡 SUGESTÕES:
+   ⚠️ Acima da meta! Considere:
+      • Aumentar threshold do cache semântico (70% → 75%)
+      • Reduzir frequência de crons
+      • Expandir cache FAQ
+
+================================================================================
+Gerado em: 2026-02-24T18:14:51.597Z
+================================================================================

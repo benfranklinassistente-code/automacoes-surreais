@@ -253,6 +253,38 @@ O sistema **NÃO REPETE** o mesmo tema por 30 dias:
 
 ## ⚠️ INFORMAÇÕES CRÍTICAS - NÃO ESQUECER
 
+### 📰 REGRA #1: APENAS UMA CAMPANHA DE NEWSLETTER POR DIA
+- **NUNCA** enviar mais de uma newsletter no mesmo dia
+- O CRON diário (06:06 Brasília) já faz o envio automático
+- Se precisar reenviar, esperar o dia seguinte
+- Evita duplicidade e spam para a lista
+
+### 📰 REGRA #2: NEWSLETTER SEMPRE EM MODO PRODUÇÃO
+- `MODO_TESTE = false` - SEMPRE em produção
+- Enviar para a **lista completa** (Brevo ID 4)
+- NÃO enviar apenas para email de teste
+- O objetivo é alcançar todos os assinantes
+
+### 📰 REGRA #3: VARIAR TEMAS E CATEGORIAS
+- NÃO repetir a mesma categoria em dias seguidos
+- Escolher temas aleatoriamente de categorias diferentes
+- Hoje: Netflix (apps/entretenimento) → Amanhã: categoria diferente
+- Objetivo: diversificar o conteúdo para o leitor
+- Manter a qualidade alta do conteúdo (elogiado em 24/02/2026)
+
+### 📰 REGRA #5: SEMPRE PUBLICAR NO BLOG APÓS ENVIAR NEWSLETTER
+- **NUNCA** esquecer de postar no blog após enviar a newsletter
+- Script: `publicar-blog.js`
+- O fluxo é: Newsletter → Blog → WhatsApp
+- Verificar se foi publicado antes de finalizar o dia
+
+### 📰 REGRA #4: DICA WHATSAPP = MESMO TEMA DA NEWSLETTER
+- A dica do WhatsApp deve ser o **mesmo tema** da Newsletter do dia
+- Script: `dica-whatsapp-newsletter.js`
+- CRON: 08:00 Brasília (2h após newsletter 06:06)
+- Formato: resumido para WhatsApp (até 1500 caracteres)
+- NÃO usar dicas fixas/rotativas - sempre sincronizado com a newsletter
+
 ### 📚 Lista de 100 Temas
 - **Arquivo:** `/root/.openclaw/workspace/lista-temas.json`
 - **Total:** 100 temas organizados em 12 categorias
@@ -355,5 +387,92 @@ Ver documentação completa: `memory/mission-control.md`
 
 ---
 
-*Documentação atualizada por Ben - 22/02/2026*
+---
+
+## 🧠 APRENDIZAGENS DO DIA - 23/02/2026
+
+### ✅ Conquistas do Dia
+
+| Conquista | Detalhes |
+|-----------|----------|
+| **Newsletter 30 temas** | Cache completo implementado (`cache-newsletter-completo.json`) |
+| **Imagens hospedadas** | Imgur funcionando (cabeçalho + rodapé) |
+| **WhatsApp CTA** | Atualizado para 11 95354-5939 |
+| **CRONs funcionando** | Newsletter 06:06 + Dicas WhatsApp 08:00 |
+| **Grupo WhatsApp correto** | ID: `120363375518105627@g.us` |
+| **Aprendizagem diária** | Sistema ativado às 19:00 |
+
+### 📱 Formato WhatsApp - CRÍTICO
+
+```
+GRUPOS:    120363375518105627@g.us     ✅ CORRETO
+NÚMEROS:   5511953545939@s.whatsapp.net ✅ CORRETO
+NUNCA:     @c.us                        ❌ ERRADO
+```
+
+### 🖼️ Hospedagem de Imagens
+
+- **Imgur** funciona bem para newsletter
+- URLs: `https://i.imgur.com/[ID].jpeg`
+- Sempre testar com `curl -I` antes de usar
+
+### 📋 Cache de Temas
+
+- **30 temas** no arquivo `cache-newsletter-completo.json`
+- Sistema não repete por 30 dias
+- Campo `categoria` para organizar
+
+### ⚠️ Problemas Pendentes
+
+1. CRON Relatório Telegram (timeout)
+2. CRON Lembrete MVP (target incorreto)
+3. Gateway com lentidão às vezes
+
+---
+
+## 🧠 APRENDIZAGENS DO DIA - 24/02/2026
+
+### ✅ Fix Cron WhatsApp
+
+**Problema:** Cron `enviar-dica-whatsapp.js` (08:00) falhava com HTTP 405
+
+**Causa Raiz:** Script usava requisição HTTP para endpoint `/api/message` que não é suportado pelo gateway OpenClaw
+
+**Solução:** Reescrito para usar CLI `openclaw message send`
+
+**Arquivos:**
+- Script corrigido: `/root/.openclaw/workspace/enviar-dica-whatsapp.js`
+- Documentação completa: `memory/fix-cron-whatsapp.md`
+
+**Comando correto para enviar mensagens:**
+```bash
+openclaw message send --channel whatsapp --target "120363375518105627@g.us" -m "Mensagem"
+```
+
+### 📊 Monitor de Tokens
+
+- Sistema funcionando (`monitor-tokens.js`)
+- Consumo: 118M tokens/dia
+- Economia: 67.6% vs 364M/dia anterior
+- Cache HIT rate: 53.8%
+
+### 🔧 Comandos Úteis
+
+```bash
+# Verificar crons
+crontab -l
+
+# Testar envio WhatsApp
+openclaw message send --channel whatsapp --target "120363375518105627@g.us" -m "Teste"
+
+# Ver logs dica WhatsApp
+cat /tmp/dicas-whatsapp.log
+
+# Rodar monitor de tokens
+cd /root/.openclaw/workspace && node run-monitor-tokens.js
+```
+
+---
+
+*Documentação atualizada por Ben - 24/02/2026*
 *Sistema 60maisNews v2.0*

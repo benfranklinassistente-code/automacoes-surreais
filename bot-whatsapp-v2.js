@@ -357,6 +357,21 @@ async function main() {
     const stats = faqCache.getStats();
     console.log(`💰 Cache: ${stats.hits} hits | ~${stats.tokensSaved} tokens economizados`);
   }
+  
+  // 📰 ENVIAR DICA DIÁRIA (se ainda não enviou hoje)
+  const dicaBot = require('./enviar-dica-bot.js');
+  if (!dicaBot.jaEnviouHoje()) {
+    console.log('\n📰 Enviando dica diária para o grupo...');
+    try {
+      await enviarMensagem(dicaBot.DICA_NETFLIX, dicaBot.GRUPO_ID);
+      dicaBot.marcarEnviado();
+      console.log('✅ Dica enviada com sucesso!\n');
+    } catch (e) {
+      console.log('❌ Erro ao enviar dica:', e.message);
+    }
+  } else {
+    console.log('📰 Dica já foi enviada hoje.');
+  }
 }
 
 main().catch(console.error);
